@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0jb7pk04mibd"]
+
+[ext_resource type="Script" path="res://scripts/introduction.gd" id="1_2bu0y"]
+[ext_resource type="Texture2D" uid="uid://ktxi0664dusu" path="res://imports/images/Introduction.png" id="1_m7ntm"]
+
+[sub_resource type="Animation" id="Animation_tjwr8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w6jko"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gai5q"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dqjar"]
+_data = {
+"RESET": SubResource("Animation_tjwr8"),
+"fade_in": SubResource("Animation_w6jko"),
+"fade_out": SubResource("Animation_gai5q")
+}
+
+[node name="Introduction" type="Node2D"]
+script = ExtResource("1_2bu0y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 541)
+texture = ExtResource("1_m7ntm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1919.0
+offset_bottom = 1082.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dqjar")
+}

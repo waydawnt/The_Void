@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://cgyq3du7efntg"]
+
+[ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="1_43n1f"]
+[ext_resource type="PackedScene" uid="uid://fc42tlaktuqt" path="res://scenes/level_01/vending_machines/vending_machine_01.tscn" id="2_g2qbu"]
+[ext_resource type="PackedScene" uid="uid://d353sd0n376xt" path="res://scenes/level_01/vending_machines/vending_machine_02.tscn" id="3_akwcv"]
+[ext_resource type="PackedScene" uid="uid://bev1rua8aa31a" path="res://scenes/level_01/alleys/alley_01.tscn" id="4_3yrpe"]
+[ext_resource type="Texture2D" uid="uid://bde5ji6tdyjay" path="res://imports/level_01/2d_sprites/ac.png" id="5_nuqsw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o5uke"]
+size = Vector3(200, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h8k3b"]
+size = Vector3(5, 5, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bwb6j"]
+size = Vector3(10, 2.5, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oqos5"]
+size = Vector3(5, 3, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0h15n"]
+size = Vector3(3, 3, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aag7y"]
+size = Vector3(4, 3, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2bsrs"]
+size = Vector3(4, 3, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l4wl1"]
+size = Vector3(5, 4, 6)
+
+[sub_resource type="QuadMesh" id="QuadMesh_82lfc"]
+size = Vector2(0.5, 2)
+
+[node name="Level_01" type="Node3D"]
+
+[node name="ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9033, -1, 0)
+mesh = SubResource("BoxMesh_o5uke")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.491, 1.9721, -2.01206)
+mesh = SubResource("BoxMesh_h8k3b")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18016, 0.742698, -2.01206)
+mesh = SubResource("BoxMesh_bwb6j")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6471, 0.492602, -2.01206)
+mesh = SubResource("BoxMesh_oqos5")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.3929, 0.975563, -2.01206)
+mesh = SubResource("BoxMesh_oqos5")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6411, 0.996228, -1.39009)
+mesh = SubResource("BoxMesh_0h15n")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1555, 0.996228, -2.13702)
+mesh = SubResource("BoxMesh_aag7y")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.2764, 0.996228, -2.13702)
+mesh = SubResource("BoxMesh_2bsrs")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2104, 0.996228, -2.13702)
+mesh = SubResource("BoxMesh_2bsrs")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.6796, 1.49657, -2.13702)
+mesh = SubResource("BoxMesh_l4wl1")
+
+[node name="Player" parent="." instance=ExtResource("1_43n1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6065, 0.0727196, 2.42815)
+
+[node name="Camera3D" parent="Player" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 6)
+keep_aspect = 0
+current = true
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.603, 0.541354, 2.70093)
+mesh = SubResource("QuadMesh_82lfc")
+
+[node name="vending_machine_01" parent="." instance=ExtResource("2_g2qbu")]
+transform = Transform3D(0.45, 0, 0, 0, 0.5, 0, 0, 0, 0.4, 0.358886, -0.488017, 1.2274)
+
+[node name="vending_machine_02" parent="." instance=ExtResource("3_akwcv")]
+transform = Transform3D(0.45, 0, 0, 0, 0.5, 0, 0, 0, 0.4, -0.593374, -0.48981, 1.22639)
+
+[node name="alley_01" parent="." instance=ExtResource("4_3yrpe")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -41.6635, -0.513044, 0.250372)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -40.4199, 1.08174, 0.937267)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("5_nuqsw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1084, 0.715378, 0)
+light_energy = 5.0
+shadow_enabled = true
+
+[editable path="Player"]

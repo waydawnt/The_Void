@@ -1,0 +1,188 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="ArrayMesh" uid="uid://dmll02wiyb8ud" path="res://objects/level_02_objects/ground.res" id="1_igqwl"]
+[ext_resource type="PackedScene" uid="uid://c8u8o7f0r7klk" path="res://scenes/level_02/ground/ground_support.tscn" id="2_ow6fa"]
+[ext_resource type="PackedScene" path="res://scenes/level_02/building_00/building_00.tscn" id="3_4jrto"]
+[ext_resource type="PackedScene" uid="uid://dyvyt5bieuw24" path="res://scenes/level_02/building_01/building_01.tscn" id="4_x4s48"]
+[ext_resource type="PackedScene" uid="uid://c5g7hrxu7qyl0" path="res://imports/level_02/buildings/building_02/building_02.glb" id="5_5qlbs"]
+[ext_resource type="PackedScene" uid="uid://bty6gkta7dwvn" path="res://imports/level_02/buildings/building_03/building_03.glb" id="6_fwq12"]
+[ext_resource type="PackedScene" uid="uid://bbyffdfnl2foo" path="res://scenes/level_02/building_04/building_04.tscn" id="7_cwii1"]
+[ext_resource type="Texture2D" uid="uid://ddrecx3qjbd8u" path="res://imports/level_02/ground/railing.png" id="8_1jk7t"]
+
+[node name="ground" type="Node3D"]
+
+[node name="ground_platform" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_igqwl")
+
+[node name="ground_support" parent="." instance=ExtResource("2_ow6fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2288, -7.735, 3.66031)
+
+[node name="ground_support2" parent="." instance=ExtResource("2_ow6fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2288, -7.735, 3.66031)
+
+[node name="ground_support3" parent="." instance=ExtResource("2_ow6fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90735e-06, -7.735, 3.66031)
+
+[node name="ground_support4" parent="." instance=ExtResource("2_ow6fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.715, -7.735, 3.66031)
+
+[node name="ground_support5" parent="." instance=ExtResource("2_ow6fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0514, -7.735, 3.66031)
+
+[node name="building_00" parent="." instance=ExtResource("3_4jrto")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -3, -7)
+
+[node name="building_01" parent="." instance=ExtResource("4_x4s48")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 17.672, -2.63345, -7.61096)
+
+[node name="building_05" parent="." instance=ExtResource("4_x4s48")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -8.01561, -2.63345, -7.04444)
+
+[node name="building_02" parent="." instance=ExtResource("5_5qlbs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.43908, -3.00959, -8.66222)
+
+[node name="building_03" parent="." instance=ExtResource("6_fwq12")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.8377, -2.96346, -8.21369)
+
+[node name="building_04" parent="." instance=ExtResource("7_cwii1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.759, -3.0558, -9.00442)
+
+[node name="railing_00" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -19.8949, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_01" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -17.8488, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_02" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -15.8072, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_03" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -13.7612, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_04" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -11.7151, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_05" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -9.66903, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_06" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -7.62745, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_07" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -5.58142, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_08" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.55212, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_09" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.5061, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_10" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.535488, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_11" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.58151, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_12" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.62768, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_13" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 6.6737, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_14" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.71529, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_15" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 10.7613, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_16" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 12.8032, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_17" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.8494, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_18" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 16.8954, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_19" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 18.937, 0.976603, 7.75687)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")

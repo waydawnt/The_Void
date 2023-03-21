@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://ckh7u1a7c0hd4"
+path="res://.godot/imported/level_02.exr-56392db09fe7f550788997f7704c54da.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://scenes/level_02/bake/level_02.exr"
+dest_files=["res://.godot/imported/level_02.exr-56392db09fe7f550788997f7704c54da.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=1
