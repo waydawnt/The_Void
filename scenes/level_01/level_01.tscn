@@ -76,12 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.6796, 1.49657, -2.13702)
 mesh = SubResource("BoxMesh_l4wl1")
 
 [node name="Player" parent="." instance=ExtResource("1_43n1f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6065, 0.0727196, 2.42815)
-
-[node name="Camera3D" parent="Player" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 6)
-keep_aspect = 0
-current = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6065, 0.520861, 2.42815)
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.603, 0.541354, 2.70093)
@@ -94,7 +89,7 @@ transform = Transform3D(0.45, 0, 0, 0, 0.5, 0, 0, 0, 0.4, 0.358886, -0.488017, 1
 transform = Transform3D(0.45, 0, 0, 0, 0.5, 0, 0, 0, 0.4, -0.593374, -0.48981, 1.22639)
 
 [node name="alley_01" parent="." instance=ExtResource("4_3yrpe")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -41.6635, -0.513044, 0.250372)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6635, -0.513044, 0.250372)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -40.4199, 1.08174, 0.937267)
@@ -107,5 +102,3 @@ texture = ExtResource("5_nuqsw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1084, 0.715378, 0)
 light_energy = 5.0
 shadow_enabled = true
-
-[editable path="Player"]
