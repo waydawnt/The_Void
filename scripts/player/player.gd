@@ -41,7 +41,6 @@ func get_input(delta):
 	direction = direction.normalized()
 
 	velocity = velocity.lerp(direction * speed, acceleration * delta)
-	print(velocity)
 
 
 func _physics_process(delta):

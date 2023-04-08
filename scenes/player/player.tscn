@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cv80xmr0e1ad2"]
+[gd_scene load_steps=29 format=3 uid="uid://cv80xmr0e1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://kcxvdg3hqxtj" path="res://imports/player/player_spritesheet.png" id="1_827c7"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qk0m8"]
@@ -142,24 +142,18 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0vkyf"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mdivp"]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mbpl6"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pdda1"]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n8wau"]
 states/fire/node = SubResource("AnimationNodeAnimation_mtaeo")
-states/fire/position = Vector2(602, 100)
+states/fire/position = Vector2(637, 254)
 states/idle/node = SubResource("AnimationNodeAnimation_c5xkt")
-states/idle/position = Vector2(369, 100)
+states/idle/position = Vector2(409, 100)
 states/run/node = SubResource("AnimationNodeAnimation_x06nh")
-states/run/position = Vector2(602, 361)
+states/run/position = Vector2(409, 403)
 states/walk/node = SubResource("AnimationNodeAnimation_ddp44")
-states/walk/position = Vector2(369, 361)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6lifx"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jjydk"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_s6ms5"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ebdx8"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_7y8gn"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_3m62q"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wym1o"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_3ijwh"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_wsj06"), "walk", "fire", SubResource("AnimationNodeStateMachineTransition_0vkyf"), "fire", "walk", SubResource("AnimationNodeStateMachineTransition_mdivp"), "run", "fire", SubResource("AnimationNodeStateMachineTransition_mbpl6"), "fire", "run", SubResource("AnimationNodeStateMachineTransition_pdda1")]
+states/walk/position = Vector2(180, 254)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6lifx"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jjydk"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_s6ms5"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ebdx8"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_7y8gn"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_3m62q"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wym1o"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_3ijwh"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_wsj06"), "walk", "fire", SubResource("AnimationNodeStateMachineTransition_0vkyf"), "run", "fire", SubResource("AnimationNodeStateMachineTransition_mbpl6")]
 graph_offset = Vector2(-206, -6)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_lel6j"]

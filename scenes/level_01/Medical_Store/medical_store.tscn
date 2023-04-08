@@ -1,0 +1,791 @@
+[gd_scene load_steps=24 format=3 uid="uid://dwddtpxnroo7t"]
+
+[ext_resource type="ArrayMesh" uid="uid://b7bfrag1un7uq" path="res://objects/level_01_objects/medical_store.res" id="1_7nmpq"]
+[ext_resource type="Texture2D" uid="uid://box8qqghmv5hh" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/shelf.png" id="2_4kqx1"]
+[ext_resource type="Texture2D" uid="uid://d12g1vbqgom3y" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/b1.png" id="3_3o217"]
+[ext_resource type="Texture2D" uid="uid://br08gc7q6nk3x" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/bottlem5.png" id="4_pxbh8"]
+[ext_resource type="Texture2D" uid="uid://cq7ni1inxsfbq" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/f1.png" id="5_tyj7s"]
+[ext_resource type="Texture2D" uid="uid://jhkqu76ixljg" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/f3.png" id="6_ipvdb"]
+[ext_resource type="Texture2D" uid="uid://bee7tla7xyeav" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/f4png.png" id="7_quoh7"]
+[ext_resource type="Texture2D" uid="uid://dmavtvf6hrngt" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/bottlem19.png" id="8_valto"]
+[ext_resource type="Texture2D" uid="uid://bm2diqrn1uhr3" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/bottlem20.png" id="9_na1lv"]
+[ext_resource type="Texture2D" uid="uid://jjclsv8jm608" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/b5.png" id="10_2lika"]
+[ext_resource type="Texture2D" uid="uid://dkympeqwt3gxh" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/b6.png" id="11_8febs"]
+[ext_resource type="Texture2D" uid="uid://dbs51tf7b0v40" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/bottlem7.png" id="12_iec0c"]
+[ext_resource type="Texture2D" uid="uid://cxk17p2gbb0h6" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/bottlem10.png" id="13_xdj8j"]
+[ext_resource type="Texture2D" uid="uid://c31cvake2dtu8" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/bottlem16.png" id="14_yn62r"]
+[ext_resource type="Texture2D" uid="uid://b8ovxapu6d2nn" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/f12png.png" id="15_0yk5t"]
+[ext_resource type="Texture2D" uid="uid://be27yjdt833v4" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/table.png" id="16_jlry1"]
+[ext_resource type="Texture2D" uid="uid://b72qnvgvnsbip" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/plus_white.png" id="16_n5jv7"]
+[ext_resource type="Texture2D" uid="uid://dwqb7sgimojqg" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/pc.png" id="17_knqeq"]
+[ext_resource type="Texture2D" uid="uid://cwva7m4854bcu" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/medsign2.png" id="17_nds3j"]
+[ext_resource type="Texture2D" uid="uid://d12r6igkc5s3r" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/cash_counter3.png" id="18_4ursy"]
+[ext_resource type="Texture2D" uid="uid://ob1t7d5xjne2" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/glass_windows.png" id="18_m7ysq"]
+[ext_resource type="Texture2D" uid="uid://l03e7w03iq7e" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/chemist1.png" id="20_jj8dr"]
+[ext_resource type="Texture2D" uid="uid://cvts13xppanuy" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/drug store.png" id="21_253eo"]
+
+[node name="Medical_Store" type="Node3D"]
+
+[node name="store" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_7nmpq")
+
+[node name="Medicines" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09622, 0.818167)
+
+[node name="Shelf_00" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(5.1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28574, -0.271284, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_4kqx1")
+
+[node name="Shelf_01" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(5.1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28574, 0.0526373, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_4kqx1")
+
+[node name="Shelf_02" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(5.1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28574, 0.348215, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_4kqx1")
+
+[node name="Shelf_03" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(5.1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28574, 0.631646, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_4kqx1")
+
+[node name="Shelf_04" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(-8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0, 0, 1, 1.28574, 0.201874, -0.00684977)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_4kqx1")
+
+[node name="Medicine_00" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.179469, 0, 0, 0, 0.179469, 0, 0, 0, 1, -0.244044, 0.468476, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_3o217")
+
+[node name="Medicine_01" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.179469, 0, 0, 0, 0.179469, 0, 0, 0, 1, 2.77853, 0.468476, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_3o217")
+
+[node name="Medicine_02" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.179469, 0, 0, 0, 0.179469, 0, 0, 0, 1, 1.0311, -0.152006, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_3o217")
+
+[node name="Medicine_04" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.179469, 0, 0, 0, 0.179469, 0, 0, 0, 1, 2.16078, -0.152006, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_3o217")
+
+[node name="Medicine_05" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.179469, 0, 0, 0, 0.179469, 0, 0, 0, 1, -0.0540333, -0.152006, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_3o217")
+
+[node name="Medicine_06" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.179469, 0, 0, 0, 0.179469, 0, 0, 0, 1, 0.42375, 0.174325, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_3o217")
+
+[node name="Medicine_03" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.179469, 0, 0, 0, 0.179469, 0, 0, 0, 1, 1.62336, 0.169987, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_3o217")
+
+[node name="Medicine_07" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.129572, 0, 0, 0, 0.129572, 0, 0, 0, 1, 0.87418, 0.126611, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_pxbh8")
+
+[node name="Medicine_08" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.129572, 0, 0, 0, 0.129572, 0, 0, 0, 1, 1.73151, -0.197438, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_pxbh8")
+
+[node name="Medicine_09" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.129572, 0, 0, 0, 0.129572, 0, 0, 0, 1, -0.105621, 0.422593, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_pxbh8")
+
+[node name="Medicine_10" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.129572, 0, 0, 0, 0.129572, 0, 0, 0, 1, 2.67148, 0.422593, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_pxbh8")
+
+[node name="Medicine_11" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.129572, 0, 0, 0, 0.129572, 0, 0, 0, 1, 2.67148, -0.198784, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_pxbh8")
+
+[node name="Medicine_12" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 2.67148, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_tyj7s")
+
+[node name="Medicine_13" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 2.67148, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_tyj7s")
+
+[node name="Medicine_14" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 2.57775, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_tyj7s")
+
+[node name="Medicine_15" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 2.47014, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_tyj7s")
+
+[node name="Medicine_16" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 2.36253, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_tyj7s")
+
+[node name="Medicine_17" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.980921, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_tyj7s")
+
+[node name="Medicine_18" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 1.07812, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_tyj7s")
+
+[node name="Medicine_19" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 1.18226, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_20" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 1.36971, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_21" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 1.49816, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_22" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 1.49816, 0.141411, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_23" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.00546324, 0.436478, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_24" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.120019, 0.436478, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_25" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.234574, 0.436478, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_26" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.360694, 0.436478, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_quoh7")
+
+[node name="Medicine_27" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.454068, 0.436478, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_quoh7")
+
+[node name="Medicine_28" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.552491, 0.436478, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_quoh7")
+
+[node name="Medicine_29" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.645865, 0.436478, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_quoh7")
+
+[node name="Medicine_30" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.645865, -0.179291, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_quoh7")
+
+[node name="Medicine_31" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 0.751858, -0.179291, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_quoh7")
+
+[node name="Medicine_32" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 1.62504, -0.179291, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_quoh7")
+
+[node name="Medicine_33" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 1.53419, -0.179291, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_quoh7")
+
+[node name="Medicine_34" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.184432, 0, 0, 0, 0.184432, 0, 0, 0, 1, 1.44838, -0.179291, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_quoh7")
+
+[node name="Medicine_35" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 1.82945, -0.181815, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_valto")
+
+[node name="Medicine_36" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 1.92031, -0.181815, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_valto")
+
+[node name="Medicine_37" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 2.00106, -0.181815, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_valto")
+
+[node name="Medicine_38" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 2.08182, -0.181815, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_valto")
+
+[node name="Medicine_39" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 2.56636, 0.433954, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_valto")
+
+[node name="Medicine_40" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 2.49277, 0.433954, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_valto")
+
+[node name="Medicine_41" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 2.41918, 0.433954, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_valto")
+
+[node name="Medicine_42" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 0.77372, 0.14254, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_valto")
+
+[node name="Medicine_43" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 0.697187, 0.14254, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_valto")
+
+[node name="Medicine_44" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 0.620654, 0.14254, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_na1lv")
+
+[node name="Medicine_45" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, 0.526459, 0.14254, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_na1lv")
+
+[node name="Medicine_46" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, -0.280081, -0.181253, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_na1lv")
+
+[node name="Medicine_47" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, -0.206492, -0.181253, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_na1lv")
+
+[node name="Medicine_48" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.073773, 0, 0, 0, 0.073773, 0, 0, 0, 1, -0.129959, -0.181253, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_na1lv")
+
+[node name="Medicine_49" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, -0.259476, 0.163145, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_2lika")
+
+[node name="Medicine_50" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, -0.165282, 0.163145, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_2lika")
+
+[node name="Medicine_51" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, -0.0740307, 0.163145, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_2lika")
+
+[node name="Medicine_52" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 0.756059, 0.460447, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_2lika")
+
+[node name="Medicine_53" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 0.850253, 0.460447, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_2lika")
+
+[node name="Medicine_54" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 2.3397, 0.460447, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_2lika")
+
+[node name="Medicine_55" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 2.26317, -0.157705, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_2lika")
+
+[node name="Medicine_56" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 2.35737, -0.157705, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_2lika")
+
+[node name="Medicine_57" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 2.45745, -0.157705, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_2lika")
+
+[node name="Medicine_58" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 2.56636, -0.157705, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_8febs")
+
+[node name="Medicine_59" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 2.80479, -0.157705, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_8febs")
+
+[node name="Medicine_60" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 2.80479, 0.166089, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_8febs")
+
+[node name="Medicine_61" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.169987, 0, 0, 0, 0.169987, 0, 0, 0, 1, 2.26906, 0.166089, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_8febs")
+
+[node name="Medicine_62" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 2.17781, 0.121935, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_iec0c")
+
+[node name="Medicine_63" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 2.05712, 0.121935, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_iec0c")
+
+[node name="Medicine_64" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 1.94526, 0.121935, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_iec0c")
+
+[node name="Medicine_65" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 1.20643, -0.201858, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_iec0c")
+
+[node name="Medicine_66" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 0.550008, -0.201858, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_iec0c")
+
+[node name="Medicine_67" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 0.441096, -0.201858, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_xdj8j")
+
+[node name="Medicine_68" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 0.88852, -0.201858, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_xdj8j")
+
+[node name="Medicine_69" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 0.341015, -0.201858, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_xdj8j")
+
+[node name="Medicine_70" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 0.232102, -0.201858, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_xdj8j")
+
+[node name="Medicine_71" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 0.0348822, 0.124879, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_xdj8j")
+
+[node name="Medicine_72" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 0.155569, 0.124879, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_xdj8j")
+
+[node name="Medicine_73" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 0.953279, 0.416293, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_xdj8j")
+
+[node name="Medicine_74" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 1.07102, 0.416293, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_xdj8j")
+
+[node name="Medicine_75" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.128341, 0, 0, 0, 0.128341, 0, 0, 0, 1, 1.20054, 0.416293, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_xdj8j")
+
+[node name="Medicine_76" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.0684282, 0, 0, 0, 0.0684282, 0, 0, 0, 1, 1.36832, 0.431011, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_yn62r")
+
+[node name="Medicine_77" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.0684282, 0, 0, 0, 0.0684282, 0, 0, 0, 1, 1.45957, 0.431011, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_yn62r")
+
+[node name="Medicine_78" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.0684282, 0, 0, 0, 0.0684282, 0, 0, 0, 1, 1.55671, 0.431011, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_yn62r")
+
+[node name="Medicine_79" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.0684282, 0, 0, 0, 0.0684282, 0, 0, 0, 1, 1.64502, 0.431011, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_yn62r")
+
+[node name="Medicine_80" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.0684282, 0, 0, 0, 0.0684282, 0, 0, 0, 1, 1.71272, 0.136653, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_yn62r")
+
+[node name="Medicine_81" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.0684282, 0, 0, 0, 0.0684282, 0, 0, 0, 1, 1.78337, 0.136653, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_yn62r")
+
+[node name="Medicine_82" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.0684282, 0, 0, 0, 0.0684282, 0, 0, 0, 1, 1.85401, 0.136653, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_yn62r")
+
+[node name="Medicine_83" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 2.25275, 0.444538, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_84" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 2.1518, 0.444538, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_85" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 2.04833, 0.444538, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_86" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 1.93982, 0.444538, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_87" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 0.25907, 0.149271, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_88" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 0.349921, 0.149271, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_89" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 0.034465, -0.181326, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_90" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 0.132887, -0.181326, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_ipvdb")
+
+[node name="Medicine_91" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 1.11963, -0.181326, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("15_0yk5t")
+
+[node name="Medicine_92" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 1.83635, 0.444538, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("15_0yk5t")
+
+[node name="Medicine_93" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 1.73793, 0.444538, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("15_0yk5t")
+
+[node name="Medicine_94" type="Sprite3D" parent="Medicines"]
+transform = Transform3D(0.198171, 0, 0, 0, 0.198171, 0, 0, 0, 1, 1.36443, -0.176279, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("15_0yk5t")
+
+[node name="Middle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.17231)
+
+[node name="table" type="Sprite3D" parent="Middle"]
+transform = Transform3D(0.586086, 0, 0, 0, 0.586086, 0, 0, 0, 1, 0.234597, 0.807086, 0)
+shaded = true
+texture_filter = 0
+texture = ExtResource("16_jlry1")
+
+[node name="computer" type="Sprite3D" parent="Middle"]
+transform = Transform3D(0.12418, 0, 0, 0, 0.12418, 0, 0, 0, 1, 0.777901, 0.997151, 0)
+shaded = true
+texture_filter = 0
+texture = ExtResource("17_knqeq")
+
+[node name="cash_counter" type="Sprite3D" parent="Middle"]
+transform = Transform3D(0.302781, 0, 0, 0, 0.302781, 0, 0, 0, 1, -0.352605, 0.800185, 0)
+shaded = true
+texture_filter = 0
+texture = ExtResource("18_4ursy")
+
+[node name="Front" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30761, 2.10006, 1.03159)
+
+[node name="Plus_sign" type="Sprite3D" parent="Front"]
+transform = Transform3D(0.851374, 0, 0, 0, 0.851374, 0, 0, 0, 1, -2.47509, 0.0233319, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_n5jv7")
+
+[node name="Billboard" type="Sprite3D" parent="Front"]
+transform = Transform3D(0.851374, 0, 0, 0, 0.851374, 0, 0, 0, 1, 0.0823877, 0.186224, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("20_jj8dr")
+
+[node name="Billboard2" type="Sprite3D" parent="Front"]
+transform = Transform3D(0.851374, 0, 0, 0, 0.851374, 0, 0, 0, 1, -0.0849332, -1.69103, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("21_253eo")
+
+[node name="Plus_sign2" type="Sprite3D" parent="Front"]
+transform = Transform3D(0.851374, 0, 0, 0, 0.851374, 0, 0, 0, 1, 1.94855, -0.67564, -0.0476046)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_nds3j")
+
+[node name="windows" type="Sprite3D" parent="."]
+transform = Transform3D(1.1674, 0, 0, 0, 0.844029, 0, 0, 0, 1, 1.27291, 1.30989, 0.964869)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("18_m7ysq")
