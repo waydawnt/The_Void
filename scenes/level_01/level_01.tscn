@@ -1,10 +1,28 @@
-[gd_scene load_steps=15 format=3 uid="uid://cgyq3du7efntg"]
+[gd_scene load_steps=23 format=3 uid="uid://cgyq3du7efntg"]
 
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="1_43n1f"]
 [ext_resource type="PackedScene" uid="uid://fc42tlaktuqt" path="res://scenes/level_01/vending_machines/vending_machine_01.tscn" id="2_g2qbu"]
 [ext_resource type="PackedScene" uid="uid://d353sd0n376xt" path="res://scenes/level_01/vending_machines/vending_machine_02.tscn" id="3_akwcv"]
 [ext_resource type="PackedScene" uid="uid://bev1rua8aa31a" path="res://scenes/level_01/alleys/alley_01.tscn" id="4_3yrpe"]
 [ext_resource type="Texture2D" uid="uid://bde5ji6tdyjay" path="res://imports/level_01/2d_sprites/ac.png" id="5_nuqsw"]
+[ext_resource type="ArrayMesh" uid="uid://cbhxyei16xy2h" path="res://objects/level_01_objects/road.res" id="6_nywqb"]
+[ext_resource type="Shader" uid="uid://b7nsg66n2p8h5" path="res://shaders/ground.tres" id="7_kcnlw"]
+[ext_resource type="Texture2D" uid="uid://bhhj4yab4hc04" path="res://imports/level_01/road/Dirt 04 seamless.jpg" id="8_so26r"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3mes"]
+
+[sub_resource type="Sky" id="Sky_6e7qn"]
+sky_material = SubResource("ProceduralSkyMaterial_o3mes")
+
+[sub_resource type="Environment" id="Environment_7v0ri"]
+background_mode = 2
+sky = SubResource("Sky_6e7qn")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_o5uke"]
 size = Vector3(200, 1, 10)
@@ -33,7 +51,19 @@ size = Vector3(5, 4, 6)
 [sub_resource type="QuadMesh" id="QuadMesh_82lfc"]
 size = Vector2(0.5, 2)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_dvhkc"]
+size = Vector2(500, 250)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejm62"]
+render_priority = 0
+shader = ExtResource("7_kcnlw")
+shader_parameter/uv_scale = 100.0
+shader_parameter/color = ExtResource("8_so26r")
+
 [node name="Level_01" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7v0ri")
 
 [node name="ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9033, -1, 0)
@@ -76,7 +106,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.6796, 1.49657, -2.13702)
 mesh = SubResource("BoxMesh_l4wl1")
 
 [node name="Player" parent="." instance=ExtResource("1_43n1f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6065, 0.520861, 2.42815)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6065, 0.520861, 6.0316)
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.603, 0.541354, 2.70093)
@@ -99,6 +129,15 @@ texture_filter = 0
 texture = ExtResource("5_nuqsw")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1084, 0.715378, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1084, 0.715378, 4.71262)
 light_energy = 5.0
 shadow_enabled = true
+
+[node name="Road" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 53.129, -0.47156, 9.144)
+mesh = ExtResource("6_nywqb")
+
+[node name="dirt_ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.525823, 0)
+mesh = SubResource("PlaneMesh_dvhkc")
+surface_material_override/0 = SubResource("ShaderMaterial_ejm62")

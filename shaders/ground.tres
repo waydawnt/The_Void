@@ -1,0 +1,17 @@
+[gd_resource type="Shader" format=3 uid="uid://b7nsg66n2p8h5"]
+
+[resource]
+code = "shader_type spatial;
+
+uniform sampler2D color;
+uniform float uv_scale : hint_range(1, 100, 1);
+
+void fragment() {
+	vec2 uv = UV;
+	uv *= uv_scale;
+	
+	vec4 tex = texture(color, uv);
+	
+	ALBEDO = tex.rgb;
+}
+"
