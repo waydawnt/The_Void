@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c25hr2j85bpua"
-path.s3tc="res://.godot/imported/building_02_windows_normals.png-2eb0d0b0aa20a00e60301510e8c508df.s3tc.ctex"
+uid="uid://dtieol82owd47"
+path.s3tc="res://.godot/imported/muzzle_flash.png-a71dc5b0a7f634d87ec43544ea8fbac1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://imports/level_02/buildings/building_02/building_02_windows_normals.png"
-dest_files=["res://.godot/imported/building_02_windows_normals.png-2eb0d0b0aa20a00e60301510e8c508df.s3tc.ctex"]
+source_file="res://imports/player/muzzle_flash.png"
+dest_files=["res://.godot/imported/muzzle_flash.png-a71dc5b0a7f634d87ec43544ea8fbac1.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://imports/level_02/buildings/building_02/building_02_windows_normals.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

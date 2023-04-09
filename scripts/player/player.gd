@@ -39,6 +39,7 @@ func get_input(delta):
 			barrel_point.transform.origin = Vector3(0.6, 0.28, 0)
 			bullet_direction = 1
 		
+		
 		if Input.is_action_pressed("run"):
 			state_machine.travel("run")
 			speed = 5

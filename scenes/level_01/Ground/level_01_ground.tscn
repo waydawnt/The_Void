@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cdjhqbvxvd7jm"]
+[gd_scene load_steps=31 format=3 uid="uid://c84j3cc4ymjp3"]
 
 [ext_resource type="Shader" uid="uid://b7nsg66n2p8h5" path="res://shaders/level_01_ground.tres" id="1_sjh5s"]
 [ext_resource type="Texture2D" uid="uid://bhhj4yab4hc04" path="res://imports/level_01/road/Dirt 04 seamless.jpg" id="2_0kryc"]
@@ -12,10 +12,12 @@
 [ext_resource type="Shader" path="res://shaders/level_01_crops_shader.gdshader" id="10_nv626"]
 [ext_resource type="Texture2D" uid="uid://cagbseblgqa" path="res://imports/2d_sprites/level_01_sprites/ground/crops.png" id="11_fdu2w"]
 [ext_resource type="Texture2D" uid="uid://dmhs0p6ti6tfu" path="res://imports/2d_sprites/level_01_sprites/ground/bin3.png" id="12_b7yea"]
-[ext_resource type="Texture2D" uid="uid://dmpucj6eqxwot" path="res://imports/2d_sprites/level_01_sprites/ground/cycle.png" id="13_u1b5i"]
 [ext_resource type="Texture2D" uid="uid://cx4irhcyxo2xt" path="res://imports/2d_sprites/level_01_sprites/ground/Sprite-0005.png" id="14_265xg"]
+[ext_resource type="Texture2D" uid="uid://dmpucj6eqxwot" path="res://imports/2d_sprites/level_01_sprites/ground/bicycle.png" id="15_7x0pg"]
 [ext_resource type="Texture2D" uid="uid://b2iuurttdpmah" path="res://imports/2d_sprites/level_01_sprites/ground/kamba2.png" id="15_bp7j7"]
 [ext_resource type="ArrayMesh" uid="uid://cl8ucp80n7njw" path="res://objects/level_01_objects/wire.res" id="16_37gl4"]
+[ext_resource type="Texture2D" uid="uid://ccnvn48of2ag1" path="res://imports/2d_sprites/level_01_sprites/ground/bicycle(1).png" id="17_i83eb"]
+[ext_resource type="Texture2D" uid="uid://64lkldpdgj85" path="res://imports/2d_sprites/level_01_sprites/ground/tractor.png" id="18_n8i4m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b72ai"]
 render_priority = 0
@@ -2705,12 +2707,12 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("12_b7yea")
 
-[node name="Cycle" type="Sprite3D" parent="."]
+[node name="Bicycle" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -223.377, 0.450576, -6.57743)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("13_u1b5i")
+texture = ExtResource("15_7x0pg")
 
 [node name="BillBoard" type="Sprite3D" parent="."]
 transform = Transform3D(2.59808, 0, -1.5, 0, 3, 0, 1.5, 0, 2.59808, -182.439, 7.06635, -35.2056)
@@ -2718,3 +2720,17 @@ shaded = true
 alpha_cut = 1
 texture_filter = 1
 texture = ExtResource("14_265xg")
+
+[node name="Cycle" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -163.778, 0.769207, -9.86561)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("17_i83eb")
+
+[node name="Tractor" type="Sprite3D" parent="."]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -169.013, 1.45475, -7.9356)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("18_n8i4m")

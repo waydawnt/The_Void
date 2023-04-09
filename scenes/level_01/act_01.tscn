@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4sjxor8spc62"]
+[gd_scene load_steps=12 format=3 uid="uid://c4sjxor8spc62"]
 
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="1_fgpdl"]
-[ext_resource type="PackedScene" uid="uid://cdjhqbvxvd7jm" path="res://scenes/level_01/Ground/level_01_ground.tscn" id="1_jl1n3"]
+[ext_resource type="PackedScene" uid="uid://c84j3cc4ymjp3" path="res://scenes/level_01/Ground/level_01_ground.tscn" id="1_jl1n3"]
 [ext_resource type="PackedScene" uid="uid://bghtab3mormds" path="res://scenes/enemies/enemy_00.tscn" id="3_aka3d"]
+[ext_resource type="PackedScene" uid="uid://ta4dcsv2he5s" path="res://scenes/interactive_civilians/store_owner.tscn" id="4_c56u7"]
 
 [sub_resource type="Gradient" id="Gradient_r1fex"]
 offsets = PackedFloat32Array(0.327869, 1)
@@ -61,4 +62,7 @@ camera_attributes = SubResource("CameraAttributesPractical_iip2e")
 [node name="Level_01_Ground" parent="." instance=ExtResource("1_jl1n3")]
 
 [node name="Enemy_00" parent="." instance=ExtResource("3_aka3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.649, 1.14572, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -168.571, 1.14572, -3)
+
+[node name="StoreOwner" parent="." instance=ExtResource("4_c56u7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -164.715, 1.07154, -4.95008)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://cju8r7mme5683"]
 
 [ext_resource type="ArrayMesh" uid="uid://dmll02wiyb8ud" path="res://objects/level_02_objects/ground.res" id="1_igqwl"]
 [ext_resource type="PackedScene" uid="uid://c8u8o7f0r7klk" path="res://scenes/level_02/ground/ground_support.tscn" id="2_ow6fa"]

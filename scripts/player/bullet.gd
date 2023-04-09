@@ -31,5 +31,5 @@ func _on_body_entered(body):
 	var parent = body.get_parent()
 	print(parent)
 	if hit_something == false:
-		if parent.has_method("deal_damage"):
+		if parent.is_in_group("Enemy"):
 			parent.deal_damage(bullet_damage)

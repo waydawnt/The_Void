@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://bt5s3exq6swte"]
+
+[sub_resource type="Curve" id="Curve_xvwwk"]
+_data = [Vector2(0, 1), 0.0, 0.0367169, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_syt8j"]
+curve = SubResource("Curve_xvwwk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ou07o"]
+lifetime_randomness = 0.4
+gravity = Vector3(0, -9.3, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 4.0
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_syt8j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o623h"]
+albedo_color = Color(1, 0.286275, 0.223529, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hkel6"]
+material = SubResource("StandardMaterial3D_o623h")
+size = Vector2(0.2, 0.2)
+orientation = 2
+
+[sub_resource type="Animation" id="Animation_jv72o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6imxy"]
+resource_name = "default"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_scwod"]
+_data = {
+"RESET": SubResource("Animation_jv72o"),
+"default": SubResource("Animation_6imxy")
+}
+
+[node name="BloodSplatter" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1594, 0, 0)
+emitting = false
+amount = 16
+one_shot = true
+preprocess = 0.9
+process_material = SubResource("ParticleProcessMaterial_ou07o")
+draw_pass_1 = SubResource("PlaneMesh_hkel6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_scwod")
+}

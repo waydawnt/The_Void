@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c25hr2j85bpua"
-path.s3tc="res://.godot/imported/building_02_windows_normals.png-2eb0d0b0aa20a00e60301510e8c508df.s3tc.ctex"
+uid="uid://ccnvn48of2ag1"
+path.s3tc="res://.godot/imported/bicycle(1).png-c6832209e247c391f3f16a67d1340272.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://imports/level_02/buildings/building_02/building_02_windows_normals.png"
-dest_files=["res://.godot/imported/building_02_windows_normals.png-2eb0d0b0aa20a00e60301510e8c508df.s3tc.ctex"]
+source_file="res://imports/2d_sprites/level_01_sprites/ground/bicycle(1).png"
+dest_files=["res://.godot/imported/bicycle(1).png-c6832209e247c391f3f16a67d1340272.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://imports/level_02/buildings/building_02/building_02_windows_normals.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

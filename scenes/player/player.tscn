@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://cv80xmr0e1ad2"]
+[gd_scene load_steps=43 format=3 uid="uid://cv80xmr0e1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://kcxvdg3hqxtj" path="res://imports/player/player_spritesheet.png" id="1_827c7"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qk0m8"]
 [ext_resource type="Texture2D" uid="uid://dc08gs121o6cp" path="res://imports/player/player_spritesheet_normalmap.png" id="3_5ssqh"]
+[ext_resource type="Texture2D" uid="uid://dtieol82owd47" path="res://imports/player/muzzle_flash.png" id="4_3b4l6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toi7h"]
 transparency = 2
@@ -12,6 +13,21 @@ albedo_texture = ExtResource("1_827c7")
 normal_enabled = true
 normal_texture = ExtResource("3_5ssqh")
 texture_filter = 0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k1i1e"]
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr0so"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("4_3b4l6")
+emission_enabled = true
+emission_texture = ExtResource("4_3b4l6")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rmk55"]
+material = SubResource("StandardMaterial3D_vr0so")
+size = Vector2(0.8, 0.8)
+orientation = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gb7ul"]
 radius = 0.3
@@ -29,6 +45,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite/Muzzle/MuzzleFlash:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_2edse"]
@@ -61,6 +89,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [58, 59, 60, 61, 62]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite/Muzzle/MuzzleFlash:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_0jmsm"]
@@ -114,11 +154,29 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 }
 
+[sub_resource type="Animation" id="Animation_tafi1"]
+resource_name = "hurt"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [40, 41, 42]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0eugc"]
 _data = {
 "RESET": SubResource("Animation_h4u2u"),
 "die": SubResource("Animation_2edse"),
 "fire": SubResource("Animation_l7nh7"),
+"hurt": SubResource("Animation_tafi1"),
 "idle": SubResource("Animation_0jmsm"),
 "run": SubResource("Animation_72prt"),
 "walk": SubResource("Animation_mnncn")
@@ -129,6 +187,9 @@ animation = &"die"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mtaeo"]
 animation = &"fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ortrf"]
+animation = &"hurt"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5xkt"]
 animation = &"idle"
@@ -166,19 +227,34 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dtdoo"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yekuw"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f1cfo"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xwy1j"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gf43a"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_otnjy"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n8wau"]
+states/End/position = Vector2(1159, 39)
 states/Start/position = Vector2(92, 100)
 states/die/node = SubResource("AnimationNodeAnimation_fi0bs")
-states/die/position = Vector2(694, 100)
+states/die/position = Vector2(953, 39)
 states/fire/node = SubResource("AnimationNodeAnimation_mtaeo")
 states/fire/position = Vector2(637, 254)
+states/hurt/node = SubResource("AnimationNodeAnimation_ortrf")
+states/hurt/position = Vector2(637, 100)
 states/idle/node = SubResource("AnimationNodeAnimation_c5xkt")
 states/idle/position = Vector2(409, 100)
 states/run/node = SubResource("AnimationNodeAnimation_x06nh")
 states/run/position = Vector2(409, 393)
 states/walk/node = SubResource("AnimationNodeAnimation_ddp44")
 states/walk/position = Vector2(180, 254)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6lifx"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jjydk"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_s6ms5"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ebdx8"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_7y8gn"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_3m62q"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wym1o"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_3ijwh"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_wsj06"), "walk", "fire", SubResource("AnimationNodeStateMachineTransition_0vkyf"), "run", "fire", SubResource("AnimationNodeStateMachineTransition_mbpl6"), "die", "End", SubResource("AnimationNodeStateMachineTransition_dtdoo")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6lifx"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jjydk"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_s6ms5"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ebdx8"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_7y8gn"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_3m62q"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wym1o"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_3ijwh"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_wsj06"), "walk", "fire", SubResource("AnimationNodeStateMachineTransition_0vkyf"), "run", "fire", SubResource("AnimationNodeStateMachineTransition_mbpl6"), "die", "End", SubResource("AnimationNodeStateMachineTransition_dtdoo"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_yekuw"), "walk", "hurt", SubResource("AnimationNodeStateMachineTransition_f1cfo"), "run", "hurt", SubResource("AnimationNodeStateMachineTransition_xwy1j"), "fire", "hurt", SubResource("AnimationNodeStateMachineTransition_gf43a"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_otnjy")]
 graph_offset = Vector2(-122, 5)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_lel6j"]
@@ -198,6 +274,15 @@ vframes = 2
 
 [node name="Muzzle" type="Node3D" parent="PlayerSprite"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.28, 0)
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="PlayerSprite/Muzzle"]
+transform = Transform3D(0.555556, 0, -1.32455e-07, 0, 0.555556, 4.85682e-08, 1.32455e-07, -4.85682e-08, 0.555556, 0.142642, 0, 0.00300268)
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_k1i1e")
+draw_pass_1 = SubResource("PlaneMesh_rmk55")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_gb7ul")
