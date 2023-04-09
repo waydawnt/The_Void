@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cv80xmr0e1ad2"]
+[gd_scene load_steps=32 format=3 uid="uid://cv80xmr0e1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://kcxvdg3hqxtj" path="res://imports/player/player_spritesheet.png" id="1_827c7"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qk0m8"]
@@ -29,6 +29,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2edse"]
+resource_name = "die"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55]
 }
 
 [sub_resource type="Animation" id="Animation_l7nh7"]
@@ -101,11 +117,15 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0eugc"]
 _data = {
 "RESET": SubResource("Animation_h4u2u"),
+"die": SubResource("Animation_2edse"),
 "fire": SubResource("Animation_l7nh7"),
 "idle": SubResource("Animation_0jmsm"),
 "run": SubResource("Animation_72prt"),
 "walk": SubResource("Animation_mnncn")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fi0bs"]
+animation = &"die"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mtaeo"]
 animation = &"fire"
@@ -144,17 +164,22 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mbpl6"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dtdoo"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n8wau"]
+states/Start/position = Vector2(92, 100)
+states/die/node = SubResource("AnimationNodeAnimation_fi0bs")
+states/die/position = Vector2(694, 100)
 states/fire/node = SubResource("AnimationNodeAnimation_mtaeo")
 states/fire/position = Vector2(637, 254)
 states/idle/node = SubResource("AnimationNodeAnimation_c5xkt")
 states/idle/position = Vector2(409, 100)
 states/run/node = SubResource("AnimationNodeAnimation_x06nh")
-states/run/position = Vector2(409, 403)
+states/run/position = Vector2(409, 393)
 states/walk/node = SubResource("AnimationNodeAnimation_ddp44")
 states/walk/position = Vector2(180, 254)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6lifx"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jjydk"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_s6ms5"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ebdx8"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_7y8gn"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_3m62q"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wym1o"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_3ijwh"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_wsj06"), "walk", "fire", SubResource("AnimationNodeStateMachineTransition_0vkyf"), "run", "fire", SubResource("AnimationNodeStateMachineTransition_mbpl6")]
-graph_offset = Vector2(-206, -6)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6lifx"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jjydk"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_s6ms5"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ebdx8"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_7y8gn"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_3m62q"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wym1o"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_3ijwh"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_wsj06"), "walk", "fire", SubResource("AnimationNodeStateMachineTransition_0vkyf"), "run", "fire", SubResource("AnimationNodeStateMachineTransition_mbpl6"), "die", "End", SubResource("AnimationNodeStateMachineTransition_dtdoo")]
+graph_offset = Vector2(-122, 5)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_lel6j"]
 
@@ -171,11 +196,16 @@ texture = ExtResource("1_827c7")
 hframes = 65
 vframes = 2
 
+[node name="Muzzle" type="Node3D" parent="PlayerSprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.28, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_gb7ul")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 9.5)
+h_offset = 0.05
+v_offset = -1.3
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -188,3 +218,5 @@ tree_root = SubResource("AnimationNodeStateMachine_n8wau")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_lel6j")
+
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

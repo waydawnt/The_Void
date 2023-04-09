@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyt2qa5fdwpll"]
+
+[ext_resource type="Texture2D" uid="uid://bugga7i62pnwu" path="res://imports/player/bullet_sprite.png" id="1_tx2qn"]
+[ext_resource type="Script" path="res://scripts/player/bullet.gd" id="1_yj5h5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_51y5q"]
+radius = 0.1
+height = 0.32
+
+[node name="Bullet" type="Area3D"]
+script = ExtResource("1_yj5h5")
+
+[node name="BulletSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00492618, 0)
+texture_filter = 0
+texture = ExtResource("1_tx2qn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_51y5q")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.843137, 0.231373, 1)
+light_indirect_energy = 16.0
+omni_range = 0.02
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

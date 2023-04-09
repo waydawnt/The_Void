@@ -4,7 +4,8 @@
 code = "shader_type spatial;
 
 uniform sampler2D ground_texture;
-uniform float uv_scale : hint_range(1, 100, 1);
+uniform float roughness_level : hint_range(0.0, 1.0, 0.1);
+uniform float uv_scale : hint_range(1, 200, 1);
 
 void fragment() {
 	vec2 uv = UV;
@@ -13,5 +14,6 @@ void fragment() {
 	vec4 tex = texture(ground_texture, uv);
 	
 	ALBEDO = tex.rgb;
+	ROUGHNESS = roughness_level;
 }
 "

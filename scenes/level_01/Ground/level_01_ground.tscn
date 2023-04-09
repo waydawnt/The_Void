@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cdjhqbvxvd7jm"]
+[gd_scene load_steps=29 format=3 uid="uid://cdjhqbvxvd7jm"]
 
 [ext_resource type="Shader" uid="uid://b7nsg66n2p8h5" path="res://shaders/level_01_ground.tres" id="1_sjh5s"]
 [ext_resource type="Texture2D" uid="uid://bhhj4yab4hc04" path="res://imports/level_01/road/Dirt 04 seamless.jpg" id="2_0kryc"]
@@ -14,15 +14,19 @@
 [ext_resource type="Texture2D" uid="uid://dmhs0p6ti6tfu" path="res://imports/2d_sprites/level_01_sprites/ground/bin3.png" id="12_b7yea"]
 [ext_resource type="Texture2D" uid="uid://dmpucj6eqxwot" path="res://imports/2d_sprites/level_01_sprites/ground/cycle.png" id="13_u1b5i"]
 [ext_resource type="Texture2D" uid="uid://cx4irhcyxo2xt" path="res://imports/2d_sprites/level_01_sprites/ground/Sprite-0005.png" id="14_265xg"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_xxl5d"]
-size = Vector2(1000, 1000)
+[ext_resource type="Texture2D" uid="uid://b2iuurttdpmah" path="res://imports/2d_sprites/level_01_sprites/ground/kamba2.png" id="15_bp7j7"]
+[ext_resource type="ArrayMesh" uid="uid://cl8ucp80n7njw" path="res://objects/level_01_objects/wire.res" id="16_37gl4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b72ai"]
 render_priority = 0
 shader = ExtResource("1_sjh5s")
-shader_parameter/uv_scale = 100.0
+shader_parameter/roughness_level = 1.0
+shader_parameter/uv_scale = 200.0
 shader_parameter/ground_texture = ExtResource("2_0kryc")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xxl5d"]
+material = SubResource("ShaderMaterial_b72ai")
+size = Vector2(1000, 1000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tvpu"]
 transparency = 1
@@ -84,18 +88,150 @@ buffer = PackedFloat32Array(-0.850708, 0, -0.523003, -168.598, 0, 0.998617, 0, -
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -436)
 mesh = SubResource("PlaneMesh_xxl5d")
-surface_material_override/0 = SubResource("ShaderMaterial_b72ai")
 
 [node name="Road" type="MeshInstance3D" parent="."]
 transform = Transform3D(22.8, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 mesh = ExtResource("3_3sprq")
 
-[node name="Alley01" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -223.748, 0, -7.9634)
-mesh = ExtResource("4_i85q1")
+[node name="Towers" type="Node3D" parent="."]
 
-[node name="Medical_Store" parent="." instance=ExtResource("5_x14fc")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -164.048, 0, -11.9495)
+[node name="Tower_00" type="Sprite3D" parent="Towers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.149, 19.0667, -64.1806)
+shaded = true
+alpha_cut = 2
+texture_filter = 1
+texture = ExtResource("15_bp7j7")
+
+[node name="Wire_01" type="MeshInstance3D" parent="Towers/Tower_00"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.709, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_02" type="MeshInstance3D" parent="Towers/Tower_00"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_03" type="MeshInstance3D" parent="Towers/Tower_00"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.998, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_04" type="MeshInstance3D" parent="Towers/Tower_00"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Tower_05" type="Sprite3D" parent="Towers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.149, 19.067, 35.79)
+shaded = true
+alpha_cut = 2
+texture_filter = 1
+texture = ExtResource("15_bp7j7")
+
+[node name="Wire_01" type="MeshInstance3D" parent="Towers/Tower_05"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.709, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_02" type="MeshInstance3D" parent="Towers/Tower_05"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_03" type="MeshInstance3D" parent="Towers/Tower_05"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.998, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_04" type="MeshInstance3D" parent="Towers/Tower_05"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Tower_01" type="Sprite3D" parent="Towers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.149, 19.0667, -163.543)
+shaded = true
+alpha_cut = 2
+texture_filter = 1
+texture = ExtResource("15_bp7j7")
+
+[node name="Wire_01" type="MeshInstance3D" parent="Towers/Tower_01"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.709, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_02" type="MeshInstance3D" parent="Towers/Tower_01"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_03" type="MeshInstance3D" parent="Towers/Tower_01"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.998, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_04" type="MeshInstance3D" parent="Towers/Tower_01"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Tower_02" type="Sprite3D" parent="Towers"]
+transform = Transform3D(0.99749, 0, -0.0708011, 0, 1, 0, 0.0708011, 0, 0.99749, -133.214, 19.0667, -262.719)
+shaded = true
+alpha_cut = 2
+texture_filter = 1
+texture = ExtResource("15_bp7j7")
+
+[node name="Wire_01" type="MeshInstance3D" parent="Towers/Tower_02"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.709, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_02" type="MeshInstance3D" parent="Towers/Tower_02"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_03" type="MeshInstance3D" parent="Towers/Tower_02"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.998, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_04" type="MeshInstance3D" parent="Towers/Tower_02"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Tower_03" type="Sprite3D" parent="Towers"]
+transform = Transform3D(0.985591, 0, -0.169143, 0, 1, 0, 0.169143, 0, 0.985591, -116.254, 19.0667, -360.799)
+shaded = true
+alpha_cut = 2
+texture_filter = 1
+texture = ExtResource("15_bp7j7")
+
+[node name="Wire_01" type="MeshInstance3D" parent="Towers/Tower_03"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.709, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_02" type="MeshInstance3D" parent="Towers/Tower_03"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_03" type="MeshInstance3D" parent="Towers/Tower_03"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.998, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_04" type="MeshInstance3D" parent="Towers/Tower_03"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Tower_04" type="Sprite3D" parent="Towers"]
+transform = Transform3D(0.962668, 0, -0.270684, 0, 1, 0, 0.270684, 0, 0.962668, -89.2937, 19.0667, -456.736)
+shaded = true
+alpha_cut = 2
+texture_filter = 1
+texture = ExtResource("15_bp7j7")
+
+[node name="Wire_01" type="MeshInstance3D" parent="Towers/Tower_04"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.709, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_02" type="MeshInstance3D" parent="Towers/Tower_04"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 6.061, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_03" type="MeshInstance3D" parent="Towers/Tower_04"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, -8.998, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
+
+[node name="Wire_04" type="MeshInstance3D" parent="Towers/Tower_04"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 0, 9.311, 10.457, 50.009)
+mesh = ExtResource("16_37gl4")
 
 [node name="Fences" type="Node3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.581185, -4.07224)
@@ -2515,36 +2651,52 @@ shaded = true
 texture_filter = 0
 texture = ExtResource("6_qhrv7")
 
-[node name="Crop_field" type="MeshInstance3D" parent="."]
+[node name="Crop_Fields" type="Node3D" parent="."]
+
+[node name="Crop_field" type="MeshInstance3D" parent="Crop_Fields"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -195.137, -0.01, -19.6724)
 mesh = SubResource("PlaneMesh_abgqb")
+skeleton = NodePath("../..")
 
-[node name="Crops" type="MeshInstance3D" parent="."]
+[node name="Crops" type="MeshInstance3D" parent="Crop_Fields"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -200.357, 2.66775, -6.34632)
 visible = false
 mesh = SubResource("PlaneMesh_3dqw6")
+skeleton = NodePath("../..")
 
-[node name="CropsMultimesh" type="MultiMeshInstance3D" parent="."]
+[node name="CropsMultimesh" type="MultiMeshInstance3D" parent="Crop_Fields"]
 multimesh = SubResource("MultiMesh_srjbe")
 
-[node name="Grass" type="MeshInstance3D" parent="."]
+[node name="Grass_Fields" type="Node3D" parent="."]
+
+[node name="Grass" type="MeshInstance3D" parent="Grass_Fields"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86999, 0)
 visible = false
 mesh = SubResource("PlaneMesh_wywv1")
+skeleton = NodePath("../..")
 
-[node name="GrassLine" type="MeshInstance3D" parent="."]
+[node name="GrassLine" type="MeshInstance3D" parent="Grass_Fields"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, -5.124)
 mesh = SubResource("PlaneMesh_44if2")
+skeleton = NodePath("../..")
 
-[node name="GrassLine2" type="MeshInstance3D" parent="."]
+[node name="GrassLine2" type="MeshInstance3D" parent="Grass_Fields"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 4.79629)
 mesh = SubResource("PlaneMesh_44if2")
+skeleton = NodePath("../..")
 
-[node name="GrassLineMultiMesh" type="MultiMeshInstance3D" parent="."]
+[node name="GrassLineMultiMesh" type="MultiMeshInstance3D" parent="Grass_Fields"]
 multimesh = SubResource("MultiMesh_eauks")
 
-[node name="GrassLineMultiMesh2" type="MultiMeshInstance3D" parent="."]
+[node name="GrassLineMultiMesh2" type="MultiMeshInstance3D" parent="Grass_Fields"]
 multimesh = SubResource("MultiMesh_dl8bf")
+
+[node name="Alley01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -223.748, 0, -7.9634)
+mesh = ExtResource("4_i85q1")
+
+[node name="Medical_Store" parent="." instance=ExtResource("5_x14fc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -164.048, 0, -11.9495)
 
 [node name="TrashCan" type="Sprite3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -226.369, 0.905441, -6.96944)
