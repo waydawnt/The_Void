@@ -1,33 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8vwywexas22f"]
+[gd_scene load_steps=9 format=3 uid="uid://b8vwywexas22f"]
 
 [ext_resource type="PackedScene" uid="uid://cju8r7mme5683" path="res://scenes/level_02/ground/ground.tscn" id="1_l64pm"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="2_vn8et"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bv080"]
-sky_top_color = Color(0.0392157, 0.0588235, 0.0823529, 1)
-sky_horizon_color = Color(0.0156863, 0.0196078, 0.0196078, 1)
-ground_bottom_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
-ground_horizon_color = Color(0.0117647, 0.0156863, 0.0156863, 1)
-sun_angle_max = 0.0
+[sub_resource type="Gradient" id="Gradient_kl4dw"]
+offsets = PackedFloat32Array(0.813665, 1)
 
-[sub_resource type="Sky" id="Sky_77fwt"]
-sky_material = SubResource("ProceduralSkyMaterial_bv080")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lhhoa"]
+seed = 2
 
-[sub_resource type="Environment" id="Environment_lmkqv"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_iwoov"]
+seamless = true
+color_ramp = SubResource("Gradient_kl4dw")
+noise = SubResource("FastNoiseLite_lhhoa")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lgs3o"]
+sky_top_color = Color(0.0352941, 0.054902, 0.0784314, 1)
+sky_horizon_color = Color(0.0470588, 0.0470588, 0.0509804, 1)
+sky_cover = SubResource("NoiseTexture2D_iwoov")
+ground_horizon_color = Color(0.109804, 0.109804, 0.117647, 1)
+
+[sub_resource type="Sky" id="Sky_17lwy"]
+sky_material = SubResource("ProceduralSkyMaterial_lgs3o")
+
+[sub_resource type="Environment" id="Environment_gadai"]
 background_mode = 2
-sky = SubResource("Sky_77fwt")
-ssao_enabled = true
-ssil_enabled = true
+sky = SubResource("Sky_17lwy")
 glow_enabled = true
-glow_normalized = true
+fog_height_density = 0.0161
 
 [node name="level_02" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lmkqv")
+environment = SubResource("Environment_gadai")
 
 [node name="ground" parent="." instance=ExtResource("1_l64pm")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_vn8et")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84805, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 4.52606, 23.3732)

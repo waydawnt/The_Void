@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cju8r7mme5683"]
+[gd_scene load_steps=8 format=3 uid="uid://cju8r7mme5683"]
 
 [ext_resource type="ArrayMesh" uid="uid://dmll02wiyb8ud" path="res://objects/level_02_objects/ground.res" id="1_igqwl"]
-[ext_resource type="PackedScene" uid="uid://c8u8o7f0r7klk" path="res://scenes/level_02/ground/ground_support.tscn" id="2_ow6fa"]
 [ext_resource type="PackedScene" path="res://scenes/level_02/building_00/building_00.tscn" id="3_4jrto"]
 [ext_resource type="PackedScene" uid="uid://dyvyt5bieuw24" path="res://scenes/level_02/building_01/building_01.tscn" id="4_x4s48"]
 [ext_resource type="PackedScene" uid="uid://c5g7hrxu7qyl0" path="res://imports/level_02/buildings/building_02/building_02.glb" id="5_5qlbs"]
@@ -12,176 +11,204 @@
 [node name="ground" type="Node3D"]
 
 [node name="ground_platform" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_igqwl")
 
-[node name="ground_support" parent="." instance=ExtResource("2_ow6fa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2288, -7.735, 3.66031)
-
-[node name="ground_support2" parent="." instance=ExtResource("2_ow6fa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2288, -7.735, 3.66031)
-
-[node name="ground_support3" parent="." instance=ExtResource("2_ow6fa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90735e-06, -7.735, 3.66031)
-
-[node name="ground_support4" parent="." instance=ExtResource("2_ow6fa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.715, -7.735, 3.66031)
-
-[node name="ground_support5" parent="." instance=ExtResource("2_ow6fa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0514, -7.735, 3.66031)
-
 [node name="building_00" parent="." instance=ExtResource("3_4jrto")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -3, -7)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.55325, -4.85056, -14.2827)
 
 [node name="building_01" parent="." instance=ExtResource("4_x4s48")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 17.672, -2.63345, -7.61096)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 38.1594, -9.25245, -19.3945)
+
+[node name="building_06" parent="." instance=ExtResource("4_x4s48")]
+transform = Transform3D(1.5, 0, 2.62268e-07, 0, 1.5, 0, -2.62268e-07, 0, 1.5, 74.1594, -9.25245, 14.6055)
 
 [node name="building_05" parent="." instance=ExtResource("4_x4s48")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -8.01561, -2.63345, -7.04444)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -20.6621, -11.8968, -15.8952)
+
+[node name="building_09" parent="." instance=ExtResource("4_x4s48")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 74.6319, -11.8968, -43.8617)
 
 [node name="building_02" parent="." instance=ExtResource("5_5qlbs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.43908, -3.00959, -8.66222)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.12777, -5.29087, -18.1755)
+
+[node name="building_10" parent="." instance=ExtResource("5_5qlbs")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 53.3697, -8.25991, -49.4235)
 
 [node name="building_03" parent="." instance=ExtResource("6_fwq12")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.8377, -2.96346, -8.21369)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.8783, -10.1086, -19.396)
+
+[node name="building_16" parent="." instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -27.3439, -3.01931, -36.2678)
+
+[node name="building_12" parent="." instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 69.228, -10.1086, -58.3036)
+
+[node name="building_15" parent="." instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -9.23847, -10.1086, -30.7915)
+
+[node name="building_13" parent="." instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 51.3632, -10.1086, -66.3987)
+
+[node name="building_07" parent="." instance=ExtResource("6_fwq12")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 78.3829, -10.1086, -2.81682)
 
 [node name="building_04" parent="." instance=ExtResource("7_cwii1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.759, -3.0558, -9.00442)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36.6772, -21.9082, -18.3039)
 
-[node name="railing_00" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -19.8949, 0.976603, 7.75687)
+[node name="building_08" parent="." instance=ExtResource("7_cwii1")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 80.4074, -19.9479, -23.3039)
+
+[node name="building_11" parent="." instance=ExtResource("7_cwii1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36.4516, -19.9479, -46.7461)
+
+[node name="building_14" parent="." instance=ExtResource("7_cwii1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12.0326, -19.9479, -38.7693)
+
+[node name="Railings" type="Node3D" parent="."]
+
+[node name="railing_00" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -39.7021, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_01" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -17.8488, 0.976603, 7.75687)
+[node name="railing_01" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -35.612, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_02" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -15.8072, 0.976603, 7.75687)
+[node name="railing_02" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -35.612, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_03" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -13.7612, 0.976603, 7.75687)
+[node name="railing_03" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -31.5219, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_04" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -11.7151, 0.976603, 7.75687)
+[node name="railing_04" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -27.4526, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_05" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -9.66903, 0.976603, 7.75687)
+[node name="railing_05" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -23.3895, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_06" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -7.62745, 0.976603, 7.75687)
+[node name="railing_06" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -19.3315, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_07" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -5.58142, 0.976603, 7.75687)
+[node name="railing_07" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -15.2413, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_08" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.55212, 0.976603, 7.75687)
+[node name="railing_08" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -11.1513, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_09" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.5061, 0.976603, 7.75687)
+[node name="railing_09" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -7.082, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_10" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.535488, 0.976603, 7.75687)
+[node name="railing_10" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.01888, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_11" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.58151, 0.976603, 7.75687)
+[node name="railing_11" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.05602, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_12" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.62768, 0.976603, 7.75687)
+[node name="railing_12" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.14613, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_13" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 6.6737, 0.976603, 7.75687)
+[node name="railing_13" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.23615, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_14" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.71529, 0.976603, 7.75687)
+[node name="railing_14" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 13.3055, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_15" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 10.7613, 0.976603, 7.75687)
+[node name="railing_15" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 17.3686, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_16" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 12.8032, 0.976603, 7.75687)
+[node name="railing_16" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 21.4542, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_17" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.8494, 0.976603, 7.75687)
+[node name="railing_17" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 25.5443, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_18" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 16.8954, 0.976603, 7.75687)
+[node name="railing_18" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 29.6344, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="railing_19" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 18.937, 0.976603, 7.75687)
+[node name="railing_19" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 33.7037, 1.97071, 15.5061)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_1jk7t")
+
+[node name="railing_20" type="Sprite3D" parent="Railings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 37.7668, 1.97071, 15.5061)
 shaded = true
 double_sided = false
 texture_filter = 0

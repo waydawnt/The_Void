@@ -103,6 +103,23 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_tafi1"]
+resource_name = "hurt"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [40, 41, 42]
+}
+
 [sub_resource type="Animation" id="Animation_0jmsm"]
 resource_name = "idle"
 length = 1.3
@@ -152,23 +169,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-}
-
-[sub_resource type="Animation" id="Animation_tafi1"]
-resource_name = "hurt"
-length = 0.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [40, 41, 42]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0eugc"]
@@ -288,7 +288,7 @@ draw_pass_1 = SubResource("PlaneMesh_rmk55")
 shape = SubResource("CapsuleShape3D_gb7ul")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 9.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.2, 9.5)
 h_offset = 0.05
 v_offset = -1.3
 current = true

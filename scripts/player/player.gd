@@ -3,8 +3,6 @@ extends CharacterBody3D
 @export var walk_speed : int = 2
 @export var acceleration : int = 10
 @export var run_speed : int = 5
-@export var jump_force : int = 15
-@export var gravity : float = 0.98
 
 @onready var animation_player : Object = $AnimationPlayer
 @onready var player_sprite : Object = $PlayerSprite

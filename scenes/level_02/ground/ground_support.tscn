@@ -3,6 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://doy8iv5iwpab6" path="res://objects/level_02_objects/ground_support.res" id="1_mpkss"]
 
 [node name="ground_support" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_mpkss")

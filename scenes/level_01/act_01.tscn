@@ -48,10 +48,10 @@ dof_blur_near_transition = 5.0
 [node name="Act_01" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_fgpdl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.407, 1.103, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221.638, 1.103, -3)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.908508, -0.0306038, 0.416745, 0, 0.997315, 0.0732382, -0.417867, 0.0665375, -0.906068, 0, 33.99, 0)
+transform = Transform3D(-0.908508, -0.0306038, 0.416745, 0, 0.997315, 0.0732381, -0.417867, 0.0665375, -0.906068, 0, 33.99, 0)
 light_color = Color(1, 0.662745, 0.364706, 1)
 shadow_enabled = true
 
