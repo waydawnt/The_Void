@@ -1,9 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://cv80xmr0e1ad2"]
+[gd_scene load_steps=44 format=3 uid="uid://cv80xmr0e1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://kcxvdg3hqxtj" path="res://imports/player/player_spritesheet.png" id="1_827c7"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qk0m8"]
 [ext_resource type="Texture2D" uid="uid://dc08gs121o6cp" path="res://imports/player/player_spritesheet_normalmap.png" id="3_5ssqh"]
 [ext_resource type="Texture2D" uid="uid://dtieol82owd47" path="res://imports/player/muzzle_flash.png" id="4_3b4l6"]
+[ext_resource type="AudioStream" uid="uid://d3w3j2lrg88nb" path="res://sounds/walk.mp3" id="5_b65k3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toi7h"]
 transparency = 2
@@ -273,16 +274,23 @@ hframes = 65
 vframes = 2
 
 [node name="Muzzle" type="Node3D" parent="PlayerSprite"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.28, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.28, 0)
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="PlayerSprite/Muzzle"]
 transform = Transform3D(0.555556, 0, -1.32455e-07, 0, 0.555556, 4.85682e-08, 1.32455e-07, -4.85682e-08, 0.555556, 0.142642, 0, 0.00300268)
+visible = false
 emitting = false
 amount = 1
 lifetime = 0.2
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_k1i1e")
 draw_pass_1 = SubResource("PlaneMesh_rmk55")
+
+[node name="Flash" type="Sprite3D" parent="PlayerSprite/Muzzle"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.0149646, 0.00616863, 0.00107798)
+visible = false
+cast_shadow = 0
+texture = ExtResource("4_3b4l6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_gb7ul")
@@ -303,5 +311,8 @@ tree_root = SubResource("AnimationNodeStateMachine_n8wau")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_lel6j")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_b65k3")
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

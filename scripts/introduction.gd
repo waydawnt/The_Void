@@ -2,6 +2,7 @@ extends Node2D
 
 
 @onready var animation_player : Object = $AnimationPlayer
+@onready var loading_scene = preload("res://scenes/misc/load.tscn")
 
 
 func _ready():
@@ -11,3 +12,6 @@ func _ready():
 	print("finished")
 	
 	animation_player.play("fade_in")
+	
+	get_tree().change_scene_to_packed(loading_scene)
+	queue_free()

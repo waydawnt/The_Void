@@ -26,6 +26,9 @@ sky_material = SubResource("ProceduralSkyMaterial_lgs3o")
 [sub_resource type="Environment" id="Environment_gadai"]
 background_mode = 2
 sky = SubResource("Sky_17lwy")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
 glow_enabled = true
 fog_height_density = 0.0161
 
@@ -38,4 +41,4 @@ environment = SubResource("Environment_gadai")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_vn8et")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 4.52606, 23.3732)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 4.52606, -2.82362)
