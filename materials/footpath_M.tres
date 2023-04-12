@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b70rnkowcis5"]
+
+[ext_resource type="Texture2D" uid="uid://fblj764d3y1y" path="res://imports/level_01/medical_store/parking_road/foothpath_color.png" id="1_pj6ut"]
+
+[resource]
+albedo_texture = ExtResource("1_pj6ut")
+texture_filter = 0

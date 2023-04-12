@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://kwge11dt8qhe"]
+
+[ext_resource type="Texture2D" uid="uid://qk1lj17o0pe2" path="res://imports/level_01/medical_store/parking_road/stopper_color_01.png" id="1_amo6u"]
+
+[resource]
+albedo_texture = ExtResource("1_amo6u")
+texture_filter = 0

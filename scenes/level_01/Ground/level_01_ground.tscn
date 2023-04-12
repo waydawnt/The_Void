@@ -2698,7 +2698,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -223.748, 0, -7.9634)
 mesh = ExtResource("4_i85q1")
 
 [node name="Medical_Store" parent="." instance=ExtResource("5_x14fc")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -164.048, 0, -11.9495)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -164.048, 0, -10.0055)
 
 [node name="TrashCan" type="Sprite3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -226.369, 0.905441, -6.96944)
@@ -2722,15 +2722,15 @@ texture_filter = 1
 texture = ExtResource("14_265xg")
 
 [node name="Cycle" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -163.778, 0.769207, -9.86561)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.204, 0.877298, -8.11269)
 shaded = true
-alpha_cut = 2
+alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("17_i83eb")
 
 [node name="Tractor" type="Sprite3D" parent="."]
-transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -169.013, 1.45475, -7.9356)
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -170.672, 1.47673, -15.2509)
 shaded = true
-alpha_cut = 2
+alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("18_n8i4m")

@@ -33,3 +33,5 @@ func _on_body_entered(body):
 	if hit_something == false:
 		if parent.is_in_group("Enemy"):
 			parent.deal_damage(bullet_damage)
+	
+	queue_free()

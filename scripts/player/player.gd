@@ -104,13 +104,13 @@ func movement_sfx(movement):
 			if audio_player.stream == run_sound:
 				audio_player.set_stream(walk_sound)
 				audio_player.pitch_scale = 0.8
-				audio_player.volume_db = 0
+				audio_player.volume_db = -5
 				audio_player.play()
 	elif movement == "run":
 		if !audio_player.playing or audio_player.stream == walk_sound:
 			if audio_player.stream == walk_sound:
 				audio_player.set_stream(run_sound)
-				audio_player.pitch_scale = 1.0
+				audio_player.pitch_scale = 0.8
 				audio_player.volume_db = 20
 				audio_player.play()
 	elif movement == "stand":

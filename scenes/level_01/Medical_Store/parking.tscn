@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://ci4js7n1g4lm1"]
+
+[ext_resource type="PackedScene" uid="uid://j5v7shyld653" path="res://imports/level_01/medical_store/parking_road/parking.glb" id="1_hykeg"]
+[ext_resource type="Material" uid="uid://se0tw5eso3e3" path="res://materials/stopper_02_M.tres" id="2_hu6vv"]
+[ext_resource type="Shader" path="res://shaders/parking_road.gdshader" id="2_qf2r5"]
+[ext_resource type="Material" uid="uid://kwge11dt8qhe" path="res://materials/stopper_01_M.tres" id="3_3hh7l"]
+[ext_resource type="Texture2D" uid="uid://bevwpu38xuiv1" path="res://imports/level_01/medical_store/parking_road/road_color.png" id="3_afbd2"]
+[ext_resource type="Texture2D" uid="uid://l5g68gph27nu" path="res://imports/level_01/medical_store/parking_road/plant_cement.png" id="4_1jr8i"]
+[ext_resource type="Material" uid="uid://b70rnkowcis5" path="res://materials/footpath_M.tres" id="4_6i3wn"]
+[ext_resource type="Material" uid="uid://bny7hyfyl6rwi" path="res://materials/stopper_00_M.tres" id="4_7u5tg"]
+[ext_resource type="Texture2D" uid="uid://blb6herh4lip3" path="res://imports/level_01/medical_store/parking_road/plant_color.png" id="5_oebur"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8n0ks"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4umms"]
+seamless = true
+noise = SubResource("FastNoiseLite_8n0ks")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0d5a"]
+render_priority = 0
+shader = ExtResource("2_qf2r5")
+shader_parameter/noise_uv_scale = 1.0
+shader_parameter/noise_scale = 0.4
+shader_parameter/image = ExtResource("3_afbd2")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_4umms")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yolq3"]
+albedo_texture = ExtResource("4_1jr8i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbb2p"]
+albedo_texture = ExtResource("5_oebur")
+
+[node name="parking" instance=ExtResource("1_hykeg")]
+
+[node name="parking_road" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_g0d5a")
+
+[node name="stopper000" parent="." index="1"]
+surface_material_override/0 = ExtResource("4_7u5tg")
+
+[node name="foothpath" parent="." index="2"]
+surface_material_override/0 = ExtResource("4_6i3wn")
+
+[node name="tree_pot" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yolq3")
+surface_material_override/1 = SubResource("StandardMaterial3D_jbb2p")
+
+[node name="stopper001" parent="." index="4"]
+surface_material_override/0 = ExtResource("3_3hh7l")
+
+[node name="stopper002" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_hu6vv")
+
+[node name="stopper003" parent="." index="6"]
+material_override = ExtResource("2_hu6vv")
+
+[node name="stopper004" parent="." index="7"]
+material_override = ExtResource("3_3hh7l")
+
+[node name="stopper005" parent="." index="8"]
+material_override = ExtResource("4_7u5tg")
+
+[node name="stopper006" parent="." index="9"]
+material_override = ExtResource("3_3hh7l")
+
+[node name="stopper007" parent="." index="10"]
+material_override = ExtResource("3_3hh7l")
+
+[node name="stopper008" parent="." index="11"]
+material_override = ExtResource("3_3hh7l")
+
+[node name="stopper009" parent="." index="12"]
+material_override = ExtResource("3_3hh7l")
+
+[node name="stopper010" parent="." index="13"]
+material_override = ExtResource("4_7u5tg")
+
+[node name="stopper011" parent="." index="14"]
+material_override = ExtResource("2_hu6vv")
+
+[node name="stopper012" parent="." index="15"]
+material_override = ExtResource("3_3hh7l")
+
+[node name="stopper013" parent="." index="16"]
+material_override = ExtResource("2_hu6vv")
+
+[node name="stopper014" parent="." index="17"]
+material_override = ExtResource("2_hu6vv")
+
+[node name="stopper015" parent="." index="18"]
+material_override = ExtResource("4_7u5tg")
+
+[node name="stopper016" parent="." index="19"]
+material_override = ExtResource("3_3hh7l")
+
+[node name="stopper017" parent="." index="20"]
+material_override = ExtResource("2_hu6vv")
+
+[node name="stopper018" parent="." index="21"]
+material_override = ExtResource("3_3hh7l")
+
+[node name="stopper019" parent="." index="22"]
+material_override = ExtResource("4_7u5tg")
