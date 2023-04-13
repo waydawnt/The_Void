@@ -4,6 +4,12 @@ extends CharacterBody3D
 @export var acceleration : int = 10
 @export var run_speed : int = 5
 
+@onready var ammo : Label = $Control/BulletText
+@export var total_bullet: int = 6
+var current_bullet: int = 6
+var is_reloading : bool = false
+
+
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var player_sprite : Sprite3D = $PlayerSprite
 @onready var muzzle_flash : Sprite3D = $PlayerSprite/Muzzle/Flash
@@ -20,6 +26,18 @@ extends CharacterBody3D
 
 var vel : Vector3 = Vector3.ZERO
 var bullet_direction : int = 1
+
+
+func _process(delta):
+	
+	update_text()
+	
+	if Input.is_action_just_pressed("reload") or current_bullet == 0:
+		if current_bullet < total_bullet:
+			is_reloading = true
+			current_bullet = total_bullet
+			await get_tree().create_timer(2.0).timeout
+			is_reloading = false
 
 
 func _physics_process(delta):
@@ -60,7 +78,7 @@ func get_input(delta):
 		state_machine.travel("idle")
 	
 	# call shoot function and show muzzle flash
-	if Input.is_action_pressed("fire"):
+	if Input.is_action_pressed("fire") and not is_reloading:
 		state_machine.travel("fire")
 		movement_sfx("stand")
 		shoot()
@@ -73,6 +91,7 @@ func get_input(delta):
 
 # Pistol Shoot function
 func shoot():
+	current_bullet -= 1
 	var clone = bullet_scene.instantiate()
 	clone.player_direction = bullet_direction
 	clone.transform.scaled(Vector3(10, 10, 10))
@@ -103,7 +122,7 @@ func movement_sfx(movement):
 			audio_player.play()
 			if audio_player.stream == run_sound:
 				audio_player.set_stream(walk_sound)
-				audio_player.pitch_scale = 0.8
+				audio_player.pitch_scale = 0.7
 				audio_player.volume_db = -5
 				audio_player.play()
 	elif movement == "run":
@@ -117,45 +136,12 @@ func movement_sfx(movement):
 		audio_player.stop()
 
 
-#func movement_sfx(movement):
-#	if movement == "walk":
-#		if !audio_player.playing or audio_player.stream == run_sound:
-#			audio_player.play()
-#			if audio_player.stream == run_sound:
-#				audio_player.stop()
-#
-#				audio_player.set_stream(walk_sound)
-#				audio_player.pitch_scale = 0.8
-#				audio_player.volume_db = 0
-#				audio_player.play()
-#	elif movement == "run":
-#		if !audio_player.playing or audio_player.stream == walk_sound:
-#			if audio_player.stream == walk_sound:
-#				audio_player.stop()
-#
-#				audio_player.set_stream(run_sound)
-#				audio_player.pitch_scale = 1.0
-#				audio_player.volume_db = 20
-#				audio_player.play()
-#	elif movement == "stand":
-#		audio_player.stop()
-
-
-#func movement_sfx(movement):
-#	print(movement)
-#	if movement == "walk" and !audio_player.playing and audio_player.stream != run_sound:
-#		audio_player.set_stream(walk_sound)
-#		audio_player.pitch_scale = 0.8
-#		audio_player.volume_db = 0
-#		audio_player.play()
-#	elif movement == "run" and audio_player.stream == walk_sound:
-#		audio_player.stop()
-#		audio_player.set_stream(run_sound)
-#		audio_player.pitch_scale = 1.0
-#		audio_player.volume_db = 20
-#		audio_player.play()
-#	elif movement == "stand":
-#		audio_player.stop()
+# Update ammo text
+func update_text():
+	if is_reloading:
+		ammo.text = "Reloading"
+	else:
+		ammo.text = str(current_bullet) + " / " + str(total_bullet)
 
 
 func _on_animation_tree_animation_finished(anim_name):

@@ -1,10 +1,11 @@
-[gd_scene load_steps=44 format=3 uid="uid://cv80xmr0e1ad2"]
+[gd_scene load_steps=45 format=3 uid="uid://cv80xmr0e1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://kcxvdg3hqxtj" path="res://imports/player/player_spritesheet.png" id="1_827c7"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qk0m8"]
 [ext_resource type="Texture2D" uid="uid://dc08gs121o6cp" path="res://imports/player/player_spritesheet_normalmap.png" id="3_5ssqh"]
 [ext_resource type="Texture2D" uid="uid://dtieol82owd47" path="res://imports/player/muzzle_flash.png" id="4_3b4l6"]
 [ext_resource type="AudioStream" uid="uid://d3w3j2lrg88nb" path="res://sounds/walk.mp3" id="5_b65k3"]
+[ext_resource type="FontFile" uid="uid://djpj6jue28dw3" path="res://fonts/digital/Digital7-rg1mL.ttf" id="6_ultkg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toi7h"]
 transparency = 2
@@ -314,6 +315,34 @@ parameters/playback = SubResource("AnimationNodeStateMachinePlayback_lel6j")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_b65k3")
-pitch_scale = 0.8
+pitch_scale = 0.7
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthText" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("6_ultkg")
+theme_override_font_sizes/font_size = 50
+text = "Health: 100"
+
+[node name="BulletText" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 220.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_ultkg")
+theme_override_font_sizes/font_size = 50
+text = "6 / 6"
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

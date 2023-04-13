@@ -36,7 +36,7 @@ albedo_texture = ExtResource("5_oebur")
 surface_material_override/0 = SubResource("ShaderMaterial_g0d5a")
 
 [node name="stopper000" parent="." index="1"]
-surface_material_override/0 = ExtResource("4_7u5tg")
+surface_material_override/0 = ExtResource("3_3hh7l")
 
 [node name="foothpath" parent="." index="2"]
 surface_material_override/0 = ExtResource("4_6i3wn")

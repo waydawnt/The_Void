@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwddtpxnroo7t"]
+[gd_scene load_steps=37 format=3 uid="uid://dwddtpxnroo7t"]
 
 [ext_resource type="ArrayMesh" uid="uid://b7bfrag1un7uq" path="res://objects/level_01_objects/medical_store.res" id="1_7nmpq"]
 [ext_resource type="Texture2D" uid="uid://box8qqghmv5hh" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/shelf.png" id="2_4kqx1"]
@@ -28,8 +28,11 @@
 [ext_resource type="Texture2D" uid="uid://df4it5aa5xx07" path="res://imports/2d_sprites/level_01_sprites/street_light_00.png" id="26_qeawf"]
 [ext_resource type="Texture2D" uid="uid://bq7jtqyge26s6" path="res://imports/2d_sprites/level_01_sprites/car_00.png" id="27_83iup"]
 [ext_resource type="Texture2D" uid="uid://b17j5ykvd6p2k" path="res://imports/2d_sprites/level_01_sprites/dirtbike.png" id="28_r53g8"]
+[ext_resource type="Texture2D" uid="uid://c5gn3w3i2oixw" path="res://imports/2d_sprites/level_01_sprites/car_02.png" id="28_x8lk0"]
+[ext_resource type="Texture2D" uid="uid://68gjyo6kycd8" path="res://imports/2d_sprites/level_01_sprites/Cars/Cars1.png" id="29_bpqdg"]
 [ext_resource type="PackedScene" uid="uid://fc42tlaktuqt" path="res://scenes/level_01/vending_machines/vending_machine_01.tscn" id="29_egkyw"]
 [ext_resource type="ArrayMesh" uid="uid://3ubkpc6kchmg" path="res://objects/level_01_objects/wall.res" id="30_jq10r"]
+[ext_resource type="Texture2D" uid="uid://df7ek7x1wp5d2" path="res://imports/2d_sprites/level_01_sprites/Cars/Cars2.png" id="30_qv6lt"]
 [ext_resource type="Texture2D" uid="uid://cq5idccgxshq8" path="res://imports/2d_sprites/level_01_sprites/car_01.png" id="31_e0mvb"]
 [ext_resource type="Texture2D" uid="uid://dmhs0p6ti6tfu" path="res://imports/2d_sprites/level_01_sprites/ground/bin3.png" id="32_a88fh"]
 [ext_resource type="PackedScene" uid="uid://d353sd0n376xt" path="res://scenes/level_01/vending_machines/vending_machine_02.tscn" id="33_q5xel"]
@@ -853,6 +856,65 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("27_83iup")
+
+[node name="Car_01" type="Sprite3D" parent="."]
+transform = Transform3D(-1.3, 0, -1.1365e-07, 0, 1.3, 0, 1.1365e-07, 0, -1.3, 12.0913, 0.47639, 1.30225)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("28_x8lk0")
+
+[node name="Car_02" type="Sprite3D" parent="."]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 12.0913, 0.544314, -0.143128)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("29_bpqdg")
+vframes = 3
+
+[node name="Car_03" type="Sprite3D" parent="."]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 11.4711, 0.525814, -1.84329)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("29_bpqdg")
+vframes = 3
+frame = 1
+
+[node name="Car_04" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 1.19209e-06, 0, 5, 0, -1.19209e-06, 0, 5, 8.04001, 0.600138, -3.48822)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("29_bpqdg")
+vframes = 3
+frame = 2
+
+[node name="Car_05" type="Sprite3D" parent="."]
+transform = Transform3D(-5, 0, -1.62921e-06, 0, 5, 0, 1.62921e-06, 0, -5, 12.0048, 0.656289, -3.48822)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("30_qv6lt")
+vframes = 3
+frame = 2
+
+[node name="Car_06" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 2.06632e-06, 0, 5, 0, -2.06632e-06, 0, 5, -0.470836, 0.542988, -6.90622)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("30_qv6lt")
+vframes = 3
+
+[node name="Car_07" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 2.06632e-06, 0, 5, 0, -2.06632e-06, 0, 5, -0.470836, 0.542988, -5.60028)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("30_qv6lt")
+vframes = 3
+frame = 1
 
 [node name="DirtBike" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 8.86697, 0.388188, 1.15459)
