@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var scene : String = "res://scenes/level_01/act_01.tscn"
+@export var scene : String = Global.next_scene
 
 @onready var progress_bar : ProgressBar = $Control/ProgressBar
 @onready var enter_text : Label = $Control/EnterText
@@ -22,5 +22,7 @@ func _process(delta):
 		enter_text.visible = true
 		if enter_text.is_visible_in_tree():
 			if Input.is_action_just_pressed("enter"):
+				$AnimationPlayer.play("fade_out")
+				await get_tree().create_timer(3.0).timeout
 				get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(scene))
 				queue_free()
