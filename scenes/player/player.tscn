@@ -386,4 +386,6 @@ theme_override_fonts/font = ExtResource("6_ultkg")
 theme_override_font_sizes/font_size = 50
 text = "6 / 6"
 
+[connection signal="area_entered" from="PlayerSprite/Muzzle/ActionableFinder" to="." method="_on_actionable_finder_area_entered"]
+[connection signal="area_exited" from="PlayerSprite/Muzzle/ActionableFinder" to="." method="_on_actionable_finder_area_exited"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

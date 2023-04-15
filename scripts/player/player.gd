@@ -39,15 +39,14 @@ func _process(delta):
 			await get_tree().create_timer(2.0).timeout
 			is_reloading = false
 	
-	var actionables = actionable_finder.get_overlapping_areas()
-	if actionables.size() > 0:
-		interact_text.visible = true
-		if Input.is_action_just_pressed("interact"):
-			interact_text.visible = false
-			actionables[0].action()
-			return
-	else:
-		interact_text.visible = false
+	
+	if interact_text.visible == true:
+			if Input.is_action_just_pressed("interact"):
+				set_physics_process(false)
+				interact_text.visible = false
+				actionable_finder.action()
+			else:
+				set_physics_process(true)
 
 
 func _physics_process(delta):
@@ -157,3 +156,12 @@ func update_text():
 func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "fire":
 		set_physics_process(true)
+
+
+func _on_actionable_finder_area_entered(area):
+	actionable_finder = area
+	interact_text.visible = true
+
+
+func _on_actionable_finder_area_exited(area):
+	interact_text.visible = false

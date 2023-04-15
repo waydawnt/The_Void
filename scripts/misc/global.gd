@@ -7,6 +7,7 @@ var next_scene : String
 
 
 func _ready():
+#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_child(audio_player)
 
 

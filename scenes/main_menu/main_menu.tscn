@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b2mmn4k486f6r"]
+[gd_scene load_steps=20 format=3 uid="uid://b2mmn4k486f6r"]
 
 [ext_resource type="Script" path="res://scripts/main_menu/main_menu.gd" id="1_8v47u"]
 [ext_resource type="PackedScene" uid="uid://3cq3h8c0grmo" path="res://scenes/main_menu/raindrops.tscn" id="2_hyylm"]
@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://do4r1smvax2rf" path="res://scenes/main_menu/yellow_light.tscn" id="4_oxw0r"]
 [ext_resource type="SphereMesh" uid="uid://c58w3p20dw65p" path="res://materials/blue_emission.tres" id="5_dq7ud"]
 [ext_resource type="Material" uid="uid://covx8bigld11a" path="res://materials/red_emission.tres" id="6_oaxgy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bq7ij"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c8r7f"]
+seamless = true
+noise = SubResource("FastNoiseLite_bq7ij")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qenk0"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -26,6 +33,9 @@ ssil_enabled = true
 glow_enabled = true
 glow_bloom = 1.0
 glow_blend_mode = 4
+glow_map = SubResource("NoiseTexture2D_c8r7f")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
 
 [sub_resource type="Animation" id="Animation_75ffr"]
 length = 0.001
