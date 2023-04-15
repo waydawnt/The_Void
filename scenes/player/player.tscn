@@ -1,10 +1,11 @@
-[gd_scene load_steps=45 format=3 uid="uid://cv80xmr0e1ad2"]
+[gd_scene load_steps=48 format=3 uid="uid://cv80xmr0e1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://kcxvdg3hqxtj" path="res://imports/player/player_spritesheet.png" id="1_827c7"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qk0m8"]
 [ext_resource type="Texture2D" uid="uid://dc08gs121o6cp" path="res://imports/player/player_spritesheet_normalmap.png" id="3_5ssqh"]
 [ext_resource type="Texture2D" uid="uid://dtieol82owd47" path="res://imports/player/muzzle_flash.png" id="4_3b4l6"]
 [ext_resource type="AudioStream" uid="uid://d3w3j2lrg88nb" path="res://sounds/walk.mp3" id="5_b65k3"]
+[ext_resource type="FontFile" uid="uid://fa3xkn5gp5p0" path="res://fonts/digital/Digital7Monoitalic-8MDLJ.ttf" id="5_c2rgb"]
 [ext_resource type="FontFile" uid="uid://djpj6jue28dw3" path="res://fonts/digital/Digital7-rg1mL.ttf" id="6_ultkg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toi7h"]
@@ -30,6 +31,19 @@ emission_texture = ExtResource("4_3b4l6")
 material = SubResource("StandardMaterial3D_vr0so")
 size = Vector2(0.8, 0.8)
 orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kq2ab"]
+size = Vector3(0.363955, 0.363951, 0.351897)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn5vw"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+shadow_size = 10
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gb7ul"]
 radius = 0.3
@@ -293,6 +307,32 @@ visible = false
 cast_shadow = 0
 texture = ExtResource("4_3b4l6")
 
+[node name="ActionableFinder" type="Area3D" parent="PlayerSprite/Muzzle"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerSprite/Muzzle/ActionableFinder"]
+shape = SubResource("BoxShape3D_kq2ab")
+
+[node name="InteractText" type="Label" parent="PlayerSprite"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -40.0
+offset_right = -206.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_c2rgb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yn5vw")
+text = "Press \"E\" to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_gb7ul")
 
@@ -326,6 +366,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HealthText" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0

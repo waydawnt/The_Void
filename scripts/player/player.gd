@@ -17,6 +17,8 @@ var is_reloading : bool = false
 @onready var barrel_point : Node3D = $PlayerSprite/Muzzle
 @onready var state_machine = $AnimationTree.get("parameters/playback")
 @onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
+@onready var actionable_finder : Area3D = $PlayerSprite/Muzzle/ActionableFinder
+@onready var interact_text : Label = $PlayerSprite/InteractText
 
 @onready var bullet_scene = preload("res://scenes/player/bullet.tscn")
 
@@ -29,15 +31,23 @@ var bullet_direction : int = 1
 
 
 func _process(delta):
-	
 	update_text()
-	
 	if Input.is_action_just_pressed("reload") or current_bullet == 0:
 		if current_bullet < total_bullet:
 			is_reloading = true
 			current_bullet = total_bullet
 			await get_tree().create_timer(2.0).timeout
 			is_reloading = false
+	
+	var actionables = actionable_finder.get_overlapping_areas()
+	if actionables.size() > 0:
+		interact_text.visible = true
+		if Input.is_action_just_pressed("interact"):
+			interact_text.visible = false
+			actionables[0].action()
+			return
+	else:
+		interact_text.visible = false
 
 
 func _physics_process(delta):

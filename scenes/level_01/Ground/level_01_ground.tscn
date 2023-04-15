@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c84j3cc4ymjp3"]
+[gd_scene load_steps=41 format=3 uid="uid://c84j3cc4ymjp3"]
 
 [ext_resource type="Shader" uid="uid://b7nsg66n2p8h5" path="res://shaders/level_01_ground.tres" id="1_sjh5s"]
 [ext_resource type="Texture2D" uid="uid://bhhj4yab4hc04" path="res://imports/level_01/road/Dirt 04 seamless.jpg" id="2_0kryc"]
@@ -12,13 +12,21 @@
 [ext_resource type="Shader" path="res://shaders/level_01_crops_shader.gdshader" id="10_nv626"]
 [ext_resource type="Texture2D" uid="uid://cagbseblgqa" path="res://imports/2d_sprites/level_01_sprites/ground/crops.png" id="11_fdu2w"]
 [ext_resource type="Texture2D" uid="uid://dmhs0p6ti6tfu" path="res://imports/2d_sprites/level_01_sprites/ground/bin3.png" id="12_b7yea"]
+[ext_resource type="ArrayMesh" uid="uid://cvty4bme5rucw" path="res://objects/level_01_objects/alley_02.res" id="13_457vj"]
 [ext_resource type="Texture2D" uid="uid://cx4irhcyxo2xt" path="res://imports/2d_sprites/level_01_sprites/ground/Sprite-0005.png" id="14_265xg"]
+[ext_resource type="Texture2D" uid="uid://bdhlofgknrj2e" path="res://imports/2d_sprites/level_01_sprites/railing.png" id="14_oitdv"]
 [ext_resource type="Texture2D" uid="uid://dmpucj6eqxwot" path="res://imports/2d_sprites/level_01_sprites/ground/bicycle.png" id="15_7x0pg"]
 [ext_resource type="Texture2D" uid="uid://b2iuurttdpmah" path="res://imports/2d_sprites/level_01_sprites/ground/kamba2.png" id="15_bp7j7"]
 [ext_resource type="ArrayMesh" uid="uid://cl8ucp80n7njw" path="res://objects/level_01_objects/wire.res" id="16_37gl4"]
 [ext_resource type="Texture2D" uid="uid://ccnvn48of2ag1" path="res://imports/2d_sprites/level_01_sprites/ground/bicycle(1).png" id="17_i83eb"]
 [ext_resource type="Texture2D" uid="uid://64lkldpdgj85" path="res://imports/2d_sprites/level_01_sprites/ground/tractor.png" id="18_n8i4m"]
 [ext_resource type="Texture2D" uid="uid://d4b8ydwnyqb1e" path="res://imports/2d_sprites/level_01_sprites/ground/scare_crow.png" id="19_d8ci6"]
+[ext_resource type="PackedScene" uid="uid://cnbbgetwpmnia" path="res://scenes/level_01/Ground/wall_00.tscn" id="22_nocbj"]
+[ext_resource type="Texture2D" uid="uid://cgy2etkgljg4b" path="res://imports/2d_sprites/level_01_sprites/kachra.png" id="23_vlysl"]
+[ext_resource type="Texture2D" uid="uid://cbkvtnm3jevpy" path="res://imports/2d_sprites/level_01_sprites/kachra_bag.png" id="24_7f25i"]
+[ext_resource type="Texture2D" uid="uid://cssh6b2vuoabo" path="res://imports/2d_sprites/level_01_sprites/kachra2.png" id="24_ikv7g"]
+[ext_resource type="Texture2D" uid="uid://dt4fqednkdwxk" path="res://imports/2d_sprites/level_01_sprites/bt1.png" id="26_wdy8a"]
+[ext_resource type="Texture2D" uid="uid://7tucqrfaht02" path="res://imports/2d_sprites/level_01_sprites/bt.png" id="27_k5w2a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b72ai"]
 render_priority = 0
@@ -289,20 +297,6 @@ texture = ExtResource("6_qhrv7")
 
 [node name="Fence_06" type="Sprite3D" parent="Fences"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.216, 0, 0)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_07" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.751, 0, 0)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_08" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.28, 0, 0)
 material_override = SubResource("StandardMaterial3D_7tvpu")
 shaded = true
 texture_filter = 0
@@ -2708,11 +2702,26 @@ multimesh = SubResource("MultiMesh_dl8bf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -223.748, 0, -7.9634)
 mesh = ExtResource("4_i85q1")
 
+[node name="Alley03" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -223.748, 0, -20.0734)
+mesh = ExtResource("4_i85q1")
+
+[node name="Alley02" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.901, 0, -10.098)
+mesh = ExtResource("13_457vj")
+
+[node name="Railing" type="Sprite3D" parent="Alley02"]
+transform = Transform3D(1.40915, 0, 0, 0, 0.805294, 0, 0, 0, 1, 0, 3.27613, 3.55068)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_oitdv")
+
 [node name="Medical_Store" parent="." instance=ExtResource("5_x14fc")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -164.048, 0, -10.0055)
 
 [node name="TrashCan" type="Sprite3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -226.369, 0.905441, -6.96944)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -226.819, 0.905441, -17.1987)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -2752,3 +2761,65 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("19_d8ci6")
+
+[node name="Wall_00" parent="." instance=ExtResource("22_nocbj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -235.772, 1, -14.0881)
+
+[node name="Wall_01" parent="." instance=ExtResource("22_nocbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.772, 1, -24.0881)
+
+[node name="Kachra_00" type="Sprite3D" parent="."]
+transform = Transform3D(1.84637, 0, 0, 0, 1.84637, 0, 0, 0, 1.84637, -231.634, 0.65657, -2.79211)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("23_vlysl")
+
+[node name="Kachra_03" type="Sprite3D" parent="."]
+transform = Transform3D(1.84637, 0, 0, 0, 1.84637, 0, 0, 0, 1.84637, -230.266, 0.65657, -2.43362)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("23_vlysl")
+
+[node name="Kachra_02" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -230.729, 0.399459, -2.79211)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("24_7f25i")
+
+[node name="Kachra_01" type="Sprite3D" parent="."]
+transform = Transform3D(1.76829, 0, 0, 0, 1.76829, 0, 0, 0, 1.76829, -231.156, 0.625789, -3.12771)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("24_ikv7g")
+
+[node name="Kachra_04" type="Sprite3D" parent="."]
+transform = Transform3D(-1.76829, 0, -1.54588e-07, 0, 1.76829, 0, 1.54588e-07, 0, -1.76829, -231.445, 0.625789, -2.28694)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("24_ikv7g")
+
+[node name="Bottle_01" type="Sprite3D" parent="."]
+transform = Transform3D(2.18557e-08, -0.5, -7.54979e-08, -0.5, -2.18557e-08, 0, 0, 7.54979e-08, -0.5, -229.345, 0.0977426, -2.28694)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("26_wdy8a")
+
+[node name="Bottle_02" type="Sprite3D" parent="."]
+transform = Transform3D(-0.5, 7.41726e-16, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, -230.198, 0.266483, -2.28694)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("27_k5w2a")
+
+[node name="Bottle_03" type="Sprite3D" parent="."]
+transform = Transform3D(2.18557e-08, 0.5, -7.54979e-08, 0.5, -2.18557e-08, 0, 0, -7.54979e-08, -0.5, -230.051, 0.125007, -2.33563)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("27_k5w2a")

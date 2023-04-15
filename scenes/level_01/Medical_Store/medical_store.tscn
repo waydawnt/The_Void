@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dwddtpxnroo7t"]
+[gd_scene load_steps=38 format=3 uid="uid://dwddtpxnroo7t"]
 
 [ext_resource type="ArrayMesh" uid="uid://b7bfrag1un7uq" path="res://objects/level_01_objects/medical_store.res" id="1_7nmpq"]
 [ext_resource type="Texture2D" uid="uid://box8qqghmv5hh" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/shelf.png" id="2_4kqx1"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://df7ek7x1wp5d2" path="res://imports/2d_sprites/level_01_sprites/Cars/Cars2.png" id="30_qv6lt"]
 [ext_resource type="Texture2D" uid="uid://cq5idccgxshq8" path="res://imports/2d_sprites/level_01_sprites/car_01.png" id="31_e0mvb"]
 [ext_resource type="Texture2D" uid="uid://dmhs0p6ti6tfu" path="res://imports/2d_sprites/level_01_sprites/ground/bin3.png" id="32_a88fh"]
+[ext_resource type="PackedScene" uid="uid://cnbbgetwpmnia" path="res://scenes/level_01/Ground/wall_00.tscn" id="33_d3osv"]
 [ext_resource type="PackedScene" uid="uid://d353sd0n376xt" path="res://scenes/level_01/vending_machines/vending_machine_02.tscn" id="33_q5xel"]
 
 [node name="Medical_Store" type="Node3D"]
@@ -929,9 +930,7 @@ transform = Transform3D(-2.18557e-08, 0, 0.4, 0, 0.5, 0, -0.5, 0, -1.74846e-08, 
 [node name="vending_machine_03" parent="." instance=ExtResource("29_egkyw")]
 transform = Transform3D(-2.18557e-08, 0, 0.4, 0, 0.5, 0, -0.5, 0, -1.74846e-08, -2.15555, 0.018903, -9.91635)
 
-[node name="Wall_00" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -16)
-mesh = ExtResource("30_jq10r")
+[node name="Wall_00" parent="." instance=ExtResource("33_d3osv")]
 
 [node name="Wall_01" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 1, -6.09593)

@@ -1,9 +1,9 @@
 extends Node3D
 
 
-@onready var wake_up : MeshInstance3D = $title/menu_options/wake_up
-@onready var credits : MeshInstance3D = $title/menu_options/credits
-@onready var sleep : MeshInstance3D = $title/menu_options/sleep
+@onready var wake_up : MeshInstance3D = $title/menu_options/WakeUp/wake_up
+@onready var credits : MeshInstance3D = $title/menu_options/Credits/credits
+@onready var sleep : MeshInstance3D = $title/menu_options/Sleep/sleep
 @onready var options : Array = [wake_up, credits, sleep]
 
 var current_index : int = 0
@@ -63,6 +63,7 @@ func modify(anim_name):
 	if anim_name == "fade_out":
 		if current_index == 0:
 			Global.next_scene = "res://scenes/level_01/act_01.tscn"
+			Global.audio_stop()
 			get_tree().change_scene_to_file("res://scenes/misc/load.tscn")
 			queue_free()
 		elif current_index == 1:

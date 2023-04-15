@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnby6mh8g7yf5"]
+
+[ext_resource type="Shader" path="res://shaders/water_shader.gdshader" id="1_pj08r"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6try8"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dqmlo"]
+seamless = true
+noise = SubResource("FastNoiseLite_6try8")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_64tml"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gmgpr"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_64tml")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i10m5"]
+render_priority = 0
+shader = ExtResource("1_pj08r")
+shader_parameter/height_scale = 0.5
+shader_parameter/noise = SubResource("NoiseTexture2D_dqmlo")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_gmgpr")
+
+[sub_resource type="QuadMesh" id="QuadMesh_sqtry"]
+material = SubResource("ShaderMaterial_i10m5")
+size = Vector2(100, 100)
+subdivide_width = 128
+subdivide_depth = 128
+orientation = 1
+
+[node name="Water" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_sqtry")

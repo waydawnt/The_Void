@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://do4r1smvax2rf"]
+
+[ext_resource type="Material" uid="uid://da6ruweh2wfuh" path="res://materials/yellow_emission.tres" id="1_mpwrp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_108yf"]
+material = ExtResource("1_mpwrp")
+
+[node name="YellowLight" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_108yf")
