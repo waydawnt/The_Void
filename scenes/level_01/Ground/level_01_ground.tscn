@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c84j3cc4ymjp3"]
+[gd_scene load_steps=50 format=3 uid="uid://c84j3cc4ymjp3"]
 
 [ext_resource type="Shader" uid="uid://b7nsg66n2p8h5" path="res://shaders/level_01_ground.tres" id="1_sjh5s"]
 [ext_resource type="Texture2D" uid="uid://bhhj4yab4hc04" path="res://imports/level_01/road/Dirt 04 seamless.jpg" id="2_0kryc"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://d2iavpq0itcni" path="res://scenes/level_01/petrol_pump/petrol_pump.tscn" id="28_qeq03"]
 [ext_resource type="Texture2D" uid="uid://cyp850xlvw3vp" path="res://imports/2d_sprites/level_01_sprites/bb1.png" id="33_h6s3b"]
 [ext_resource type="Texture2D" uid="uid://d043jc4pkmunb" path="res://imports/2d_sprites/level_01_sprites/bb6.png" id="34_4kyic"]
+[ext_resource type="PackedScene" uid="uid://bu46gqhe0c1ku" path="res://scenes/level_01/Goons_Adda/goons_adda.tscn" id="35_lla24"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b72ai"]
 render_priority = 0
@@ -1192,83 +1193,6 @@ texture = ExtResource("6_qhrv7")
 
 [node name="Fence_286" type="Sprite3D" parent="Fences"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1923, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_287" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.6491, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_288" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1178, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_289" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.5733, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_290" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0493, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_291" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.518, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_292" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.9511, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_293" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4079, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_294" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.8766, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_295" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.3321, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_296" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.8081, 0.000800014, -0.000418901)
-material_override = SubResource("StandardMaterial3D_7tvpu")
-shaded = true
-texture_filter = 0
-texture = ExtResource("6_qhrv7")
-
-[node name="Fence_297" type="Sprite3D" parent="Fences"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.2768, 0.000800014, -0.000418901)
 material_override = SubResource("StandardMaterial3D_7tvpu")
 shaded = true
 texture_filter = 0
@@ -3125,3 +3049,6 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("34_4kyic")
+
+[node name="GoonsAdda" parent="." instance=ExtResource("35_lla24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.94, 0.0399761, -12.0835)

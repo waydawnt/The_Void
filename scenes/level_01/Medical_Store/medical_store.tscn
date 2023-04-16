@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dwddtpxnroo7t"]
+[gd_scene load_steps=41 format=3 uid="uid://dwddtpxnroo7t"]
 
 [ext_resource type="ArrayMesh" uid="uid://b7bfrag1un7uq" path="res://objects/level_01_objects/medical_store.res" id="1_7nmpq"]
 [ext_resource type="Texture2D" uid="uid://box8qqghmv5hh" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/shelf.png" id="2_4kqx1"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://d353sd0n376xt" path="res://scenes/level_01/vending_machines/vending_machine_02.tscn" id="33_q5xel"]
 [ext_resource type="Texture2D" uid="uid://cckfe0j0k7ctr" path="res://imports/2d_sprites/level_01_sprites/trash1.png" id="37_13rlk"]
 [ext_resource type="Texture2D" uid="uid://cjb0r1mmfhymx" path="res://imports/2d_sprites/level_01_sprites/trash8.png" id="38_pur3t"]
+[ext_resource type="Texture2D" uid="uid://47efyo24bpaf" path="res://imports/2d_sprites/level_01_sprites/chain_railing.png" id="40_djy6x"]
 
 [node name="Medical_Store" type="Node3D"]
 
@@ -1017,3 +1018,45 @@ transform = Transform3D(-2.18557e-08, 0, 0.4, 0, 0.5, 0, -0.5, 0, -1.74846e-08, 
 
 [node name="vending_machine_04" parent="." instance=ExtResource("33_q5xel")]
 transform = Transform3D(-2.18557e-08, 0, 0.4, 0, 0.5, 0, -0.5, 0, -1.74846e-08, -2.15816, 0.0109424, -8.84011)
+
+[node name="Railing" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.88, 1.2096, -9.3422)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("40_djy6x")
+
+[node name="Railing2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1626, 1.2096, -9.3422)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("40_djy6x")
+
+[node name="Railing3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4362, 1.2096, -9.3422)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("40_djy6x")
+
+[node name="Railing4" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.6343, 1.2096, -10.3351)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("40_djy6x")
+
+[node name="Railing5" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.6343, 1.2096, -12.0548)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("40_djy6x")
+
+[node name="Railing6" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.6343, 1.2096, -13.79)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("40_djy6x")

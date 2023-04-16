@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=6 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogues/balloon.gd" id="1_4u26j"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="FontFile" uid="uid://djpj6jue28dw3" path="res://fonts/digital/Digital7-rg1mL.ttf" id="2_dc8xa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d24i"]
 content_margin_left = 40.0
@@ -44,6 +45,7 @@ theme_override_constants/separation = 10
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("2_dc8xa")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "Character"

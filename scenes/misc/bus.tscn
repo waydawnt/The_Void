@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dktgg4e14ffa4"]
+[gd_scene load_steps=10 format=3 uid="uid://dktgg4e14ffa4"]
 
 [ext_resource type="Script" path="res://scripts/misc/bus.gd" id="1_7ji7l"]
 [ext_resource type="Texture2D" uid="uid://c6av57cheylrv" path="res://imports/2d_sprites/level_01_sprites/bus1.png" id="1_t676f"]
@@ -108,6 +108,9 @@ _data = {
 "bus_run": SubResource("Animation_otoxs")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4e8l"]
+size = Vector3(1, 1, 4.83246)
+
 [node name="Bus" type="Node3D"]
 script = ExtResource("1_7ji7l")
 
@@ -140,3 +143,9 @@ libraries = {
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_voj7j")
 autoplay = true
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.979325, -0.340965, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_e4e8l")

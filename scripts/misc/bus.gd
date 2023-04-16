@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var bus_speed : int = 5
+@export var bus_speed : int = 6
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var audio_player : AudioStreamPlayer3D = $AudioStreamPlayer3D

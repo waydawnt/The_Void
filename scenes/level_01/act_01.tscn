@@ -1,12 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://c4sjxor8spc62"]
+[gd_scene load_steps=18 format=3 uid="uid://c4sjxor8spc62"]
 
+[ext_resource type="Script" path="res://scripts/act_01.gd" id="1_bqy3t"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="1_fgpdl"]
 [ext_resource type="PackedScene" uid="uid://c84j3cc4ymjp3" path="res://scenes/level_01/Ground/level_01_ground.tscn" id="1_jl1n3"]
 [ext_resource type="PackedScene" uid="uid://bghtab3mormds" path="res://scenes/enemies/enemy_00.tscn" id="3_aka3d"]
 [ext_resource type="PackedScene" uid="uid://ta4dcsv2he5s" path="res://scenes/interactive_civilians/store_owner.tscn" id="4_c56u7"]
 [ext_resource type="PackedScene" uid="uid://c54eav2pfd8i1" path="res://scenes/misc/actionable.tscn" id="5_nnf8p"]
 [ext_resource type="Resource" uid="uid://i0u0e6rmwpgi" path="res://dialogues/act_01_dialogues.dialogue" id="6_co8uk"]
-[ext_resource type="PackedScene" uid="uid://dktgg4e14ffa4" path="res://scenes/misc/bus.tscn" id="7_gwf5x"]
 
 [sub_resource type="Gradient" id="Gradient_r1fex"]
 offsets = PackedFloat32Array(0.327869, 1)
@@ -53,10 +53,14 @@ dof_blur_near_transition = 5.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_di6qi"]
 size = Vector3(0.250902, 1.94723, 7.42596)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ixtpr"]
+size = Vector3(1, 1, 7.06946)
+
 [node name="Act_01" type="Node3D"]
+script = ExtResource("1_bqy3t")
 
 [node name="Player" parent="." instance=ExtResource("1_fgpdl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221.638, 1.103, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175.061, 1.103, -3)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.908508, -0.0306038, 0.416745, 0, 0.997315, 0.0732381, -0.417867, 0.0665375, -0.906068, 0, 33.99, 0)
@@ -90,5 +94,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.488, 0.979731, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0300446, 0, 0)
 shape = SubResource("BoxShape3D_di6qi")
 
-[node name="Bus" parent="." instance=ExtResource("7_gwf5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -254.664, 1.22453, 0)
+[node name="BusTriggerPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40643, 1.22453, -1.24047)
+
+[node name="Marker3D" type="Marker3D" parent="BusTriggerPoint"]
+
+[node name="BusTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.4529, 0.700081, -2.41372)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BusTrigger"]
+shape = SubResource("BoxShape3D_ixtpr")
+
+[connection signal="body_entered" from="BusTrigger" to="." method="_on_bus_trigger_body_entered"]
