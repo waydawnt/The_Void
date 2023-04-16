@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2iavpq0itcni"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnv8py6gb75dw" path="res://objects/level_01_objects/petrol_pump/petrol_pump_ground.res" id="1_y114f"]
+[ext_resource type="ArrayMesh" uid="uid://dahhcx07c2qlr" path="res://objects/level_01_objects/petrol_pump/petrol_pump_store.res" id="2_toqdh"]
+[ext_resource type="ArrayMesh" uid="uid://cr42knocalvlj" path="res://objects/level_01_objects/petrol_pump/petrol_pump_shed.res" id="3_rjv7k"]
+[ext_resource type="ArrayMesh" uid="uid://bdf4d0btcmsb8" path="res://objects/level_01_objects/petrol_pump/petrol_pump_support.res" id="4_hsiry"]
+[ext_resource type="ArrayMesh" uid="uid://bs4n6ne6ajus2" path="res://objects/level_01_objects/petrol_pump/pillar.res" id="5_df1oy"]
+[ext_resource type="PackedScene" uid="uid://cnbbgetwpmnia" path="res://scenes/level_01/Ground/wall_00.tscn" id="6_qta2c"]
+[ext_resource type="Texture2D" uid="uid://gtb64qet3and" path="res://imports/2d_sprites/level_01_sprites/pp.png" id="7_b5704"]
+[ext_resource type="Texture2D" uid="uid://68gjyo6kycd8" path="res://imports/2d_sprites/level_01_sprites/Cars/Cars1.png" id="8_4p12t"]
+[ext_resource type="Texture2D" uid="uid://q16sdf12v4ce" path="res://imports/2d_sprites/level_01_sprites/billboard1.png" id="9_3mc0b"]
+
+[node name="PetrolPump" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("1_y114f")
+
+[node name="PetrolStore" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6.74437)
+mesh = ExtResource("2_toqdh")
+
+[node name="PetrolPumpShed" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0882707, 5.96815, 3.59574)
+mesh = ExtResource("3_rjv7k")
+
+[node name="PetrolPumpSupport" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.291514, 0, 2.65033)
+mesh = ExtResource("4_hsiry")
+
+[node name="Pillar" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47911, 3.19852, 3.16934)
+mesh = ExtResource("5_df1oy")
+
+[node name="Pillar2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62572, 3.19852, 3.16934)
+mesh = ExtResource("5_df1oy")
+
+[node name="Wall_00" parent="." instance=ExtResource("6_qta2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -10)
+
+[node name="Wall_01" parent="." instance=ExtResource("6_qta2c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 1, 0)
+
+[node name="Wall_02" parent="." instance=ExtResource("6_qta2c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 1, 0)
+
+[node name="Petrol_00" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, -2.50772, 1.19568, 3.22184)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_b5704")
+
+[node name="Petrol_01" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, -0.27, 1.19568, 3.22184)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_b5704")
+
+[node name="Petrol_02" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 2.12223, 1.19568, 3.22184)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_b5704")
+
+[node name="Car" type="Sprite3D" parent="."]
+transform = Transform3D(5.93374, 0, 0, 0, 5.93374, 0, 0, 0, 1, -6.6457, 0.578329, -3.75271)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_4p12t")
+vframes = 3
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2.59808, 0, -1.5, 0, 3, 0, 1.5, 0, 2.59808, 7.81573, 2.36789, 8.69275)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_3mc0b")

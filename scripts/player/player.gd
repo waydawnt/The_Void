@@ -42,11 +42,8 @@ func _process(delta):
 	
 	if interact_text.visible == true:
 			if Input.is_action_just_pressed("interact"):
-				set_physics_process(false)
 				interact_text.visible = false
 				actionable_finder.action()
-			else:
-				set_physics_process(true)
 
 
 func _physics_process(delta):

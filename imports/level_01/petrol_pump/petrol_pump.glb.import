@@ -1,0 +1,95 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://7xehx51gfth8"
+path="res://.godot/imported/petrol_pump.glb-ffb8b5f2a3eb421ae6612f6f60ed7419.scn"
+
+[deps]
+
+source_file="res://imports/level_01/petrol_pump/petrol_pump.glb"
+dest_files=["res://.godot/imported/petrol_pump.glb-ffb8b5f2a3eb421ae6612f6f60ed7419.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"meshes": {
+"petrol_pump_Cube024": {
+"generate/lightmap_uv": 1,
+"generate/lods": 1,
+"generate/shadow_meshes": 1,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://objects/level_01_objects/petrol_pump/petrol_pump_shed.res"
+},
+"petrol_pump_Cube025": {
+"generate/lightmap_uv": 1,
+"generate/lods": 1,
+"generate/shadow_meshes": 1,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://objects/level_01_objects/petrol_pump/pillar.res"
+},
+"petrol_pump_Cube026": {
+"generate/lightmap_uv": 1,
+"generate/lods": 1,
+"generate/shadow_meshes": 1,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": ""
+},
+"petrol_pump_Cube027": {
+"generate/lightmap_uv": 1,
+"generate/lods": 1,
+"generate/shadow_meshes": 1,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://objects/level_01_objects/petrol_pump/petrol_pump_store.res"
+},
+"petrol_pump_Cube028": {
+"generate/lightmap_uv": 1,
+"generate/lods": 1,
+"generate/shadow_meshes": 1,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://objects/level_01_objects/petrol_pump/petrol_pump_support.res"
+},
+"petrol_pump_Plane001": {
+"generate/lightmap_uv": 1,
+"generate/lods": 1,
+"generate/shadow_meshes": 1,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://objects/level_01_objects/petrol_pump/petrol_pump_ground.res"
+}
+}
+}
+gltf/embedded_image_handling=1

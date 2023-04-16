@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dwddtpxnroo7t"]
+[gd_scene load_steps=40 format=3 uid="uid://dwddtpxnroo7t"]
 
 [ext_resource type="ArrayMesh" uid="uid://b7bfrag1un7uq" path="res://objects/level_01_objects/medical_store.res" id="1_7nmpq"]
 [ext_resource type="Texture2D" uid="uid://box8qqghmv5hh" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/shelf.png" id="2_4kqx1"]
@@ -37,6 +37,8 @@
 [ext_resource type="Texture2D" uid="uid://dmhs0p6ti6tfu" path="res://imports/2d_sprites/level_01_sprites/ground/bin3.png" id="32_a88fh"]
 [ext_resource type="PackedScene" uid="uid://cnbbgetwpmnia" path="res://scenes/level_01/Ground/wall_00.tscn" id="33_d3osv"]
 [ext_resource type="PackedScene" uid="uid://d353sd0n376xt" path="res://scenes/level_01/vending_machines/vending_machine_02.tscn" id="33_q5xel"]
+[ext_resource type="Texture2D" uid="uid://cckfe0j0k7ctr" path="res://imports/2d_sprites/level_01_sprites/trash1.png" id="37_13rlk"]
+[ext_resource type="Texture2D" uid="uid://cjb0r1mmfhymx" path="res://imports/2d_sprites/level_01_sprites/trash8.png" id="38_pur3t"]
 
 [node name="Medical_Store" type="Node3D"]
 
@@ -948,11 +950,67 @@ texture_filter = 0
 texture = ExtResource("31_e0mvb")
 
 [node name="Trash" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1804, 0.609395, -15.2914)
+transform = Transform3D(0.999936, 0, -0.0113269, 0, 1, 0, 0.0113269, 0, 0.999936, 16.5118, 0.609395, -11.9102)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("32_a88fh")
+
+[node name="Trash2" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 15.1867, 0.614181, -14.8309)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("37_13rlk")
+
+[node name="Trash3" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.7548, 0.614181, -12.4276)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_pur3t")
+
+[node name="Trash4" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.7548, 0.614181, -14.9921)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_pur3t")
+
+[node name="Trash5" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.18308, 0.614181, -14.8309)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("37_13rlk")
+
+[node name="Trash9" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.8146, 0.614181, -15.4312)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("37_13rlk")
+
+[node name="Trash6" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.7512, 0.614181, -14.9921)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_pur3t")
+
+[node name="Trash7" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.930991, 0.614181, -15.3459)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_pur3t")
+
+[node name="Trash8" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.00115675, 0.614181, -14.9921)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_pur3t")
 
 [node name="vending_machine_02" parent="." instance=ExtResource("33_q5xel")]
 transform = Transform3D(-2.18557e-08, 0, 0.4, 0, 0.5, 0, -0.5, 0, -1.74846e-08, -2.15816, 0.0109424, -10.9717)

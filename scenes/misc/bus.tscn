@@ -1,0 +1,142 @@
+[gd_scene load_steps=9 format=3 uid="uid://dktgg4e14ffa4"]
+
+[ext_resource type="Script" path="res://scripts/misc/bus.gd" id="1_7ji7l"]
+[ext_resource type="Texture2D" uid="uid://c6av57cheylrv" path="res://imports/2d_sprites/level_01_sprites/bus1.png" id="1_t676f"]
+[ext_resource type="Texture2D" uid="uid://7exnvu78140p" path="res://imports/2d_sprites/level_01_sprites/tyre.png" id="2_oabgm"]
+[ext_resource type="AudioStream" uid="uid://d34c7h3svsya4" path="res://sounds/bus_run.mp3" id="4_voj7j"]
+
+[sub_resource type="Animation" id="Animation_xc5i2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tyre_00:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tyre_01:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0bekv"]
+resource_name = "bus_idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.01, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_otoxs"]
+resource_name = "bus_run"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.01, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tyre_00:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -6.28319)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tyre_01:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -6.28319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_51tlq"]
+_data = {
+"RESET": SubResource("Animation_xc5i2"),
+"bus_idle": SubResource("Animation_0bekv"),
+"bus_run": SubResource("Animation_otoxs")
+}
+
+[node name="Bus" type="Node3D"]
+script = ExtResource("1_7ji7l")
+
+[node name="Bus" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_t676f")
+
+[node name="Tyre_00" type="Sprite3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.33829, -0.676528, 0.0321612)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_oabgm")
+
+[node name="Tyre_01" type="Sprite3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.18526, -0.676528, 0.0321612)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_oabgm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_51tlq")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_voj7j")
+autoplay = true
