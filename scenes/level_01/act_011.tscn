@@ -1,0 +1,105 @@
+[gd_scene load_steps=18 format=3 uid="uid://crsfe8typ3v5i"]
+
+[ext_resource type="Script" path="res://scripts/act_01.gd" id="1_b6xw3"]
+[ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="2_nmo1n"]
+[ext_resource type="PackedScene" uid="uid://c84j3cc4ymjp3" path="res://scenes/level_01/Ground/level_01_ground.tscn" id="3_brcgr"]
+[ext_resource type="PackedScene" uid="uid://bghtab3mormds" path="res://scenes/enemies/enemy_00.tscn" id="4_ndufj"]
+[ext_resource type="PackedScene" uid="uid://ta4dcsv2he5s" path="res://scenes/interactive_civilians/store_owner.tscn" id="5_88x31"]
+[ext_resource type="PackedScene" uid="uid://c54eav2pfd8i1" path="res://scenes/misc/actionable.tscn" id="6_5njdv"]
+[ext_resource type="Resource" uid="uid://i0u0e6rmwpgi" path="res://dialogues/act_01_dialogues.dialogue" id="7_2daof"]
+
+[sub_resource type="Gradient" id="Gradient_r1fex"]
+offsets = PackedFloat32Array(0.327869, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gpfb3"]
+seed = 10
+domain_warp_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e6t3g"]
+seamless = true
+color_ramp = SubResource("Gradient_r1fex")
+noise = SubResource("FastNoiseLite_gpfb3")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_igxig"]
+sky_top_color = Color(0.898039, 0.65098, 0.611765, 1)
+sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
+sky_curve = 1e-05
+sky_cover = SubResource("NoiseTexture2D_e6t3g")
+sun_angle_max = 185.45
+
+[sub_resource type="Sky" id="Sky_d3u3d"]
+sky_material = SubResource("ProceduralSkyMaterial_igxig")
+
+[sub_resource type="Environment" id="Environment_k5q46"]
+background_mode = 2
+sky = SubResource("Sky_d3u3d")
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+fog_light_color = Color(0.784314, 0.87451, 0.988235, 1)
+fog_sun_scatter = 0.5
+fog_density = 0.0035
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_emission = Color(1, 0.709804, 0.654902, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_iip2e"]
+dof_blur_near_enabled = true
+dof_blur_near_distance = 5.0
+dof_blur_near_transition = 5.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52ld4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_di6qi"]
+size = Vector3(0.250902, 1.94723, 7.42596)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ixtpr"]
+size = Vector3(1, 1, 7.06946)
+
+[node name="Act_01" type="Node3D"]
+script = ExtResource("1_b6xw3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k5q46")
+camera_attributes = SubResource("CameraAttributesPractical_iip2e")
+
+[node name="Player" parent="." instance=ExtResource("2_nmo1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175.061, 1.103, -3)
+
+[node name="Level_01_Ground" parent="." instance=ExtResource("3_brcgr")]
+
+[node name="Enemy_00" parent="." instance=ExtResource("4_ndufj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.64, 1.14572, -3)
+
+[node name="StoreOwner" parent="." instance=ExtResource("5_88x31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -164.715, 1.07154, -4.02189)
+
+[node name="Actionable" parent="StoreOwner" instance=ExtResource("6_5njdv")]
+dialogue_resource = ExtResource("7_2daof")
+dialogue_start = "chemist_store"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoreOwner/Actionable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.30347)
+shape = SubResource("BoxShape3D_52ld4")
+
+[node name="Bloack_00" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.488, 0.979731, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bloack_00"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0300446, 0, 0)
+shape = SubResource("BoxShape3D_di6qi")
+
+[node name="BusTriggerPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40643, 1.22453, -1.24047)
+
+[node name="Marker3D" type="Marker3D" parent="BusTriggerPoint"]
+
+[node name="BusTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.4529, 0.700081, -2.41372)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BusTrigger"]
+shape = SubResource("BoxShape3D_ixtpr")
+
+[connection signal="body_entered" from="BusTrigger" to="." method="_on_bus_trigger_body_entered"]

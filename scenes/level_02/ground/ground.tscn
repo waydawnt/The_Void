@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cju8r7mme5683"]
+[gd_scene load_steps=23 format=3 uid="uid://cju8r7mme5683"]
 
 [ext_resource type="ArrayMesh" uid="uid://dmll02wiyb8ud" path="res://objects/level_02_objects/ground.res" id="1_igqwl"]
 [ext_resource type="PackedScene" path="res://scenes/level_02/building_00/building_00.tscn" id="3_4jrto"]
@@ -7,209 +7,286 @@
 [ext_resource type="PackedScene" uid="uid://bty6gkta7dwvn" path="res://imports/level_02/buildings/building_03/building_03.glb" id="6_fwq12"]
 [ext_resource type="PackedScene" uid="uid://bbyffdfnl2foo" path="res://scenes/level_02/building_04/building_04.tscn" id="7_cwii1"]
 [ext_resource type="Texture2D" uid="uid://ddrecx3qjbd8u" path="res://imports/level_02/ground/railing.png" id="8_1jk7t"]
+[ext_resource type="Shader" path="res://shaders/billboard.gdshader" id="8_w2y37"]
+[ext_resource type="Texture2D" uid="uid://40xd58j40vfn" path="res://imports/images/geisha_model.jpg" id="9_hmoj1"]
+[ext_resource type="ArrayMesh" uid="uid://hm18kcappw1j" path="res://objects/level_02_objects/shop_00.res" id="10_27ik0"]
+[ext_resource type="PackedScene" uid="uid://d25boyj1b2gjf" path="res://scenes/level_02/Hotel/hotel.tscn" id="11_mt4o3"]
+[ext_resource type="Shader" path="res://shaders/water_shader.gdshader" id="11_od62v"]
+[ext_resource type="PackedScene" uid="uid://ckluf0tuw203r" path="res://scenes/level_02/shop_01/shop_01.tscn" id="13_2wohy"]
+[ext_resource type="PackedScene" uid="uid://dcolw8bfngbfb" path="res://scenes/level_02/shop_02/shop_02.tscn" id="14_uebj0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_musea"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 0.278
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = -0.224
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.5
+shader_parameter/dot_scale = 100.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("9_hmoj1")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vwqf6"]
+material = SubResource("ShaderMaterial_musea")
+size = Vector2(10, 20)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u555a"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g0ycf"]
+seamless = true
+noise = SubResource("FastNoiseLite_u555a")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_stn24"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cpe25"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_stn24")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0j7i2"]
+render_priority = 0
+shader = ExtResource("11_od62v")
+shader_parameter/height_scale = 0.5
+shader_parameter/noise = SubResource("NoiseTexture2D_g0ycf")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_cpe25")
+
+[sub_resource type="QuadMesh" id="QuadMesh_nh3h0"]
+material = SubResource("ShaderMaterial_0j7i2")
+size = Vector2(500, 500)
+subdivide_width = 512
+subdivide_depth = 512
+orientation = 1
 
 [node name="ground" type="Node3D"]
 
 [node name="ground_platform" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6689, 0, 0)
 mesh = ExtResource("1_igqwl")
 
-[node name="building_00" parent="." instance=ExtResource("3_4jrto")]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.55325, -4.85056, -14.2827)
-
-[node name="building_01" parent="." instance=ExtResource("4_x4s48")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 38.1594, -9.25245, -19.3945)
-
-[node name="building_06" parent="." instance=ExtResource("4_x4s48")]
-transform = Transform3D(1.5, 0, 2.62268e-07, 0, 1.5, 0, -2.62268e-07, 0, 1.5, 74.1594, -9.25245, 14.6055)
-
-[node name="building_05" parent="." instance=ExtResource("4_x4s48")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -20.6621, -11.8968, -15.8952)
-
-[node name="building_09" parent="." instance=ExtResource("4_x4s48")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 74.6319, -11.8968, -43.8617)
-
-[node name="building_02" parent="." instance=ExtResource("5_5qlbs")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.12777, -5.29087, -18.1755)
-
-[node name="building_10" parent="." instance=ExtResource("5_5qlbs")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 53.3697, -8.25991, -49.4235)
-
-[node name="building_03" parent="." instance=ExtResource("6_fwq12")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.8783, -10.1086, -19.396)
-
-[node name="building_16" parent="." instance=ExtResource("6_fwq12")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -27.3439, -3.01931, -36.2678)
-
-[node name="building_12" parent="." instance=ExtResource("6_fwq12")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 69.228, -10.1086, -58.3036)
-
-[node name="building_15" parent="." instance=ExtResource("6_fwq12")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -9.23847, -10.1086, -30.7915)
-
-[node name="building_13" parent="." instance=ExtResource("6_fwq12")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 51.3632, -10.1086, -66.3987)
-
-[node name="building_07" parent="." instance=ExtResource("6_fwq12")]
-transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 78.3829, -10.1086, -2.81682)
-
-[node name="building_04" parent="." instance=ExtResource("7_cwii1")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36.6772, -21.9082, -18.3039)
-
-[node name="building_08" parent="." instance=ExtResource("7_cwii1")]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 80.4074, -19.9479, -23.3039)
-
-[node name="building_11" parent="." instance=ExtResource("7_cwii1")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36.4516, -19.9479, -46.7461)
-
-[node name="building_14" parent="." instance=ExtResource("7_cwii1")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12.0326, -19.9479, -38.7693)
+[node name="ground_platform2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1835, 0, 0)
+mesh = ExtResource("1_igqwl")
 
 [node name="Railings" type="Node3D" parent="."]
 
 [node name="railing_00" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -39.7021, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -39.7021, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_01" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -35.612, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -35.612, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_02" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -35.612, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -35.612, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_03" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -31.5219, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -31.5219, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_04" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -27.4526, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -27.4526, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_05" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -23.3895, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -23.3895, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_06" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -19.3315, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -19.3315, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_07" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -15.2413, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -15.2413, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_08" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -11.1513, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -11.1513, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_09" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -7.082, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -7.082, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_10" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.01888, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, -3.01888, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_11" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.05602, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 1.05602, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_12" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.14613, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 5.14613, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_13" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.23615, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 9.23615, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_14" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 13.3055, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 13.3055, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_15" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 17.3686, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 17.3686, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_16" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 21.4542, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 21.4542, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_17" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 25.5443, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 25.5443, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_18" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 29.6344, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 29.6344, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_19" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 33.7037, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 33.7037, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
 [node name="railing_20" type="Sprite3D" parent="Railings"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 37.7668, 1.97071, 15.5061)
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 0.8, 37.7668, 1.09664, 7.78531)
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
+
+[node name="Hologram" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.1583, 9.50712, -7.23486)
+mesh = SubResource("PlaneMesh_vwqf6")
+
+[node name="Buildings" type="Node3D" parent="."]
+
+[node name="building_00" parent="Buildings" instance=ExtResource("3_4jrto")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.55325, -4.85056, -14.2827)
+
+[node name="building_01" parent="Buildings" instance=ExtResource("4_x4s48")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 38.1594, -9.25245, -19.3945)
+
+[node name="building_06" parent="Buildings" instance=ExtResource("4_x4s48")]
+transform = Transform3D(1.5, 0, 2.62268e-07, 0, 1.5, 0, -2.62268e-07, 0, 1.5, 74.1594, -9.25245, 14.6055)
+
+[node name="building_05" parent="Buildings" instance=ExtResource("4_x4s48")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -20.6621, -11.8968, -15.8952)
+
+[node name="building_09" parent="Buildings" instance=ExtResource("4_x4s48")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 74.6319, -11.8968, -43.8617)
+
+[node name="building_02" parent="Buildings" instance=ExtResource("5_5qlbs")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.12777, -5.29087, -18.1755)
+
+[node name="building_10" parent="Buildings" instance=ExtResource("5_5qlbs")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 53.3697, -8.25991, -49.4235)
+
+[node name="building_03" parent="Buildings" instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.8783, -10.1086, -19.396)
+
+[node name="building_16" parent="Buildings" instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -27.3439, -3.01931, -36.2678)
+
+[node name="building_12" parent="Buildings" instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 69.228, -10.1086, -58.3036)
+
+[node name="building_15" parent="Buildings" instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -9.23847, -10.1086, -30.7915)
+
+[node name="building_13" parent="Buildings" instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 51.3632, -10.1086, -66.3987)
+
+[node name="building_07" parent="Buildings" instance=ExtResource("6_fwq12")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 78.3829, -10.1086, -2.81682)
+
+[node name="building_04" parent="Buildings" instance=ExtResource("7_cwii1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36.6772, -21.9082, -18.3039)
+
+[node name="building_08" parent="Buildings" instance=ExtResource("7_cwii1")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 80.4074, -19.9479, -23.3039)
+
+[node name="building_11" parent="Buildings" instance=ExtResource("7_cwii1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36.4516, -19.9479, -46.7461)
+
+[node name="building_14" parent="Buildings" instance=ExtResource("7_cwii1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12.0326, -19.9479, -38.7693)
+
+[node name="Shop_00" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3856, 1.64546, 0)
+mesh = ExtResource("10_27ik0")
+
+[node name="Hotel" parent="." instance=ExtResource("11_mt4o3")]
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.9229, 0)
+visible = false
+mesh = SubResource("QuadMesh_nh3h0")
+
+[node name="shop_01" parent="." instance=ExtResource("13_2wohy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.177, 1.62354, 3.66929)
+
+[node name="shop_02" parent="." instance=ExtResource("14_uebj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6572, 0.387078, 0)

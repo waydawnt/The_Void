@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu46gqhe0c1ku"]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="ArrayMesh" uid="uid://bctnh8co4os7y" path="res://objects/level_01_objects/goons_adda/goons_adda.res" id="1_lv5r8"]
 [ext_resource type="ArrayMesh" uid="uid://dcfl6u2b7lsds" path="res://objects/level_01_objects/goons_adda/goons_add_ground.res" id="2_o5obs"]
@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cnbbgetwpmnia" path="res://scenes/level_01/Ground/wall_00.tscn" id="4_466fm"]
 [ext_resource type="Texture2D" uid="uid://cq5idccgxshq8" path="res://imports/2d_sprites/level_01_sprites/car_01.png" id="5_ed8jq"]
 [ext_resource type="Texture2D" uid="uid://47efyo24bpaf" path="res://imports/2d_sprites/level_01_sprites/chain_railing.png" id="6_06db4"]
+[ext_resource type="Texture2D" uid="uid://bde5ji6tdyjay" path="res://imports/level_01/2d_sprites/ac.png" id="7_wxkf4"]
+[ext_resource type="Texture2D" uid="uid://b6opp6ikixrnq" path="res://imports/level_01/2d_sprites/Sprite-0003.png" id="8_77re0"]
+[ext_resource type="Texture2D" uid="uid://qc6mrehqml5u" path="res://imports/level_01/2d_sprites/Sprite-0002.png" id="9_yx76g"]
+[ext_resource type="Texture2D" uid="uid://o6qjf47qtc4y" path="res://imports/level_01/2d_sprites/lol1.png" id="10_8qpw1"]
+[ext_resource type="Texture2D" uid="uid://d0vns2xajutl8" path="res://imports/2d_sprites/level_01_sprites/sign8.png" id="11_5qadt"]
+[ext_resource type="Texture2D" uid="uid://be5ottmk0vksc" path="res://imports/2d_sprites/level_01_sprites/mask_paint.png" id="12_ubyby"]
 
 [node name="GoonsAdda" type="Node3D"]
 
@@ -18,6 +24,13 @@ mesh = ExtResource("2_o5obs")
 
 [node name="Railing" type="Sprite3D" parent="."]
 transform = Transform3D(2.16983, 0, 0, 0, 1.4662, 0, 0, 0, 1.385, 4.13842, 4.78661, 0.378727)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_4pp86")
+
+[node name="Railing2" type="Sprite3D" parent="."]
+transform = Transform3D(-8.24397e-08, 0, 1, 0, 1.395, 0, -1.886, 0, -4.37114e-08, 9.00656, 4.8156, -5.09872)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -145,3 +158,57 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("6_06db4")
+
+[node name="AC" type="Sprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.23736, 6.9658, -0.693016)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_wxkf4")
+
+[node name="Cycle" type="Sprite3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 8.71358, 0.623848, -0.693016)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_77re0")
+
+[node name="Trash" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.41236, 0.555137, -1.50466)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_yx76g")
+
+[node name="Trash2" type="Sprite3D" parent="."]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0.0283982, 3.92732, -0.658763)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8qpw1")
+
+[node name="Trash3" type="Sprite3D" parent="."]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0.0283982, 8.62319, -0.658763)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8qpw1")
+
+[node name="Trash4" type="Sprite3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.8084, 1.15096, 8.03491)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_5qadt")
+
+[node name="MaskPaint" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.35108, 3.75245, -0.466574)
+shaded = true
+texture_filter = 0
+texture = ExtResource("12_ubyby")
+
+[node name="MaskPaint2" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.44499, 3.75245, -0.466574)
+shaded = true
+texture_filter = 0
+texture = ExtResource("12_ubyby")

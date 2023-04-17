@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dwddtpxnroo7t"]
+[gd_scene load_steps=42 format=3]
 
 [ext_resource type="ArrayMesh" uid="uid://b7bfrag1un7uq" path="res://objects/level_01_objects/medical_store.res" id="1_7nmpq"]
 [ext_resource type="Texture2D" uid="uid://box8qqghmv5hh" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/shelf.png" id="2_4kqx1"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://cckfe0j0k7ctr" path="res://imports/2d_sprites/level_01_sprites/trash1.png" id="37_13rlk"]
 [ext_resource type="Texture2D" uid="uid://cjb0r1mmfhymx" path="res://imports/2d_sprites/level_01_sprites/trash8.png" id="38_pur3t"]
 [ext_resource type="Texture2D" uid="uid://47efyo24bpaf" path="res://imports/2d_sprites/level_01_sprites/chain_railing.png" id="40_djy6x"]
+[ext_resource type="Texture2D" uid="uid://be5ottmk0vksc" path="res://imports/2d_sprites/level_01_sprites/mask_paint.png" id="41_xq57x"]
 
 [node name="Medical_Store" type="Node3D"]
 
@@ -934,13 +935,16 @@ transform = Transform3D(-2.18557e-08, 0, 0.4, 0, 0.5, 0, -0.5, 0, -1.74846e-08, 
 transform = Transform3D(-2.18557e-08, 0, 0.4, 0, 0.5, 0, -0.5, 0, -1.74846e-08, -2.15555, 0.018903, -9.91635)
 
 [node name="Wall_00" parent="." instance=ExtResource("33_d3osv")]
+visible = false
 
 [node name="Wall_01" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 1, -6.09593)
+visible = false
 mesh = ExtResource("30_jq10r")
 
 [node name="Wall_02" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 1, -6.09593)
+visible = false
 mesh = ExtResource("30_jq10r")
 
 [node name="Car" type="Sprite3D" parent="."]
@@ -1060,3 +1064,9 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("40_djy6x")
+
+[node name="MaskPaint" type="Sprite3D" parent="."]
+transform = Transform3D(0.0484348, -0.0124125, 0, 0.0124125, 0.0484348, 0, 0, 0, 0.05, 0.140039, 0.39514, 1.00251)
+shaded = true
+texture_filter = 0
+texture = ExtResource("41_xq57x")

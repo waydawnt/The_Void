@@ -1,44 +1,35 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8vwywexas22f"]
+[gd_scene load_steps=4 format=3 uid="uid://b8vwywexas22f"]
 
 [ext_resource type="PackedScene" uid="uid://cju8r7mme5683" path="res://scenes/level_02/ground/ground.tscn" id="1_l64pm"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="2_vn8et"]
 
-[sub_resource type="Gradient" id="Gradient_kl4dw"]
-offsets = PackedFloat32Array(0.813665, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_lhhoa"]
-seed = 2
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_iwoov"]
-seamless = true
-color_ramp = SubResource("Gradient_kl4dw")
-noise = SubResource("FastNoiseLite_lhhoa")
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lgs3o"]
-sky_top_color = Color(0.0352941, 0.054902, 0.0784314, 1)
-sky_horizon_color = Color(0.0470588, 0.0470588, 0.0509804, 1)
-sky_cover = SubResource("NoiseTexture2D_iwoov")
-ground_horizon_color = Color(0.109804, 0.109804, 0.117647, 1)
-
-[sub_resource type="Sky" id="Sky_17lwy"]
-sky_material = SubResource("ProceduralSkyMaterial_lgs3o")
-
-[sub_resource type="Environment" id="Environment_gadai"]
-background_mode = 2
-sky = SubResource("Sky_17lwy")
+[sub_resource type="Environment" id="Environment_mjnp1"]
+background_mode = 1
+background_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 glow_enabled = true
-fog_height_density = 0.0161
+glow_bloom = 0.2
+glow_blend_mode = 1
+fog_enabled = true
+fog_density = 0.0
+fog_height = -3.76
+fog_height_density = 0.2252
+volumetric_fog_density = 0.0
 
 [node name="level_02" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_gadai")
+environment = SubResource("Environment_mjnp1")
 
 [node name="ground" parent="." instance=ExtResource("1_l64pm")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_vn8et")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 4.52606, -2.82362)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 58.4986, 2.3599, 3.71583)
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+visible = false
+size = Vector3(500, 500, 500)
+origin_offset = Vector3(7.198, 4.829, 0)

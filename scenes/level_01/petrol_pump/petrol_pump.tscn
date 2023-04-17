@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2iavpq0itcni"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="ArrayMesh" uid="uid://cnv8py6gb75dw" path="res://objects/level_01_objects/petrol_pump/petrol_pump_ground.res" id="1_y114f"]
 [ext_resource type="ArrayMesh" uid="uid://dahhcx07c2qlr" path="res://objects/level_01_objects/petrol_pump/petrol_pump_store.res" id="2_toqdh"]
