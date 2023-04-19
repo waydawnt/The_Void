@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://cju8r7mme5683"]
+[gd_scene load_steps=128 format=3 uid="uid://cju8r7mme5683"]
 
 [ext_resource type="ArrayMesh" uid="uid://dmll02wiyb8ud" path="res://objects/level_02_objects/ground.res" id="1_igqwl"]
 [ext_resource type="PackedScene" path="res://scenes/level_02/building_00/building_00.tscn" id="3_4jrto"]
@@ -16,7 +16,6 @@
 [ext_resource type="ArrayMesh" uid="uid://hm18kcappw1j" path="res://objects/level_02_objects/shop_00.res" id="10_27ik0"]
 [ext_resource type="Texture2D" uid="uid://bhxmsjdn0yg7e" path="res://imports/images/Car.jpg" id="11_bu8hf"]
 [ext_resource type="PackedScene" uid="uid://d25boyj1b2gjf" path="res://scenes/level_02/Hotel/hotel.tscn" id="11_mt4o3"]
-[ext_resource type="Shader" path="res://shaders/water_shader.gdshader" id="11_od62v"]
 [ext_resource type="Texture2D" uid="uid://bkwnroplqhey0" path="res://imports/images/game_over.png" id="12_nv4tk"]
 [ext_resource type="PackedScene" uid="uid://ckluf0tuw203r" path="res://scenes/level_02/shop_01/shop_01.tscn" id="13_2wohy"]
 [ext_resource type="Texture2D" uid="uid://dct7knvmot571" path="res://imports/images/live_the_game.jpg" id="13_fxi1c"]
@@ -54,6 +53,9 @@
 [ext_resource type="Texture2D" uid="uid://ddxpjktvrqvcx" path="res://imports/images/COLA.jpeg" id="35_1upnm"]
 [ext_resource type="Texture2D" uid="uid://nraaq0gort6i" path="res://imports/images/wings.png" id="37_nev78"]
 [ext_resource type="FontFile" uid="uid://laww37tcrbn7" path="res://fonts/digital/Digital7Mono-Yz9J4.ttf" id="38_v6vnm"]
+[ext_resource type="Texture2D" uid="uid://cq5idccgxshq8" path="res://imports/2d_sprites/level_01_sprites/car_01.png" id="55_jxh5a"]
+[ext_resource type="Texture2D" uid="uid://47efyo24bpaf" path="res://imports/2d_sprites/level_01_sprites/chain_railing.png" id="55_kjg0h"]
+[ext_resource type="PackedScene" uid="uid://22a858lx1is3" path="res://scenes/level_02/Hotel/hotel_02.tscn" id="56_afw0u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_musea"]
 render_priority = 0
@@ -154,7 +156,7 @@ material = SubResource("StandardMaterial3D_oded0")
 size = Vector2(5, 7)
 orientation = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0npu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6dqh"]
 render_priority = 0
 shader = ExtResource("8_w2y37")
 shader_parameter/x_scale = 1.0
@@ -166,7 +168,7 @@ shader_parameter/dot_scale = 50.0
 shader_parameter/image = ExtResource("7_wsglr")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pww16"]
-material = SubResource("ShaderMaterial_p0npu")
+material = SubResource("ShaderMaterial_w6dqh")
 size = Vector2(6, 10)
 orientation = 2
 
@@ -238,7 +240,7 @@ material = SubResource("ShaderMaterial_e1w71")
 size = Vector2(5, 6)
 orientation = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l487e"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vxoew"]
 render_priority = 0
 shader = ExtResource("8_oij3q")
 shader_parameter/x_scale = 0.565
@@ -252,7 +254,7 @@ shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
 shader_parameter/image = ExtResource("12_nv4tk")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dr3kj"]
-material = SubResource("ShaderMaterial_l487e")
+material = SubResource("ShaderMaterial_vxoew")
 size = Vector2(5, 5)
 orientation = 2
 
@@ -408,7 +410,7 @@ material = SubResource("StandardMaterial3D_3xnay")
 size = Vector2(3, 2)
 orientation = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mko63"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yv0ci"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
@@ -417,7 +419,7 @@ emission_enabled = true
 emission_texture = ExtResource("23_qbs1j")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_81gba"]
-material = SubResource("StandardMaterial3D_mko63")
+material = SubResource("StandardMaterial3D_yv0ci")
 orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67xjb"]
@@ -462,7 +464,7 @@ emission_texture = ExtResource("26_les1d")
 material = SubResource("StandardMaterial3D_l7pnl")
 orientation = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_618m7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bdl1b"]
 render_priority = 0
 shader = ExtResource("27_q0f1h")
 shader_parameter/x_scale = 0.3
@@ -476,7 +478,7 @@ shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
 shader_parameter/image = ExtResource("28_yy0xf")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0kfyl"]
-material = SubResource("ShaderMaterial_618m7")
+material = SubResource("ShaderMaterial_bdl1b")
 size = Vector2(15, 2)
 orientation = 2
 
@@ -601,7 +603,7 @@ material = SubResource("ShaderMaterial_00bou")
 size = Vector2(5, 6)
 orientation = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssln3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ae5b6"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
@@ -611,7 +613,7 @@ emission = Color(1, 0.623529, 0.988235, 1)
 emission_texture = ExtResource("37_nev78")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4dnck"]
-material = SubResource("StandardMaterial3D_ssln3")
+material = SubResource("StandardMaterial3D_ae5b6")
 size = Vector2(4, 2)
 orientation = 2
 
@@ -623,33 +625,6 @@ emission = Color(1, 0.231373, 0.980392, 1)
 material = SubResource("StandardMaterial3D_d5vs7")
 text = "VOID"
 font = ExtResource("38_v6vnm")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_u555a"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g0ycf"]
-seamless = true
-noise = SubResource("FastNoiseLite_u555a")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_stn24"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cpe25"]
-seamless = true
-as_normal_map = true
-noise = SubResource("FastNoiseLite_stn24")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0j7i2"]
-render_priority = 0
-shader = ExtResource("11_od62v")
-shader_parameter/height_scale = 0.5
-shader_parameter/noise = SubResource("NoiseTexture2D_g0ycf")
-shader_parameter/normalmap = SubResource("NoiseTexture2D_cpe25")
-
-[sub_resource type="QuadMesh" id="QuadMesh_nh3h0"]
-material = SubResource("ShaderMaterial_0j7i2")
-size = Vector2(500, 500)
-subdivide_width = 512
-subdivide_depth = 512
-orientation = 1
 
 [node name="ground" type="Node3D"]
 
@@ -706,6 +681,10 @@ mesh = SubResource("PlaneMesh_7k6ae")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4117, 18.3749, -13.1846)
 mesh = SubResource("PlaneMesh_o4apc")
 
+[node name="Chilli3" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.534, 18.3749, -9.26741)
+mesh = SubResource("PlaneMesh_o4apc")
+
 [node name="Chilli2" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.4572, 15.7254, -20.1609)
 mesh = SubResource("PlaneMesh_o4apc")
@@ -752,6 +731,10 @@ mesh = SubResource("PlaneMesh_52ulr")
 
 [node name="J2" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(2.06175, 0, 0, 0, 2.06175, 0, 0, 0, 1, 70.3114, 27.0701, -15.3431)
+mesh = SubResource("PlaneMesh_52ulr")
+
+[node name="J3" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(2.06175, 0, 0, 0, 2.06175, 0, 0, 0, 1, -22.6042, 13.9959, -9.7609)
 mesh = SubResource("PlaneMesh_52ulr")
 
 [node name="Caution" type="MeshInstance3D" parent="Billboards"]
@@ -1103,11 +1086,6 @@ mesh = ExtResource("10_27ik0")
 [node name="Hotel" parent="." instance=ExtResource("11_mt4o3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1483, 1.67007, 0.296939)
 
-[node name="Water" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30051, 0)
-visible = false
-mesh = SubResource("QuadMesh_nh3h0")
-
 [node name="shop_01" parent="." instance=ExtResource("13_2wohy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.177, 1.62354, 3.66929)
 
@@ -1189,3 +1167,176 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4694, 1.54926, 6.79615)
 
 [node name="StreetLight22" parent="StreetLights" instance=ExtResource("19_sxj3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3265, 1.54926, 6.79615)
+
+[node name="ChainRailings" type="Node3D" parent="."]
+
+[node name="chain" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain2" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73768, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain3" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46925, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain4" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20693, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain5" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.93233, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain6" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.67001, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain7" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4016, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain8" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1393, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain9" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8722, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain10" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6098, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain11" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3414, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain12" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0791, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain13" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8045, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain14" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5422, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain15" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2737, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain16" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0114, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain17" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.723, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain18" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4607, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain19" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1923, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain20" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.9299, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain21" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6554, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain22" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.393, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="chain23" type="Sprite3D" parent="ChainRailings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1246, 1.58618, -2.84615)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_kjg0h")
+
+[node name="Car" type="Sprite3D" parent="."]
+transform = Transform3D(0.413662, 0, 0, 0, 0.413662, 0, 0, 0, 1, 7.14795, 1.26663, 1.63887)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("55_jxh5a")
+
+[node name="Hotel2" parent="." instance=ExtResource("56_afw0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05276, 1.67016, 0.0023185)

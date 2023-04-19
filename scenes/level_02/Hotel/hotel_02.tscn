@@ -1,0 +1,515 @@
+[gd_scene load_steps=17 format=3 uid="uid://22a858lx1is3"]
+
+[ext_resource type="ArrayMesh" uid="uid://3pl4din2vnw3" path="res://objects/level_02_objects/hotel.res" id="1_54lx0"]
+[ext_resource type="Texture2D" uid="uid://ob1t7d5xjne2" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/glass_windows.png" id="2_qhw2b"]
+[ext_resource type="Texture2D" uid="uid://be27yjdt833v4" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/table.png" id="3_2witd"]
+[ext_resource type="Texture2D" uid="uid://cejn2ef8ykway" path="res://imports/2d_sprites/level_02_sprites/board.png" id="4_lyao1"]
+[ext_resource type="Texture2D" uid="uid://doroatctvgxxe" path="res://imports/2d_sprites/level_02_sprites/tablee.png" id="5_5fwnh"]
+[ext_resource type="Texture2D" uid="uid://bakhhlje02h8g" path="res://imports/2d_sprites/level_02_sprites/chair.png" id="6_44iar"]
+[ext_resource type="Material" uid="uid://brihhexjt2rbt" path="res://materials/blue_emission_strips.tres" id="7_4bp4k"]
+[ext_resource type="Texture2D" uid="uid://bfil6e61mtnf" path="res://imports/2d_sprites/level_02_sprites/billboard11.png" id="8_mkwnt"]
+[ext_resource type="Texture2D" uid="uid://dvkplls6i8mwp" path="res://imports/2d_sprites/level_02_sprites/cocktail4_bb1.png" id="9_lt6bt"]
+[ext_resource type="Texture2D" uid="uid://dxlcbnwgqwmvl" path="res://imports/2d_sprites/level_02_sprites/Sprite-0010.png" id="10_eodpw"]
+[ext_resource type="Texture2D" uid="uid://ckwfd4sd2fqdk" path="res://imports/2d_sprites/level_02_sprites/door1.png" id="11_2hw83"]
+[ext_resource type="Texture2D" uid="uid://bf3un8ka130qs" path="res://imports/2d_sprites/level_02_sprites/pipe2.png" id="12_pd7sy"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gf17r"]
+material = ExtResource("7_4bp4k")
+size = Vector2(7.718, 0.015)
+orientation = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kg0r5"]
+material = ExtResource("7_4bp4k")
+size = Vector2(3.386, 0.015)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3i7qc"]
+transparency = 1
+albedo_texture = ExtResource("8_mkwnt")
+emission_enabled = true
+emission_texture = ExtResource("8_mkwnt")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v50m1"]
+transparency = 1
+albedo_texture = ExtResource("9_lt6bt")
+emission_enabled = true
+emission_texture = ExtResource("9_lt6bt")
+
+[node name="Hotel" type="MeshInstance3D"]
+mesh = ExtResource("1_54lx0")
+
+[node name="Windows" type="Sprite3D" parent="."]
+transform = Transform3D(1.1766, 0, 0, 0, 1.37895, 0, 0, 0, 1, -2.16768, 0.0794261, 1.76555)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_qhw2b")
+
+[node name="Windows2" type="Sprite3D" parent="."]
+transform = Transform3D(1.1766, 0, 0, 0, 1.37895, 0, 0, 0, 1, 2.19393, 0.0794261, 1.76555)
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_qhw2b")
+
+[node name="Table" type="Sprite3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.372662, -0.428975, -1.37534)
+shaded = true
+texture_filter = 0
+texture = ExtResource("3_2witd")
+
+[node name="Board" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.70613)
+shaded = true
+texture_filter = 0
+texture = ExtResource("4_lyao1")
+
+[node name="Dinings" type="Node3D" parent="."]
+
+[node name="DiningArena" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.02039, -0.786451, 1.46294)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena2" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.3872, -0.786451, 1.46294)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena2"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena3" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.02039, -0.786451, 0.603466)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena3"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena4" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.3872, -0.786451, 0.603466)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena4"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena5" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.02039, -0.786451, -0.395699)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena5"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena6" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.3872, -0.786451, -0.395699)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena6"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena7" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.33934, -0.786451, 1.46294)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena7"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena8" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.97253, -0.786451, 1.46294)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena8"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena9" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.33934, -0.786451, 0.603466)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena9"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena10" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.97253, -0.786451, 0.603466)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena10"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena11" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.33934, -0.786451, -0.395699)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena11"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="DiningArena12" type="Node3D" parent="Dinings"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.97253, -0.786451, -0.395699)
+
+[node name="DiningTable" type="Sprite3D" parent="Dinings/DiningArena12"]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_5fwnh")
+
+[node name="ChairR" type="Sprite3D" parent="Dinings/DiningArena12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648079, 0.103154, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="ChairL" type="Sprite3D" parent="Dinings/DiningArena12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597431, 0.103154, 0)
+flip_h = true
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_44iar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0605, 1.75607)
+mesh = SubResource("PlaneMesh_gf17r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32945, 1.75607)
+mesh = SubResource("PlaneMesh_gf17r")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.419298, -1.70557)
+mesh = SubResource("PlaneMesh_gf17r")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500302, -1.70557)
+mesh = SubResource("PlaneMesh_gf17r")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18158, -1.17601, 1.79945)
+mesh = SubResource("PlaneMesh_kg0r5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18158, -0.845554, 1.79945)
+mesh = SubResource("PlaneMesh_kg0r5")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16739, -1.17601, 1.79945)
+mesh = SubResource("PlaneMesh_kg0r5")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16739, -0.845554, 1.79945)
+mesh = SubResource("PlaneMesh_kg0r5")
+
+[node name="HotelBoard" type="Sprite3D" parent="."]
+transform = Transform3D(0.398, 0, 0, 0, 0.398, 0, 0, 0, 0.398, 0, 1.77776, 2.07451)
+material_override = SubResource("StandardMaterial3D_3i7qc")
+shaded = true
+alpha_cut = 1
+alpha_antialiasing_mode = 1
+texture_filter = 0
+texture = ExtResource("8_mkwnt")
+
+[node name="CockTail" type="Sprite3D" parent="."]
+transform = Transform3D(0.300329, 0, 0, 0, 0.300329, 0, 0, 0, 1, -3.37198, 0.648169, 1.82381)
+material_override = SubResource("StandardMaterial3D_v50m1")
+shaded = true
+alpha_cut = 2
+texture = ExtResource("9_lt6bt")
+
+[node name="Light" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0861524)
+
+[node name="Lamp" type="Sprite3D" parent="Light"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_eodpw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38982, 0, 0.0861524)
+
+[node name="Lamp" type="Sprite3D" parent="Light2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_eodpw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27567, 0, 0.0861524)
+
+[node name="Lamp" type="Sprite3D" parent="Light3"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_eodpw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.60527)
+
+[node name="Lamp" type="Sprite3D" parent="Light4"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_eodpw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38982, 0, -1.60527)
+
+[node name="Lamp" type="Sprite3D" parent="Light5"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_eodpw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27567, 0, -1.60527)
+
+[node name="Lamp" type="Sprite3D" parent="Light6"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_eodpw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Door" type="Sprite3D" parent="."]
+transform = Transform3D(1.98764, 0, 0, 0, 2.21198, 0, 0, 0, 1, -0.0660877, 0, 1.76795)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("11_2hw83")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98663, 0, 3)
+light_color = Color(0, 1, 1, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29826, 0, 3)
+light_color = Color(0, 1, 1, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222937, 0, 3)
+light_color = Color(0, 1, 1, 1)
+
+[node name="pipe" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -3.9922, 0, 1.62477)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_pd7sy")
+
+[node name="pipe2" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -3.9922, -1.67609, 0.9241)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_pd7sy")
+
+[node name="pipe3" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -3.9922, -0.694839, 0.486461)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_pd7sy")

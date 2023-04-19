@@ -1,6 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://eh42ghfiv557"]
+[gd_scene load_steps=37 format=3 uid="uid://eh42ghfiv557"]
 
 [ext_resource type="Texture2D" uid="uid://dshvkfutf3jbi" path="res://imports/level_02/house_00_m.png" id="1_stkfh"]
+[ext_resource type="Texture2D" uid="uid://efem7uyhrd1i" path="res://imports/images/phone.png" id="2_e44ha"]
+[ext_resource type="Texture2D" uid="uid://dtn7255ruj66" path="res://imports/2d_sprites/plants/climbing plants pack/liana_19.png" id="3_x3twn"]
+[ext_resource type="Texture2D" uid="uid://dxioltttyxjwk" path="res://imports/2d_sprites/plants/climbing plants pack/liana_20.png" id="4_cf5xs"]
+[ext_resource type="Texture2D" uid="uid://uv4a0m2cedn4" path="res://imports/2d_sprites/plants/climbing plants pack/liana_1.png" id="4_i2oue"]
+[ext_resource type="Texture2D" uid="uid://bxxdkf5omyayo" path="res://imports/2d_sprites/plants/climbing plants pack/liana_22.png" id="5_6dkig"]
+[ext_resource type="Texture2D" uid="uid://dqmyksvh0btk2" path="res://imports/2d_sprites/plants/climbing plants pack/liana_2.png" id="5_ucv3l"]
+[ext_resource type="Texture2D" uid="uid://b7dhfbah7nqmf" path="res://imports/2d_sprites/plants/climbing plants pack/liana_8.png" id="6_fr0vq"]
+[ext_resource type="Texture2D" uid="uid://dxlcbnwgqwmvl" path="res://imports/2d_sprites/level_02_sprites/Sprite-0010.png" id="7_rnltc"]
+[ext_resource type="Texture2D" uid="uid://d1f1gud4dc4tr" path="res://imports/images/soldout.png" id="8_ae0j5"]
+[ext_resource type="Texture2D" uid="uid://taccs7l6pjxg" path="res://imports/images/Pizza (1).png" id="9_323b7"]
+[ext_resource type="Texture2D" uid="uid://b12vnck2upsxe" path="res://imports/images/compass.png" id="10_8uyvv"]
+[ext_resource type="Shader" path="res://shaders/billboard_moving_up.gdshader" id="13_prxbf"]
+[ext_resource type="Texture2D" uid="uid://bkwnroplqhey0" path="res://imports/images/game_over.png" id="14_p33y0"]
+[ext_resource type="Texture2D" uid="uid://bcxpteecdfkhs" path="res://imports/images/cyber_punk.png" id="15_5d4p6"]
+[ext_resource type="Shader" path="res://shaders/billboard_moving.gdshader" id="16_wqbko"]
+[ext_resource type="Texture2D" uid="uid://bva24f3ij8cjm" path="res://imports/images/quote_00.png" id="17_puamp"]
+[ext_resource type="Shader" path="res://shaders/billboard.gdshader" id="18_t2bpr"]
+[ext_resource type="Texture2D" uid="uid://d4rwbgw0vw4p" path="res://imports/images/Gamer.jpg" id="19_ltuxn"]
+[ext_resource type="Texture2D" uid="uid://nraaq0gort6i" path="res://imports/images/wings.png" id="20_lrk6w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wilu7"]
 resource_name = "m"
@@ -43,9 +62,401 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xn4kb")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_so8mt"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_e44ha")
+emission_enabled = true
+emission = Color(1, 0.396078, 0.823529, 1)
+emission_texture = ExtResource("2_e44ha")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_00fc4"]
+material = SubResource("StandardMaterial3D_so8mt")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wyr0d"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("10_8uyvv")
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+emission_texture = ExtResource("10_8uyvv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l487e"]
+render_priority = 0
+shader = ExtResource("13_prxbf")
+shader_parameter/x_scale = 0.565
+shader_parameter/y_scale = 0.565
+shader_parameter/x_offset = -0.215
+shader_parameter/y_offset = -0.262
+shader_parameter/time_speed = 0.5
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 50.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("14_p33y0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lr7ya"]
+material = SubResource("ShaderMaterial_l487e")
+size = Vector2(5, 5)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mko63"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("15_5d4p6")
+emission_enabled = true
+emission_texture = ExtResource("15_5d4p6")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h1rui"]
+material = SubResource("StandardMaterial3D_mko63")
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_618m7"]
+render_priority = 0
+shader = ExtResource("16_wqbko")
+shader_parameter/x_scale = 0.3
+shader_parameter/y_scale = 0.5
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = -0.238
+shader_parameter/moving_speed = 0.1
+shader_parameter/x_uv_scale = 6.0
+shader_parameter/dot_scale = 10.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("17_puamp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jqu8k"]
+material = SubResource("ShaderMaterial_618m7")
+size = Vector2(15, 2)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0npu"]
+render_priority = 0
+shader = ExtResource("18_t2bpr")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.5
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("19_ltuxn")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6u8kq"]
+material = SubResource("ShaderMaterial_p0npu")
+size = Vector2(6, 10)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssln3"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("20_lrk6w")
+emission_enabled = true
+emission = Color(0.364706, 0.921569, 0.713726, 1)
+emission_texture = ExtResource("20_lrk6w")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_it60t"]
+material = SubResource("StandardMaterial3D_ssln3")
+size = Vector2(4, 2)
+orientation = 2
+
 [node name="house_00" type="Node3D"]
 
 [node name="building_01" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.78814e-07, 0, 1, 0, 1, 0, -1, 0, 1.78814e-07, 0, 1.25, -0.7)
 mesh = SubResource("ArrayMesh_nqgju")
 skeleton = NodePath("")
+
+[node name="Phone" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.00932e-08, 0, 1, 0, 0.230905, 0, -0.230905, 0, -4.37114e-08, 1.82118, 1.67374, -0.23243)
+mesh = SubResource("PlaneMesh_00fc4")
+
+[node name="Plants" type="Node3D" parent="."]
+
+[node name="Plant" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.313409, -2.32246)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_x3twn")
+
+[node name="Plant15" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 1.81244, 0.686192, -1.9865)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_x3twn")
+
+[node name="Plant16" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 1.81244, 0.686192, -1.41819)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_x3twn")
+
+[node name="Plant17" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 1.81244, 0.686192, -0.836345)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_x3twn")
+
+[node name="Plant18" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 1.81244, 0.686192, -0.251121)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_x3twn")
+
+[node name="Plant19" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.429099, -0.000794411)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_i2oue")
+
+[node name="Plant22" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -0.240478)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant23" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -1.83269)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant24" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -0.753814)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant25" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -0.356486)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant26" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -0.5595)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant27" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -0.919125)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant28" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -1.66738)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant29" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -1.06704)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant30" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -1.22655)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant31" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -1.37736)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant32" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -1.37736)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant33" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.29859, -1.53977)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_ucv3l")
+
+[node name="Plant20" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.429099, -2.20299)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_i2oue")
+
+[node name="Plant21" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, -0.258819, 0.965926, -1.13133e-08, -0.965926, -0.258819, -4.2222e-08, 1.81244, 0.402037, -2.01694)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_i2oue")
+
+[node name="Plant2" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 0.895327, -2.32246)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_x3twn")
+
+[node name="Plant3" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 1.48308, -2.32246)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_x3twn")
+
+[node name="Plant4" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 2.06572, -2.32246)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_x3twn")
+
+[node name="Plant5" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 2.63926, -2.32246)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_x3twn")
+
+[node name="Plant6" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81244, 2.63926, -2.19046)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_cf5xs")
+
+[node name="Plant7" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 1.81244, 2.85775, -1.85362)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_6dkig")
+
+[node name="Plant8" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 1.81244, 2.85775, -1.3347)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_6dkig")
+
+[node name="Plant9" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-8.13496e-08, 0, 1, 0, 1, 0, -1.86106, 0, -4.37114e-08, 2.35447, 3.00745, 0.690427)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_fr0vq")
+
+[node name="Plant10" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-8.13496e-08, 0, 1, 0, 1, 0, -1.86106, 0, -4.37114e-08, 2.35447, 3.00745, 0.218674)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_fr0vq")
+
+[node name="Plant11" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-8.13496e-08, 0, 1, 0, 1, 0, -1.86106, 0, -4.37114e-08, 2.35447, 3.00745, -0.400292)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_fr0vq")
+
+[node name="Plant12" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-8.13496e-08, 0, 1, 0, 1, 0, -1.86106, 0, -4.37114e-08, 2.35447, 3.00745, -1.01257)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_fr0vq")
+
+[node name="Plant13" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-8.13496e-08, 0, 1, 0, 1, 0, -1.86106, 0, -4.37114e-08, 2.35447, 3.00745, -1.60142)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_fr0vq")
+
+[node name="Plant14" type="Sprite3D" parent="Plants"]
+transform = Transform3D(-8.13496e-08, 0, 1, 0, 1, 0, -1.86106, 0, -4.37114e-08, 2.35447, 3.00745, -2.12671)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_fr0vq")
+
+[node name="Lamp2" type="Sprite3D" parent="."]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 2.04832, 3.01516, -0.808348)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_rnltc")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2, 3.10539, -0.798131)
+light_color = Color(0.988235, 1, 0.756863, 1)
+light_energy = 2.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-5.0801e-09, 0, 1, 0, 0.116219, 0, -0.116219, 0, -4.37114e-08, 1.81835, 2.34547, 0.403955)
+alpha_cut = 1
+texture = ExtResource("8_ae0j5")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-5.0801e-09, 0, 1, 0, 0.116219, 0, -0.116219, 0, -4.37114e-08, 1.81835, 2.78351, -0.452646)
+alpha_cut = 1
+texture = ExtResource("9_323b7")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-5.0801e-09, 0, 1, 0, 0.116219, 0, -0.116219, 0, -4.37114e-08, 1.81835, 1.18186, -1.42941)
+material_override = SubResource("StandardMaterial3D_wyr0d")
+alpha_cut = 1
+texture = ExtResource("10_8uyvv")
+
+[node name="GameOver" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.00455e-09, 0, 0.206, 0, 0.206, 0, -0.206, 0, -9.00455e-09, 2.43771, 3.8374, -0.344432)
+mesh = SubResource("PlaneMesh_lr7ya")
+
+[node name="CyberPunk" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.38107, 5.16407, -0.0273664)
+mesh = SubResource("PlaneMesh_h1rui")
+
+[node name="Quote02" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.00099e-08, 0, 0.229, 0, 0.229, 0, -0.229, 0, -1.00099e-08, 2.34107, 5.92017, -0.721525)
+mesh = SubResource("PlaneMesh_jqu8k")
+
+[node name="Gamer" type="MeshInstance3D" parent="."]
+transform = Transform3D(-7.86805e-09, 0, 0.18, 0, 0.18, 0, -0.18, 0, -7.86805e-09, 2.97654, 4.23025, -1.89286)
+mesh = SubResource("PlaneMesh_6u8kq")
+
+[node name="Wings2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.01072e-08, 0, 0.129, 0, 0.46, 0, -0.46, 0, -5.63877e-09, 1.83779, 2.32334, -1.46172)
+mesh = SubResource("PlaneMesh_it60t")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.87574, -1.91203)
+light_color = Color(1, 1, 0.105882, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.18343, -1.48006)
+light_color = Color(1, 0.768627, 0.996078, 1)

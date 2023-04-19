@@ -1215,3 +1215,11 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("33_rap5i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57298, 1.92091, 1.96899)
+light_color = Color(1, 0.462745, 0.392157, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57298, 0.700643, 1.96899)
+light_color = Color(1, 0.462745, 0.392157, 1)

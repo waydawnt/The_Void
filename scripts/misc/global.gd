@@ -3,7 +3,7 @@ extends Node
 var next_scene : String
 
 @onready var audio_player = AudioStreamPlayer.new()
-@onready var main_music : AudioStream = preload("res://sounds/main_menu_music.mp3")
+@onready var main_music : AudioStream = preload("res://sounds/just_evil(cyberpunk).mp3")
 
 
 func _ready():

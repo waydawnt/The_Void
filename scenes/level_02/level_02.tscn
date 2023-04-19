@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8vwywexas22f"]
+[gd_scene load_steps=13 format=3 uid="uid://b8vwywexas22f"]
 
+[ext_resource type="Script" path="res://scripts/level_02/level_02.gd" id="1_fb601"]
 [ext_resource type="PackedScene" uid="uid://cju8r7mme5683" path="res://scenes/level_02/ground/ground.tscn" id="1_l64pm"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="2_vn8et"]
 [ext_resource type="LightmapGIData" uid="uid://dgkem5owaa4dw" path="res://scenes/level_02/bake/level_02.lmbake" id="3_qdv01"]
+[ext_resource type="FontFile" uid="uid://laww37tcrbn7" path="res://fonts/digital/Digital7Mono-Yz9J4.ttf" id="5_0mxn1"]
+[ext_resource type="AudioStream" uid="uid://dljk4wn7p77j" path="res://sounds/keyboard_typing.mp3" id="6_rtnye"]
 
 [sub_resource type="Environment" id="Environment_mjnp1"]
 background_mode = 1
@@ -36,10 +39,46 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(50.6029, 22.3755, 37.9412)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeTransition:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FadeTransition/RichTextLabel:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_xhgbc"]
-resource_name = "establish"
-length = 10.0
+resource_name = "establishing_shot"
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -47,19 +86,78 @@ tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(50.6029, 22.3755, 37.9412), Vector3(15.9567, 3.21178, 13.9953), Vector3(53.4844, 3.21178, 13.9953)]
+}
+
+[sub_resource type="Animation" id="Animation_oypgi"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeTransition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(50.6029, 22.3755, 37.9412), Vector3(10.4736, 2.62764, 13.9211)]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeTransition/RichTextLabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_hurxn"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeTransition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yxjro"]
 _data = {
 "RESET": SubResource("Animation_7kgww"),
-"establish": SubResource("Animation_xhgbc")
+"establishing_shot": SubResource("Animation_xhgbc"),
+"fade_in": SubResource("Animation_oypgi"),
+"fade_out": SubResource("Animation_hurxn")
 }
 
 [node name="level_02" type="Node3D"]
+script = ExtResource("1_fb601")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mjnp1")
@@ -68,7 +166,8 @@ environment = SubResource("Environment_mjnp1")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_vn8et")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 58.4986, 2.3599, 5.93414)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 9.92395, 2.3599, 5.93414)
+visible = false
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 size = Vector3(500, 500, 500)
@@ -79,7 +178,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.6029, 22.3755, 37.9412)
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "establish"
+autoplay = "fade_in"
 libraries = {
 "": SubResource("AnimationLibrary_yxjro")
 }
@@ -89,3 +188,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9518, 0)
 quality = 2
 bounces = 5
 light_data = ExtResource("3_qdv01")
+
+[node name="FadeTransition" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FadeTransition"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -103.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("5_0mxn1")
+theme_override_font_sizes/normal_font_size = 100
+text = "City- Metropolis"
+fit_content = true
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rtnye")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

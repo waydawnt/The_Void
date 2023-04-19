@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d25boyj1b2gjf"]
+[gd_scene load_steps=17 format=3 uid="uid://d25boyj1b2gjf"]
 
 [ext_resource type="ArrayMesh" uid="uid://3pl4din2vnw3" path="res://objects/level_02_objects/hotel.res" id="1_lt5ud"]
 [ext_resource type="Texture2D" uid="uid://ob1t7d5xjne2" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/glass_windows.png" id="2_esh86"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dvkplls6i8mwp" path="res://imports/2d_sprites/level_02_sprites/cocktail4_bb1.png" id="9_4ojte"]
 [ext_resource type="Texture2D" uid="uid://dxlcbnwgqwmvl" path="res://imports/2d_sprites/level_02_sprites/Sprite-0010.png" id="10_8bt1i"]
 [ext_resource type="Texture2D" uid="uid://ckwfd4sd2fqdk" path="res://imports/2d_sprites/level_02_sprites/door1.png" id="11_1yrct"]
+[ext_resource type="Texture2D" uid="uid://bf3un8ka130qs" path="res://imports/2d_sprites/level_02_sprites/pipe2.png" id="12_cv0sl"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gf17r"]
 material = ExtResource("7_layyp")
@@ -480,3 +481,36 @@ shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("11_1yrct")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98663, 0, 3)
+light_color = Color(0, 1, 1, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29826, 0, 3)
+light_color = Color(0, 1, 1, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222937, 0, 3)
+light_color = Color(0, 1, 1, 1)
+
+[node name="pipe" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -3.9922, 0, 1.62477)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_cv0sl")
+
+[node name="pipe2" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -3.9922, -1.67609, 0.9241)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_cv0sl")
+
+[node name="pipe3" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -3.9922, -0.694839, 0.486461)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_cv0sl")

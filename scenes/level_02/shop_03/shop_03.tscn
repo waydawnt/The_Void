@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://civyvv85sf4g"]
+[gd_scene load_steps=34 format=3 uid="uid://civyvv85sf4g"]
 
 [ext_resource type="Texture2D" uid="uid://c1u5vik57pesw" path="res://imports/2d_sprites/level_02_sprites/red_seat.png" id="1_2i3pt"]
 [ext_resource type="Material" uid="uid://brihhexjt2rbt" path="res://materials/blue_emission_strips.tres" id="2_iinhi"]
@@ -10,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://bgcx51kn5nwm" path="res://imports/2d_sprites/plants/climbing plants pack/liana_12.png" id="7_jbwu8"]
 [ext_resource type="Texture2D" uid="uid://bf3un8ka130qs" path="res://imports/2d_sprites/level_02_sprites/pipe2.png" id="9_bpwt5"]
 [ext_resource type="Texture2D" uid="uid://dlx31kqponbfs" path="res://imports/images/1burger.png" id="10_mwrrb"]
+[ext_resource type="Shader" path="res://shaders/billboard.gdshader" id="11_0nv21"]
+[ext_resource type="Shader" path="res://shaders/billboard_moving_up.gdshader" id="11_yffqe"]
+[ext_resource type="Texture2D" uid="uid://ygpewldfk4lg" path="res://imports/images/burger_02.jpg" id="12_wbna0"]
+[ext_resource type="Texture2D" uid="uid://ude0pib32hqa" path="res://imports/images/burger.jpg" id="14_4c0i3"]
+[ext_resource type="Texture2D" uid="uid://c5fjllptdk65r" path="res://imports/images/burger_png.png" id="15_ji5qq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1mg2"]
 resource_name = "Pizza_store"
@@ -141,6 +146,53 @@ emission_texture = ExtResource("10_mwrrb")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wjhsl"]
 material = SubResource("StandardMaterial3D_h8wqb")
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s11a5"]
+render_priority = 0
+shader = ExtResource("11_yffqe")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/time_speed = 0.1
+shader_parameter/x_uv_scale = 0.7
+shader_parameter/dot_scale = 70.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("12_wbna0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_umvx7"]
+material = SubResource("ShaderMaterial_s11a5")
+size = Vector2(0.842, 1.19)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pp2ig"]
+render_priority = 0
+shader = ExtResource("11_0nv21")
+shader_parameter/x_scale = 0.867
+shader_parameter/y_scale = 0.937
+shader_parameter/x_offset = -0.089
+shader_parameter/y_offset = -0.041
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("14_4c0i3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q221l"]
+material = SubResource("ShaderMaterial_pp2ig")
+size = Vector2(1, 0.8)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lm3gm"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("15_ji5qq")
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_texture = ExtResource("15_ji5qq")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_x3075"]
+material = SubResource("StandardMaterial3D_lm3gm")
 orientation = 2
 
 [node name="shop_03" type="Node3D"]
@@ -357,3 +409,35 @@ texture = ExtResource("9_bpwt5")
 [node name="Burger" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12498, 1.86668)
 mesh = SubResource("PlaneMesh_wjhsl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.68321, 2.13724)
+light_color = Color(0, 0.933333, 1, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.415699, 2.13724)
+light_color = Color(0, 0.933333, 1, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20009, 2.13724)
+light_color = Color(1, 0.137255, 0.917647, 1)
+
+[node name="Burger2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00972, 1.62364, 1.83122)
+mesh = SubResource("PlaneMesh_umvx7")
+
+[node name="Burger3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.709898, 0, 0, 0, 0.709898, 0, 0, 0, 1, -1.07366, 1.59603, 1.69637)
+mesh = SubResource("PlaneMesh_q221l")
+
+[node name="BurgerNeon" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.295534, 0, 0, 0, 0.295534, 0, 0, 0, 1, 1.11048, 2.19263, 1.8365)
+mesh = SubResource("PlaneMesh_x3075")
+
+[node name="BurgerNeon2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.295534, 0, 0, 0, 0.295534, 0, 0, 0, 1, -1.06895, 2.19263, 1.8365)
+mesh = SubResource("PlaneMesh_x3075")
+
+[node name="BurgerNeon3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.416019, 0, 0, 0, 0.416019, 0, 0, 0, 1, 0.0486116, 2.89293, 1.83099)
+mesh = SubResource("PlaneMesh_x3075")

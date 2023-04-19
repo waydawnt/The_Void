@@ -1,8 +1,8 @@
 extends Node2D
 
 
-@onready var animation_player : Object = $AnimationPlayer
-@onready var main_menu = preload("res://scenes/main_menu/main_menu.tscn")
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var next_scene = preload("res://scenes/level_02/level_02.tscn")
 
 
 func _ready():
@@ -17,5 +17,5 @@ func play_audio():
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "fade_in":
-		get_tree().change_scene_to_packed(main_menu)
+		get_tree().change_scene_to_packed(next_scene)
 		queue_free()
