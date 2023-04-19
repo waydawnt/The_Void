@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d25boyj1b2gjf"]
+[gd_scene load_steps=16 format=3 uid="uid://d25boyj1b2gjf"]
 
 [ext_resource type="ArrayMesh" uid="uid://3pl4din2vnw3" path="res://objects/level_02_objects/hotel.res" id="1_lt5ud"]
 [ext_resource type="Texture2D" uid="uid://ob1t7d5xjne2" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/glass_windows.png" id="2_esh86"]
@@ -9,6 +9,8 @@
 [ext_resource type="Material" uid="uid://brihhexjt2rbt" path="res://materials/blue_emission_strips.tres" id="7_layyp"]
 [ext_resource type="Texture2D" uid="uid://bfil6e61mtnf" path="res://imports/2d_sprites/level_02_sprites/billboard11.png" id="8_fkcuh"]
 [ext_resource type="Texture2D" uid="uid://dvkplls6i8mwp" path="res://imports/2d_sprites/level_02_sprites/cocktail4_bb1.png" id="9_4ojte"]
+[ext_resource type="Texture2D" uid="uid://dxlcbnwgqwmvl" path="res://imports/2d_sprites/level_02_sprites/Sprite-0010.png" id="10_8bt1i"]
+[ext_resource type="Texture2D" uid="uid://ckwfd4sd2fqdk" path="res://imports/2d_sprites/level_02_sprites/door1.png" id="11_1yrct"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gf17r"]
 material = ExtResource("7_layyp")
@@ -399,3 +401,82 @@ material_override = SubResource("StandardMaterial3D_v50m1")
 shaded = true
 alpha_cut = 2
 texture = ExtResource("9_4ojte")
+
+[node name="Light" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0861524)
+
+[node name="Lamp" type="Sprite3D" parent="Light"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8bt1i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38982, 0, 0.0861524)
+
+[node name="Lamp" type="Sprite3D" parent="Light2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8bt1i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27567, 0, 0.0861524)
+
+[node name="Lamp" type="Sprite3D" parent="Light3"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8bt1i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.60527)
+
+[node name="Lamp" type="Sprite3D" parent="Light4"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8bt1i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38982, 0, -1.60527)
+
+[node name="Lamp" type="Sprite3D" parent="Light5"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8bt1i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Light6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27567, 0, -1.60527)
+
+[node name="Lamp" type="Sprite3D" parent="Light6"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0993767, 1.18011, 0.898016)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8bt1i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0993767, 0.0922058, 0.898016)
+
+[node name="Door" type="Sprite3D" parent="."]
+transform = Transform3D(1.98764, 0, 0, 0, 2.21198, 0, 0, 0, 1, -0.0660877, 0, 1.76795)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("11_1yrct")

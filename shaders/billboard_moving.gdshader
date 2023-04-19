@@ -19,7 +19,7 @@ void fragment() {
 	float d = length(st);
 	float c = d;
 	
-	if (d < 0.4) {
+	if (d < 0.45) {
 		c = 1.0;
 	} else {
 		c = 0.0;
@@ -35,6 +35,6 @@ void fragment() {
 		EMISSION = img;
 	} else {
 		ALBEDO = vec3(0.0);
-		EMISSION = emission_color;
+//		EMISSION = emission_color;
 	}
 }

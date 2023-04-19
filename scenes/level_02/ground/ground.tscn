@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cju8r7mme5683"]
+[gd_scene load_steps=132 format=3 uid="uid://cju8r7mme5683"]
 
 [ext_resource type="ArrayMesh" uid="uid://dmll02wiyb8ud" path="res://objects/level_02_objects/ground.res" id="1_igqwl"]
 [ext_resource type="PackedScene" path="res://scenes/level_02/building_00/building_00.tscn" id="3_4jrto"]
@@ -6,14 +6,54 @@
 [ext_resource type="PackedScene" uid="uid://c5g7hrxu7qyl0" path="res://imports/level_02/buildings/building_02/building_02.glb" id="5_5qlbs"]
 [ext_resource type="PackedScene" uid="uid://bty6gkta7dwvn" path="res://imports/level_02/buildings/building_03/building_03.glb" id="6_fwq12"]
 [ext_resource type="PackedScene" uid="uid://bbyffdfnl2foo" path="res://scenes/level_02/building_04/building_04.tscn" id="7_cwii1"]
+[ext_resource type="Texture2D" uid="uid://d4rwbgw0vw4p" path="res://imports/images/Gamer.jpg" id="7_wsglr"]
 [ext_resource type="Texture2D" uid="uid://ddrecx3qjbd8u" path="res://imports/level_02/ground/railing.png" id="8_1jk7t"]
+[ext_resource type="Shader" path="res://shaders/billboard_moving_up.gdshader" id="8_oij3q"]
 [ext_resource type="Shader" path="res://shaders/billboard.gdshader" id="8_w2y37"]
+[ext_resource type="Texture2D" uid="uid://dca1tb0n5lau" path="res://imports/images/2Movies.jpg" id="9_8uo6s"]
 [ext_resource type="Texture2D" uid="uid://40xd58j40vfn" path="res://imports/images/geisha_model.jpg" id="9_hmoj1"]
+[ext_resource type="Texture2D" uid="uid://dvrptiw2hn8by" path="res://imports/images/chilli.jpg" id="10_5t5xp"]
 [ext_resource type="ArrayMesh" uid="uid://hm18kcappw1j" path="res://objects/level_02_objects/shop_00.res" id="10_27ik0"]
+[ext_resource type="Texture2D" uid="uid://bhxmsjdn0yg7e" path="res://imports/images/Car.jpg" id="11_bu8hf"]
 [ext_resource type="PackedScene" uid="uid://d25boyj1b2gjf" path="res://scenes/level_02/Hotel/hotel.tscn" id="11_mt4o3"]
 [ext_resource type="Shader" path="res://shaders/water_shader.gdshader" id="11_od62v"]
+[ext_resource type="Texture2D" uid="uid://bkwnroplqhey0" path="res://imports/images/game_over.png" id="12_nv4tk"]
 [ext_resource type="PackedScene" uid="uid://ckluf0tuw203r" path="res://scenes/level_02/shop_01/shop_01.tscn" id="13_2wohy"]
+[ext_resource type="Texture2D" uid="uid://dct7knvmot571" path="res://imports/images/live_the_game.jpg" id="13_fxi1c"]
+[ext_resource type="Texture2D" uid="uid://53v1sm34clc" path="res://imports/images/BvS.jpeg" id="13_wb30k"]
 [ext_resource type="PackedScene" uid="uid://dcolw8bfngbfb" path="res://scenes/level_02/shop_02/shop_02.tscn" id="14_uebj0"]
+[ext_resource type="Texture2D" uid="uid://dubwww6eltxyn" path="res://imports/images/R.jpeg" id="14_wft1a"]
+[ext_resource type="Texture2D" uid="uid://be1acp3qh658t" path="res://imports/images/J.png" id="15_h6p6y"]
+[ext_resource type="ArrayMesh" uid="uid://uxtgt24fwq3v" path="res://objects/level_02_objects/board_00.res" id="15_n0qi6"]
+[ext_resource type="PackedScene" uid="uid://d2q8kmvomn0fo" path="res://scenes/level_02/ground/shelter.tscn" id="15_wfns4"]
+[ext_resource type="PackedScene" uid="uid://civyvv85sf4g" path="res://scenes/level_02/shop_03/shop_03.tscn" id="16_hj80s"]
+[ext_resource type="Texture2D" uid="uid://c2mwuy1jfem0r" path="res://imports/images/Asset 8.png" id="16_vyi1w"]
+[ext_resource type="PackedScene" uid="uid://eh42ghfiv557" path="res://imports/level_02/house_00/house_00.tscn" id="17_dndqh"]
+[ext_resource type="Texture2D" uid="uid://qth54f4e1rg6" path="res://imports/images/caution.jpg" id="17_vkrmk"]
+[ext_resource type="Texture2D" uid="uid://bdv7bxw5dccop" path="res://imports/images/universal_general.png" id="18_tawt8"]
+[ext_resource type="Texture2D" uid="uid://b8bn4uqf6h6h0" path="res://imports/images/spiderman.jpg" id="19_b4qns"]
+[ext_resource type="Texture2D" uid="uid://d4aius1q130x6" path="res://imports/images/cat.png" id="19_i102y"]
+[ext_resource type="PackedScene" uid="uid://drvon0rrr5u4y" path="res://scenes/level_02/ground/street_light.tscn" id="19_sxj3d"]
+[ext_resource type="Texture2D" uid="uid://ccdahvtpjwgb6" path="res://imports/images/cupcake.jpg" id="20_4xg4y"]
+[ext_resource type="Texture2D" uid="uid://b35i26acq4t63" path="res://imports/images/Tenkinoko.jpeg" id="20_gy20t"]
+[ext_resource type="Texture2D" uid="uid://bdetl5vng2d28" path="res://imports/images/Skull.jpeg" id="20_xrmuu"]
+[ext_resource type="Texture2D" uid="uid://blsqbom4hce2k" path="res://imports/images/RDR.jpg" id="21_mvc6e"]
+[ext_resource type="Texture2D" uid="uid://dpjm32f0t6b5t" path="res://imports/images/chinese.png" id="22_1ewlx"]
+[ext_resource type="Texture2D" uid="uid://bcxpteecdfkhs" path="res://imports/images/cyber_punk.png" id="23_qbs1j"]
+[ext_resource type="Texture2D" uid="uid://b4v0mpxqan2ad" path="res://imports/images/R (1).png" id="24_pmx83"]
+[ext_resource type="Texture2D" uid="uid://bm4c2100ukvjw" path="res://imports/images/PS4.jpg" id="25_jolmy"]
+[ext_resource type="Texture2D" uid="uid://xb6vj8n6dwk6" path="res://imports/images/bouncer.png" id="26_les1d"]
+[ext_resource type="Shader" path="res://shaders/billboard_moving.gdshader" id="27_q0f1h"]
+[ext_resource type="Texture2D" uid="uid://bva24f3ij8cjm" path="res://imports/images/quote_00.png" id="28_yy0xf"]
+[ext_resource type="Texture2D" uid="uid://lvpouqbneh3w" path="res://imports/images/quote_01.png" id="29_21mq2"]
+[ext_resource type="Texture2D" uid="uid://wy6oqc8dixqu" path="res://imports/images/sandwich.jpg" id="30_np5pi"]
+[ext_resource type="Texture2D" uid="uid://btnrindhgcvma" path="res://imports/images/jap.png" id="31_jiqw8"]
+[ext_resource type="Texture2D" uid="uid://bpqslco8gpyrs" path="res://imports/images/jap_00.png" id="32_kshxt"]
+[ext_resource type="Texture2D" uid="uid://cfr0ihjui1on3" path="res://imports/images/quote_02.png" id="33_vo576"]
+[ext_resource type="Texture2D" uid="uid://bgenvv5wlpp33" path="res://imports/images/spirited_away.jpg" id="34_vdhny"]
+[ext_resource type="Texture2D" uid="uid://ddxpjktvrqvcx" path="res://imports/images/COLA.jpeg" id="35_1upnm"]
+[ext_resource type="Texture2D" uid="uid://nraaq0gort6i" path="res://imports/images/wings.png" id="37_nev78"]
+[ext_resource type="FontFile" uid="uid://laww37tcrbn7" path="res://fonts/digital/Digital7Mono-Yz9J4.ttf" id="38_v6vnm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_musea"]
 render_priority = 0
@@ -24,12 +64,565 @@ shader_parameter/x_offset = -0.224
 shader_parameter/y_offset = 0.0
 shader_parameter/x_uv_scale = 0.5
 shader_parameter/dot_scale = 100.0
-shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
 shader_parameter/image = ExtResource("9_hmoj1")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vwqf6"]
 material = SubResource("ShaderMaterial_musea")
-size = Vector2(10, 20)
+size = Vector2(20, 40)
+
+[sub_resource type="Shader" id="Shader_w6167"]
+code = "shader_type spatial;
+
+uniform sampler2D image;
+uniform float x_scale = 1.0;
+uniform float y_scale = 1.0;
+uniform float x_offset = 0.0;
+uniform float y_offset = 0.0;
+uniform float x_uv_scale : hint_range(0.0, 1.0, 0.01) = 1.0;
+uniform float dot_scale : hint_range(0.0, 1000.0, 1.0) = 100.0;
+uniform vec3 emission_color : source_color = vec3(0.2, 0.82, 0.98);
+
+
+void fragment() {
+	vec2 uv = UV;
+	uv -= 0.5;
+	uv.x *= x_uv_scale;
+	vec2 st = fract(uv * dot_scale) - 0.5;
+	float d = length(st);
+	float c = d;
+	
+	if (d < 0.4) {
+		c = 1.0;
+	} else {
+		c = 0.0;
+	}
+	
+	vec3 img = texture(image, vec2(UV.x * x_scale, UV.y * y_scale) - vec2(x_offset, y_offset)).rgb;
+	vec3 i = vec3(c);
+	
+	if (i == vec3(1.0)) {
+		ALBEDO = img;
+		EMISSION = img;
+	} else {
+		ALBEDO = vec3(0.0);
+//		EMISSION = emission_color;
+//		ALPHA = 0.5;
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xw53d"]
+render_priority = 0
+shader = SubResource("Shader_w6167")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.5
+shader_parameter/dot_scale = 50.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("19_b4qns")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t8abc"]
+material = SubResource("ShaderMaterial_xw53d")
+size = Vector2(10, 15)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkqi1"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("20_4xg4y")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4mrmf"]
+material = SubResource("ShaderMaterial_dkqi1")
+size = Vector2(7, 7)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oded0"]
+albedo_texture = ExtResource("20_gy20t")
+emission_enabled = true
+emission_texture = ExtResource("20_gy20t")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6xqfr"]
+material = SubResource("StandardMaterial3D_oded0")
+size = Vector2(5, 7)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0npu"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.5
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("7_wsglr")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pww16"]
+material = SubResource("ShaderMaterial_p0npu")
+size = Vector2(6, 10)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gceo6"]
+render_priority = 0
+shader = ExtResource("8_oij3q")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/time_speed = 0.1
+shader_parameter/x_uv_scale = 0.5
+shader_parameter/dot_scale = 70.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("9_8uo6s")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7k6ae"]
+material = SubResource("ShaderMaterial_gceo6")
+size = Vector2(6, 12)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oc37u"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.69
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("10_5t5xp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o4apc"]
+material = SubResource("ShaderMaterial_oc37u")
+size = Vector2(5, 7)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0s04s"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.8
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("11_bu8hf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c30yd"]
+material = SubResource("ShaderMaterial_0s04s")
+size = Vector2(6, 9)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e1w71"]
+render_priority = 0
+shader = ExtResource("27_q0f1h")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/moving_speed = 0.2
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 25.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("13_fxi1c")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6ggl2"]
+material = SubResource("ShaderMaterial_e1w71")
+size = Vector2(5, 6)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l487e"]
+render_priority = 0
+shader = ExtResource("8_oij3q")
+shader_parameter/x_scale = 0.565
+shader_parameter/y_scale = 0.565
+shader_parameter/x_offset = -0.215
+shader_parameter/y_offset = -0.262
+shader_parameter/time_speed = 0.5
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 50.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("12_nv4tk")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dr3kj"]
+material = SubResource("ShaderMaterial_l487e")
+size = Vector2(5, 5)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2iigi"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("13_wb30k")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6d3jx"]
+material = SubResource("ShaderMaterial_2iigi")
+size = Vector2(10, 13)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mbblx"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.69
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("14_wft1a")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sc5qc"]
+material = SubResource("ShaderMaterial_mbblx")
+size = Vector2(4, 6)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jue8o"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 0.2
+shader_parameter/y_scale = 0.769
+shader_parameter/x_offset = -0.406
+shader_parameter/y_offset = -0.112
+shader_parameter/x_uv_scale = 0.5
+shader_parameter/dot_scale = 25.0
+shader_parameter/image = ExtResource("15_h6p6y")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2ckic"]
+material = SubResource("ShaderMaterial_jue8o")
+size = Vector2(2, 5)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojx80"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("16_vyi1w")
+emission_enabled = true
+emission_energy_multiplier = 5.0
+emission_texture = ExtResource("16_vyi1w")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_52ulr"]
+material = SubResource("StandardMaterial3D_ojx80")
+size = Vector2(2, 3)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pmww5"]
+render_priority = 0
+shader = ExtResource("8_oij3q")
+shader_parameter/x_scale = 0.894
+shader_parameter/y_scale = 0.942
+shader_parameter/x_offset = -0.052
+shader_parameter/y_offset = -0.026
+shader_parameter/time_speed = 0.2
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 50.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("17_vkrmk")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w87ej"]
+material = SubResource("ShaderMaterial_pmww5")
+size = Vector2(6.8, 8)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewyok"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("18_tawt8")
+emission_enabled = true
+emission_texture = ExtResource("18_tawt8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mnogo"]
+material = SubResource("StandardMaterial3D_ewyok")
+size = Vector2(4, 4)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8ueh"]
+transparency = 2
+alpha_scissor_threshold = 0.967
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("19_i102y")
+emission_enabled = true
+emission = Color(1, 0.494118, 0.427451, 1)
+emission_texture = ExtResource("19_i102y")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o7g1d"]
+material = SubResource("StandardMaterial3D_l8ueh")
+size = Vector2(3, 3)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3ia7"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("20_xrmuu")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_227v1"]
+material = SubResource("ShaderMaterial_p3ia7")
+size = Vector2(12, 15)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ehu50"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.65
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("21_mvc6e")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_soivy"]
+material = SubResource("ShaderMaterial_ehu50")
+size = Vector2(6, 10)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xnay"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("22_1ewlx")
+emission_enabled = true
+emission_texture = ExtResource("22_1ewlx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nlpgo"]
+material = SubResource("StandardMaterial3D_3xnay")
+size = Vector2(3, 2)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mko63"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("23_qbs1j")
+emission_enabled = true
+emission_texture = ExtResource("23_qbs1j")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_81gba"]
+material = SubResource("StandardMaterial3D_mko63")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67xjb"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("24_pmx83")
+emission_enabled = true
+emission_texture = ExtResource("24_pmx83")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jb2y3"]
+material = SubResource("StandardMaterial3D_67xjb")
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10pq0"]
+render_priority = 0
+shader = ExtResource("8_oij3q")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/time_speed = 0.1
+shader_parameter/x_uv_scale = 0.5
+shader_parameter/dot_scale = 50.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("25_jolmy")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ocl2y"]
+material = SubResource("ShaderMaterial_10pq0")
+size = Vector2(10, 15)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7pnl"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("26_les1d")
+emission_enabled = true
+emission_texture = ExtResource("26_les1d")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wbarf"]
+material = SubResource("StandardMaterial3D_l7pnl")
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_618m7"]
+render_priority = 0
+shader = ExtResource("27_q0f1h")
+shader_parameter/x_scale = 0.3
+shader_parameter/y_scale = 0.5
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = -0.238
+shader_parameter/moving_speed = 0.1
+shader_parameter/x_uv_scale = 6.0
+shader_parameter/dot_scale = 10.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("28_yy0xf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0kfyl"]
+material = SubResource("ShaderMaterial_618m7")
+size = Vector2(15, 2)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wkgt7"]
+render_priority = 0
+shader = ExtResource("27_q0f1h")
+shader_parameter/x_scale = 0.148
+shader_parameter/y_scale = 0.483
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = -0.135
+shader_parameter/moving_speed = 0.1
+shader_parameter/x_uv_scale = 7.0
+shader_parameter/dot_scale = 20.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("29_21mq2")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6rcss"]
+material = SubResource("ShaderMaterial_wkgt7")
+size = Vector2(15.5, 3)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y3k5p"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("30_np5pi")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7db7h"]
+material = SubResource("ShaderMaterial_y3k5p")
+size = Vector2(8, 8)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwjtw"]
+transparency = 2
+alpha_scissor_threshold = 0.797
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("19_i102y")
+emission_enabled = true
+emission = Color(1, 0.27451, 0.211765, 1)
+emission_texture = ExtResource("19_i102y")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yb8kd"]
+material = SubResource("StandardMaterial3D_gwjtw")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eai22"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("31_jiqw8")
+emission_enabled = true
+emission_texture = ExtResource("31_jiqw8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cmjrj"]
+material = SubResource("StandardMaterial3D_eai22")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8126t"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("32_kshxt")
+emission_enabled = true
+emission_texture = ExtResource("32_kshxt")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7gly8"]
+material = SubResource("StandardMaterial3D_8126t")
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_saskj"]
+render_priority = 0
+shader = ExtResource("27_q0f1h")
+shader_parameter/x_scale = 0.3
+shader_parameter/y_scale = 0.5
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = -0.226
+shader_parameter/moving_speed = 0.1
+shader_parameter/x_uv_scale = 6.0
+shader_parameter/dot_scale = 10.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("33_vo576")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xlb1t"]
+material = SubResource("ShaderMaterial_saskj")
+size = Vector2(20, 2)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kskwh"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 25.0
+shader_parameter/image = ExtResource("34_vdhny")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c5ivs"]
+material = SubResource("ShaderMaterial_kskwh")
+size = Vector2(7, 8)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00bou"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 25.0
+shader_parameter/image = ExtResource("35_1upnm")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d1r0k"]
+material = SubResource("ShaderMaterial_00bou")
+size = Vector2(5, 6)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssln3"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("37_nev78")
+emission_enabled = true
+emission = Color(1, 0.623529, 0.988235, 1)
+emission_texture = ExtResource("37_nev78")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4dnck"]
+material = SubResource("StandardMaterial3D_ssln3")
+size = Vector2(4, 2)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5vs7"]
+emission_enabled = true
+emission = Color(1, 0.231373, 0.980392, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_k706t"]
+material = SubResource("StandardMaterial3D_d5vs7")
+text = "VOID"
+font = ExtResource("38_v6vnm")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_u555a"]
 
@@ -59,6 +652,239 @@ subdivide_depth = 512
 orientation = 1
 
 [node name="ground" type="Node3D"]
+
+[node name="Billboards" type="Node3D" parent="."]
+
+[node name="Hologram" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.53771, 11.7124, -7.23486)
+mesh = SubResource("PlaneMesh_vwqf6")
+skeleton = NodePath("../..")
+
+[node name="Marquee" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 32.0711, 7.18428, -12.719)
+mesh = ExtResource("15_n0qi6")
+skeleton = NodePath("../..")
+
+[node name="Marquee2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 68.5488, -1.10217, -49.9877)
+mesh = ExtResource("15_n0qi6")
+skeleton = NodePath("../..")
+
+[node name="SpiderMan" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.2645, 11.8285, -27.9677)
+mesh = SubResource("PlaneMesh_t8abc")
+skeleton = NodePath("../..")
+
+[node name="SpiderMan2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -16.6053, 5.30656, -11.9297)
+mesh = SubResource("PlaneMesh_t8abc")
+skeleton = NodePath("../..")
+
+[node name="CupCake" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5614, 2.71519, -13.2196)
+mesh = SubResource("PlaneMesh_4mrmf")
+skeleton = NodePath("../..")
+
+[node name="CupCake2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 68.66, 8.923, -47.1114)
+mesh = SubResource("PlaneMesh_4mrmf")
+skeleton = NodePath("../..")
+
+[node name="TenkiNoKo" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.3059, -3.73033, -19.3833)
+mesh = SubResource("PlaneMesh_6xqfr")
+
+[node name="Gamer" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6077, 9.20172, -13.3244)
+mesh = SubResource("PlaneMesh_pww16")
+
+[node name="2Movies" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6409, 8.18922, -13.1242)
+mesh = SubResource("PlaneMesh_7k6ae")
+
+[node name="Chilli" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4117, 18.3749, -13.1846)
+mesh = SubResource("PlaneMesh_o4apc")
+
+[node name="Chilli2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.4572, 15.7254, -20.1609)
+mesh = SubResource("PlaneMesh_o4apc")
+
+[node name="Car" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2056, 18.9086, -13.2864)
+mesh = SubResource("PlaneMesh_c30yd")
+
+[node name="Live" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9326, 30.3589, -13.2864)
+mesh = SubResource("PlaneMesh_6ggl2")
+
+[node name="Car2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 63.4044, 14.4405, -52.1358)
+mesh = SubResource("PlaneMesh_c30yd")
+
+[node name="GameOver" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5677, 10.4368, -13.248)
+mesh = SubResource("PlaneMesh_dr3kj")
+
+[node name="GameOver2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.0318, 21.5447, -52.2023)
+mesh = SubResource("PlaneMesh_dr3kj")
+
+[node name="BvS" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 68.6591, 18.9503, -48.5857)
+mesh = SubResource("PlaneMesh_6d3jx")
+
+[node name="R" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.228, 11.2202, -13.3143)
+mesh = SubResource("PlaneMesh_sc5qc")
+
+[node name="R2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.4217, 15.4584, -15.4774)
+mesh = SubResource("PlaneMesh_sc5qc")
+
+[node name="Japanese" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4346, 1.50745, -13.2703)
+mesh = SubResource("PlaneMesh_2ckic")
+
+[node name="J" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.4504, 4.79243, -12.0578)
+mesh = SubResource("PlaneMesh_52ulr")
+
+[node name="J2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(2.06175, 0, 0, 0, 2.06175, 0, 0, 0, 1, 70.3114, 27.0701, -15.3431)
+mesh = SubResource("PlaneMesh_52ulr")
+
+[node name="Caution" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3602, 18.6633, -13.085)
+mesh = SubResource("PlaneMesh_w87ej")
+
+[node name="Caution2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.3495, -3.94811, -29.8522)
+mesh = SubResource("PlaneMesh_w87ej")
+
+[node name="Caution3" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.4422, 3.91694, -40.0361)
+mesh = SubResource("PlaneMesh_w87ej")
+
+[node name="UniversalGeneral" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0551, 12.4364, -13.232)
+mesh = SubResource("PlaneMesh_mnogo")
+
+[node name="UniversalGeneral2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1.66683, 0, 0, 0, 1.66683, 0, 0, 0, 1, 28.5355, 32.1961, -13.232)
+mesh = SubResource("PlaneMesh_mnogo")
+
+[node name="Cat" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.2501, 16.1506, -13.3722)
+mesh = SubResource("PlaneMesh_o7g1d")
+
+[node name="Skull" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.4449, 0.245751, -42.154)
+mesh = SubResource("PlaneMesh_227v1")
+
+[node name="RDR" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2993, 19.2158, -13.2525)
+mesh = SubResource("PlaneMesh_soivy")
+
+[node name="RDR2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.4813, 4.90085, -52.2468)
+mesh = SubResource("PlaneMesh_soivy")
+
+[node name="Chinese" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(4.6433, 0, 0, 0, 4.26125, 0, 0, 0, 0.999999, 31.7338, 16.6596, -13.1017)
+mesh = SubResource("PlaneMesh_nlpgo")
+
+[node name="CyberPunk" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(3.98986, 0, 0, 0, 3.98986, 0, 0, 0, 1, 34.2462, 9.94861, -10.3169)
+mesh = SubResource("PlaneMesh_81gba")
+
+[node name="CyberPunk2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(3.98986, 0, 0, 0, 3.98986, 0, 0, 0, 1, 63.8873, 4.40345, -39.8547)
+mesh = SubResource("PlaneMesh_81gba")
+
+[node name="R(1)" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(2.77559, 0, 0, 0, 2.77559, 0, 0, 0, 1, 15.5295, 4.61363, -12.8127)
+mesh = SubResource("PlaneMesh_jb2y3")
+
+[node name="PS4" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.0875, 18.3565, -40.1035)
+mesh = SubResource("PlaneMesh_ocl2y")
+
+[node name="Bouncer" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(6.3609, 0, 0, 0, 6.3609, 0, 0, 0, 1, 73.826, 27.1579, -40.6517)
+mesh = SubResource("PlaneMesh_wbarf")
+
+[node name="Quote00" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.9946, 3.09, -13.3696)
+mesh = SubResource("PlaneMesh_0kfyl")
+
+[node name="Quote02" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.974, 0.166582, -13.3696)
+mesh = SubResource("PlaneMesh_0kfyl")
+
+[node name="Quote01" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.4727, 3.09, -20.8772)
+mesh = SubResource("PlaneMesh_0kfyl")
+
+[node name="Quote_02" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2811, 25.7636, -13.2707)
+mesh = SubResource("PlaneMesh_6rcss")
+
+[node name="Quote_03" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 72.5206, 21.6597, -23.205)
+mesh = SubResource("PlaneMesh_6rcss")
+
+[node name="Quote_04" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.276, 21.6597, -15.4663)
+mesh = SubResource("PlaneMesh_6rcss")
+
+[node name="Sandwich" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.4377, 8.15036, -18.147)
+mesh = SubResource("PlaneMesh_7db7h")
+
+[node name="BigCat" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(3.58227, 0, 0, 0, 3.58227, 0, 0, 0, 1, 35.4631, 32.4713, -13.2268)
+mesh = SubResource("PlaneMesh_yb8kd")
+
+[node name="Jap" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(2.69465, 0, 0, 0, 2.69465, 0, 0, 0, 1, 57.5871, 25.1231, -44.4923)
+mesh = SubResource("PlaneMesh_cmjrj")
+
+[node name="Jap2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(9.31487, 0, 0, 0, 9.31487, 0, 0, 0, 1, -15.8251, 27.4838, -12.4458)
+mesh = SubResource("PlaneMesh_7gly8")
+
+[node name="Quote_05" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.1329, 9.84601, -40.0158)
+mesh = SubResource("PlaneMesh_xlb1t")
+
+[node name="Quote_06" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.3872, 8.82455, -41.9656)
+mesh = SubResource("PlaneMesh_xlb1t")
+
+[node name="SpiritedAway" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.2495, 13.8424, -41.341)
+mesh = SubResource("PlaneMesh_c5ivs")
+
+[node name="SpiritedAway2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2734, 21.9755, -12.0273)
+mesh = SubResource("PlaneMesh_c5ivs")
+
+[node name="Cola" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.0663, 13.6859, -41.4358)
+mesh = SubResource("PlaneMesh_d1r0k")
+
+[node name="Wings" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-9.8626e-08, 0, -1, 0, 2.2563, 0, 2.2563, 0, -4.37114e-08, 68.3092, 37.0714, -13.7596)
+mesh = SubResource("PlaneMesh_4dnck")
+
+[node name="Wings2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(3.52062, 0, 0, 0, 3.52062, 0, 0, 0, 1, 15.4951, 30.3263, -12.9049)
+mesh = SubResource("PlaneMesh_4dnck")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(17.6431, 0, 0, 0, 17.6431, 0, 0, 0, 1, 43.0127, 19.4453, -13.5727)
+mesh = SubResource("TextMesh_k706t")
 
 [node name="ground_platform" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6689, 0, 0)
@@ -217,10 +1043,6 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("8_1jk7t")
 
-[node name="Hologram" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.1583, 9.50712, -7.23486)
-mesh = SubResource("PlaneMesh_vwqf6")
-
 [node name="Buildings" type="Node3D" parent="."]
 
 [node name="building_00" parent="Buildings" instance=ExtResource("3_4jrto")]
@@ -279,9 +1101,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3856, 1.64546, 0)
 mesh = ExtResource("10_27ik0")
 
 [node name="Hotel" parent="." instance=ExtResource("11_mt4o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1483, 1.67007, 0.296939)
 
 [node name="Water" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.9229, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.30051, 0)
 visible = false
 mesh = SubResource("QuadMesh_nh3h0")
 
@@ -289,4 +1112,80 @@ mesh = SubResource("QuadMesh_nh3h0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.177, 1.62354, 3.66929)
 
 [node name="shop_02" parent="." instance=ExtResource("14_uebj0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6572, 0.387078, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4538, 0.387078, 0)
+
+[node name="Shelter2" parent="shop_02" instance=ExtResource("15_wfns4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0019, -2.6368, 0)
+
+[node name="shop_03" parent="." instance=ExtResource("16_hj80s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5188, 0.286177, -0.155983)
+
+[node name="house_00" parent="." instance=ExtResource("17_dndqh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.12955, 0.386101, 0.681602)
+
+[node name="StreetLights" type="Node3D" parent="."]
+
+[node name="StreetLight" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+
+[node name="StreetLight8" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73466, 1.54926, 2.73923)
+
+[node name="StreetLight9" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8733, 1.54926, 2.73923)
+
+[node name="StreetLight10" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.22489, 1.54926, 2.73923)
+
+[node name="StreetLight11" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0456, 1.54926, 2.73923)
+
+[node name="StreetLight2" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8814, 1.54926, 2.73923)
+
+[node name="StreetLight3" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6313, 1.54926, 2.73923)
+
+[node name="StreetLight4" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8288, 1.54926, 2.73923)
+
+[node name="StreetLight5" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8408, 1.54926, 2.73923)
+
+[node name="StreetLight6" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4694, 1.54926, 2.73923)
+
+[node name="StreetLight7" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3265, 1.54926, 2.73923)
+
+[node name="StreetLight12" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.79663, 1.54926, 6.79615)
+
+[node name="StreetLight13" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73466, 1.54926, 6.79615)
+
+[node name="StreetLight14" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8733, 1.54926, 6.79615)
+
+[node name="StreetLight15" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.22489, 1.54926, 6.79615)
+
+[node name="StreetLight16" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0456, 1.54926, 6.79615)
+
+[node name="StreetLight17" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8814, 1.54926, 6.79615)
+
+[node name="StreetLight18" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6313, 1.54926, 6.79615)
+
+[node name="StreetLight19" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8288, 1.54926, 6.79615)
+
+[node name="StreetLight20" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8408, 1.54926, 6.79615)
+
+[node name="StreetLight21" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4694, 1.54926, 6.79615)
+
+[node name="StreetLight22" parent="StreetLights" instance=ExtResource("19_sxj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3265, 1.54926, 6.79615)

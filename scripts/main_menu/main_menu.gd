@@ -62,7 +62,7 @@ func reset_previous(number):
 func modify(anim_name):
 	if anim_name == "fade_out":
 		if current_index == 0:
-			Global.next_scene = "res://scenes/level_01/act_01.tscn"
+			Global.next_scene = "res://scenes/level_02/level_02.tscn"
 			Global.audio_stop()
 			get_tree().change_scene_to_file("res://scenes/misc/load.tscn")
 			queue_free()

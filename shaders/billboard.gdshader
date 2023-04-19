@@ -7,7 +7,7 @@ uniform float x_offset = 0.0;
 uniform float y_offset = 0.0;
 uniform float x_uv_scale : hint_range(0.0, 1.0, 0.01) = 1.0;
 uniform float dot_scale : hint_range(0.0, 1000.0, 1.0) = 100.0;
-uniform vec3 emission_color : source_color = vec3(0.2, 0.82, 0.98);
+//uniform vec3 emission_color : source_color = vec3(0.2, 0.82, 0.98);
 
 
 void fragment() {
@@ -32,7 +32,7 @@ void fragment() {
 		EMISSION = img;
 	} else {
 		ALBEDO = vec3(0.0);
-		EMISSION = emission_color;
-		ALPHA = 0.5;
+//		EMISSION = emission_color;
+//		ALPHA = 0.5;
 	}
 }

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://drvon0rrr5u4y"]
+
+[ext_resource type="Shader" path="res://shaders/white_emisson_shader.gdshader" id="1_gtgwj"]
+[ext_resource type="Texture2D" uid="uid://dnnfeabtbieo5" path="res://imports/2d_sprites/level_02_sprites/streetlight.png" id="2_jc3fe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wh5qh"]
+render_priority = 0
+shader = ExtResource("1_gtgwj")
+shader_parameter/emission_strength = 1.0
+shader_parameter/image = ExtResource("2_jc3fe")
+
+[node name="StreetLight" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.79663, 1.54926, 2.73923)
+material_override = SubResource("ShaderMaterial_wh5qh")
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_jc3fe")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.229939, 0.850145, 0)
+light_energy = 16.0
+light_indirect_energy = 16.0
+shadow_enabled = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8vwywexas22f"]
+[gd_scene load_steps=8 format=3 uid="uid://b8vwywexas22f"]
 
 [ext_resource type="PackedScene" uid="uid://cju8r7mme5683" path="res://scenes/level_02/ground/ground.tscn" id="1_l64pm"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="2_vn8et"]
+[ext_resource type="LightmapGIData" uid="uid://dgkem5owaa4dw" path="res://scenes/level_02/bake/level_02.lmbake" id="3_qdv01"]
 
 [sub_resource type="Environment" id="Environment_mjnp1"]
 background_mode = 1
@@ -13,10 +14,50 @@ glow_enabled = true
 glow_bloom = 0.2
 glow_blend_mode = 1
 fog_enabled = true
+fog_light_color = Color(0.0235294, 0.0313726, 0.0392157, 1)
 fog_density = 0.0
 fog_height = -3.76
-fog_height_density = 0.2252
-volumetric_fog_density = 0.0
+fog_height_density = 3.3195
+volumetric_fog_density = 0.005
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_emission_energy = 0.2
+
+[sub_resource type="Animation" id="Animation_7kgww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(50.6029, 22.3755, 37.9412)]
+}
+
+[sub_resource type="Animation" id="Animation_xhgbc"]
+resource_name = "establish"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(50.6029, 22.3755, 37.9412), Vector3(10.4736, 2.62764, 13.9211)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxjro"]
+_data = {
+"RESET": SubResource("Animation_7kgww"),
+"establish": SubResource("Animation_xhgbc")
+}
 
 [node name="level_02" type="Node3D"]
 
@@ -27,9 +68,24 @@ environment = SubResource("Environment_mjnp1")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_vn8et")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 58.4986, 2.3599, 3.71583)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 58.4986, 2.3599, 5.93414)
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
-visible = false
 size = Vector3(500, 500, 500)
-origin_offset = Vector3(7.198, 4.829, 0)
+origin_offset = Vector3(50, 30, 50)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.6029, 22.3755, 37.9412)
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "establish"
+libraries = {
+"": SubResource("AnimationLibrary_yxjro")
+}
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9518, 0)
+quality = 2
+bounces = 5
+light_data = ExtResource("3_qdv01")
