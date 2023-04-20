@@ -9,6 +9,9 @@ extends Node3D
 @onready var player_2 : Node3D = $Player2
 @onready var player_animation : AnimationPlayer = $Player/AnimationPlayer
 
+@onready var waitress : Node3D = $Waitress
+@onready var waitress_animation : AnimationPlayer = $Waitress/AnimationPlayer
+
 @export var player_speed : int = 2
 
 
@@ -22,10 +25,26 @@ func _on_animation_player_animation_finished(anim_name):
 		animation_player.play("establishing_shot")
 #		audio_player.set_stream(music)
 #		audio_player.play()
-	elif anim_name == "fade_out":
+	elif anim_name == "fade_out" and !player_2.visible and !waitress.visible:
 		player.hide()
 		player_2.show()
+		waitress.show()
+		waitress_animation.play("walk")
 		animation_player.play("fade_in_2")
+	elif  anim_name == "fade_out" and player_2.visible and waitress.visible:
+		player_2.hide()
+		waitress.hide()
+		$Player/PlayerSprite.flip_h = true
+		player.show()
+		animation_player.play("fade_in_2")
+	elif anim_name == "fade_in_2" and player.visible:
+		player_animation.play("walk")
+		player_speed = -2
+		await get_tree().create_timer(5.0).timeout
+		animation_player.play("fade_out")
+		Global.next_scene = "res://scenes/level_01/act_01.tscn"
+		get_tree().change_scene_to_file("res://scenes/misc/load.tscn")
+		queue_free()
 
 
 func _on_hotel_area_area_entered(area):
@@ -33,4 +52,12 @@ func _on_hotel_area_area_entered(area):
 		player_speed = 0
 		player_animation.play("idle")
 		$HotelArea.queue_free()
+		animation_player.play("fade_out")
+
+
+func _on_animation_waitress_animation_finished(anim_name):
+	if anim_name == "walk":
+		$Image.show()
+		await get_tree().create_timer(5.0).timeout
+		$Image.hide()
 		animation_player.play("fade_out")

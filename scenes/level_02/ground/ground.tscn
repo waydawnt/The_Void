@@ -1022,7 +1022,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 68.290
 mesh = SubResource("PlaneMesh_daygl")
 
 [node name="Geisha_01" type="MeshInstance3D" parent="Billboards"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.0076, 28.7343, -87.4216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.9234, 28.7343, -87.4216)
 mesh = SubResource("PlaneMesh_6x51m")
 
 [node name="ground_platform" type="MeshInstance3D" parent="."]
