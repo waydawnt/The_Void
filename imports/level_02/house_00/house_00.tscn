@@ -446,7 +446,7 @@ transform = Transform3D(-1.00099e-08, 0, 0.229, 0, 0.229, 0, -0.229, 0, -1.00099
 mesh = SubResource("PlaneMesh_jqu8k")
 
 [node name="Gamer" type="MeshInstance3D" parent="."]
-transform = Transform3D(-7.86805e-09, 0, 0.18, 0, 0.18, 0, -0.18, 0, -7.86805e-09, 2.97654, 4.23025, -1.89286)
+transform = Transform3D(-7.86805e-09, 0, 0.18, 0, 0.18, 0, -0.18, 0, -7.86805e-09, 2.44707, 4.23025, -1.89286)
 mesh = SubResource("PlaneMesh_6u8kq")
 
 [node name="Wings2" type="MeshInstance3D" parent="."]
@@ -455,7 +455,7 @@ mesh = SubResource("PlaneMesh_it60t")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.87574, -1.91203)
-light_color = Color(1, 1, 0.105882, 1)
+light_color = Color(0.988235, 1, 0.686275, 1)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.18343, -1.48006)

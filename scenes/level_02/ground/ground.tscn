@@ -1,7 +1,8 @@
-[gd_scene load_steps=128 format=3 uid="uid://cju8r7mme5683"]
+[gd_scene load_steps=143 format=3 uid="uid://cju8r7mme5683"]
 
 [ext_resource type="ArrayMesh" uid="uid://dmll02wiyb8ud" path="res://objects/level_02_objects/ground.res" id="1_igqwl"]
 [ext_resource type="PackedScene" path="res://scenes/level_02/building_00/building_00.tscn" id="3_4jrto"]
+[ext_resource type="Texture2D" uid="uid://ck7x78qpkwejm" path="res://imports/images/geisha.jpg" id="3_qbs3k"]
 [ext_resource type="PackedScene" uid="uid://dyvyt5bieuw24" path="res://scenes/level_02/building_01/building_01.tscn" id="4_x4s48"]
 [ext_resource type="PackedScene" uid="uid://c5g7hrxu7qyl0" path="res://imports/level_02/buildings/building_02/building_02.glb" id="5_5qlbs"]
 [ext_resource type="PackedScene" uid="uid://bty6gkta7dwvn" path="res://imports/level_02/buildings/building_03/building_03.glb" id="6_fwq12"]
@@ -53,6 +54,9 @@
 [ext_resource type="Texture2D" uid="uid://ddxpjktvrqvcx" path="res://imports/images/COLA.jpeg" id="35_1upnm"]
 [ext_resource type="Texture2D" uid="uid://nraaq0gort6i" path="res://imports/images/wings.png" id="37_nev78"]
 [ext_resource type="FontFile" uid="uid://laww37tcrbn7" path="res://fonts/digital/Digital7Mono-Yz9J4.ttf" id="38_v6vnm"]
+[ext_resource type="Texture2D" uid="uid://b671x1yrkg4k7" path="res://imports/images/snickers.jpg" id="39_eh4sm"]
+[ext_resource type="Texture2D" uid="uid://ca38xme5lkhx" path="res://imports/images/your_name.jpg" id="40_wuf38"]
+[ext_resource type="Texture2D" uid="uid://ideyymobhc83" path="res://imports/images/geisha_00.jpg" id="42_vy5fj"]
 [ext_resource type="Texture2D" uid="uid://cq5idccgxshq8" path="res://imports/2d_sprites/level_01_sprites/car_01.png" id="55_jxh5a"]
 [ext_resource type="Texture2D" uid="uid://47efyo24bpaf" path="res://imports/2d_sprites/level_01_sprites/chain_railing.png" id="55_kjg0h"]
 [ext_resource type="PackedScene" uid="uid://22a858lx1is3" path="res://scenes/level_02/Hotel/hotel_02.tscn" id="56_afw0u"]
@@ -65,12 +69,27 @@ shader_parameter/y_scale = 1.0
 shader_parameter/x_offset = -0.224
 shader_parameter/y_offset = 0.0
 shader_parameter/x_uv_scale = 0.5
-shader_parameter/dot_scale = 100.0
+shader_parameter/dot_scale = 200.0
 shader_parameter/image = ExtResource("9_hmoj1")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vwqf6"]
 material = SubResource("ShaderMaterial_musea")
 size = Vector2(20, 40)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ls7s6"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.6
+shader_parameter/dot_scale = 70.0
+shader_parameter/image = ExtResource("3_qbs3k")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mc04q"]
+material = SubResource("ShaderMaterial_ls7s6")
+size = Vector2(15, 22)
 
 [sub_resource type="Shader" id="Shader_w6167"]
 code = "shader_type spatial;
@@ -318,6 +337,11 @@ emission_texture = ExtResource("16_vyi1w")
 [sub_resource type="PlaneMesh" id="PlaneMesh_52ulr"]
 material = SubResource("StandardMaterial3D_ojx80")
 size = Vector2(2, 3)
+orientation = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_db378"]
+material = SubResource("StandardMaterial3D_ojx80")
+size = Vector2(40, 60)
 orientation = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pmww5"]
@@ -626,6 +650,70 @@ material = SubResource("StandardMaterial3D_d5vs7")
 text = "VOID"
 font = ExtResource("38_v6vnm")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5wp6a"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.8
+shader_parameter/dot_scale = 50.0
+shader_parameter/image = ExtResource("39_eh4sm")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_suufi"]
+material = SubResource("ShaderMaterial_5wp6a")
+size = Vector2(5, 6)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp5ia"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.8
+shader_parameter/dot_scale = 70.0
+shader_parameter/image = ExtResource("40_wuf38")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q1uuw"]
+material = SubResource("ShaderMaterial_tp5ia")
+size = Vector2(9, 13)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abfb6"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 1.0
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 0.5
+shader_parameter/dot_scale = 100.0
+shader_parameter/image = ExtResource("42_vy5fj")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_daygl"]
+material = SubResource("ShaderMaterial_abfb6")
+size = Vector2(10, 18)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbt23"]
+render_priority = 0
+shader = ExtResource("8_w2y37")
+shader_parameter/x_scale = 0.7
+shader_parameter/y_scale = 0.754
+shader_parameter/x_offset = -0.11
+shader_parameter/y_offset = -0.108
+shader_parameter/x_uv_scale = 0.5
+shader_parameter/dot_scale = 300.0
+shader_parameter/image = ExtResource("42_vy5fj")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6x51m"]
+material = SubResource("ShaderMaterial_nbt23")
+size = Vector2(80, 144)
+orientation = 2
+
 [node name="ground" type="Node3D"]
 
 [node name="Billboards" type="Node3D" parent="."]
@@ -633,6 +721,16 @@ font = ExtResource("38_v6vnm")
 [node name="Hologram" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.53771, 11.7124, -7.23486)
 mesh = SubResource("PlaneMesh_vwqf6")
+skeleton = NodePath("../..")
+
+[node name="Hologram2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 67.7161, -25.6949, -42.501)
+mesh = SubResource("PlaneMesh_mc04q")
+skeleton = NodePath("../..")
+
+[node name="Hologram3" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 67.7161, 34.4563, -52.1595)
+mesh = SubResource("PlaneMesh_mc04q")
 skeleton = NodePath("../..")
 
 [node name="Marquee" type="MeshInstance3D" parent="Billboards"]
@@ -660,17 +758,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5614, 2.71519, -13.2196)
 mesh = SubResource("PlaneMesh_4mrmf")
 skeleton = NodePath("../..")
 
+[node name="CupCake3" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.1386, -11.8259, -28.5887)
+mesh = SubResource("PlaneMesh_4mrmf")
+skeleton = NodePath("../..")
+
+[node name="CupCake4" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.932, -4.25931, -51.9647)
+mesh = SubResource("PlaneMesh_4mrmf")
+skeleton = NodePath("../..")
+
 [node name="CupCake2" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 68.66, 8.923, -47.1114)
 mesh = SubResource("PlaneMesh_4mrmf")
 skeleton = NodePath("../..")
 
 [node name="TenkiNoKo" type="MeshInstance3D" parent="Billboards"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.3059, -3.73033, -19.3833)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.3059, -3.73033, -16.2398)
 mesh = SubResource("PlaneMesh_6xqfr")
 
 [node name="Gamer" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6077, 9.20172, -13.3244)
+mesh = SubResource("PlaneMesh_pww16")
+
+[node name="Gamer2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.6249, -15.1219, -52.0647)
 mesh = SubResource("PlaneMesh_pww16")
 
 [node name="2Movies" type="MeshInstance3D" parent="Billboards"]
@@ -729,6 +841,10 @@ mesh = SubResource("PlaneMesh_2ckic")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.4504, 4.79243, -12.0578)
 mesh = SubResource("PlaneMesh_52ulr")
 
+[node name="J4" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.533, 64.8682, -82.1144)
+mesh = SubResource("PlaneMesh_db378")
+
 [node name="J2" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(2.06175, 0, 0, 0, 2.06175, 0, 0, 0, 1, 70.3114, 27.0701, -15.3431)
 mesh = SubResource("PlaneMesh_52ulr")
@@ -757,6 +873,10 @@ mesh = SubResource("PlaneMesh_mnogo")
 transform = Transform3D(1.66683, 0, 0, 0, 1.66683, 0, 0, 0, 1, 28.5355, 32.1961, -13.232)
 mesh = SubResource("PlaneMesh_mnogo")
 
+[node name="UniversalGeneral3" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1.66683, 0, 0, 0, 1.66683, 0, 0, 0, 1, 68.5176, -1.06763, -12.975)
+mesh = SubResource("PlaneMesh_mnogo")
+
 [node name="Cat" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.2501, 16.1506, -13.3722)
 mesh = SubResource("PlaneMesh_o7g1d")
@@ -771,6 +891,10 @@ mesh = SubResource("PlaneMesh_soivy")
 
 [node name="RDR2" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.4813, 4.90085, -52.2468)
+mesh = SubResource("PlaneMesh_soivy")
+
+[node name="RDR3" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 72.5258, 25.8614, -27.5149)
 mesh = SubResource("PlaneMesh_soivy")
 
 [node name="Chinese" type="MeshInstance3D" parent="Billboards"]
@@ -807,6 +931,10 @@ mesh = SubResource("PlaneMesh_0kfyl")
 
 [node name="Quote01" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.4727, 3.09, -20.8772)
+mesh = SubResource("PlaneMesh_0kfyl")
+
+[node name="Quote03" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 64.9646, -9.15631, -52.286)
 mesh = SubResource("PlaneMesh_0kfyl")
 
 [node name="Quote_02" type="MeshInstance3D" parent="Billboards"]
@@ -849,6 +977,10 @@ mesh = SubResource("PlaneMesh_xlb1t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.2495, 13.8424, -41.341)
 mesh = SubResource("PlaneMesh_c5ivs")
 
+[node name="SpiritedAway3" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 72.5574, 27.1908, -19.4828)
+mesh = SubResource("PlaneMesh_c5ivs")
+
 [node name="SpiritedAway2" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2734, 21.9755, -12.0273)
 mesh = SubResource("PlaneMesh_c5ivs")
@@ -868,6 +1000,30 @@ mesh = SubResource("PlaneMesh_4dnck")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(17.6431, 0, 0, 0, 17.6431, 0, 0, 0, 1, 43.0127, 19.4453, -13.5727)
 mesh = SubResource("TextMesh_k706t")
+
+[node name="Snickers" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.2642, -3.43924, -22.4419)
+mesh = SubResource("PlaneMesh_suufi")
+
+[node name="YourName" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 68.4783, -8.59768, -46.6767)
+mesh = SubResource("PlaneMesh_q1uuw")
+
+[node name="YourName2" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.591, -14.2, -43.0007)
+mesh = SubResource("PlaneMesh_q1uuw")
+
+[node name="Geisha_00" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.0076, -11.6084, -38.1259)
+mesh = SubResource("PlaneMesh_daygl")
+
+[node name="Geisha_02" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 68.2909, -15.5904, -18.9143)
+mesh = SubResource("PlaneMesh_daygl")
+
+[node name="Geisha_01" type="MeshInstance3D" parent="Billboards"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.0076, 28.7343, -87.4216)
+mesh = SubResource("PlaneMesh_6x51m")
 
 [node name="ground_platform" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6689, 0, 0)
@@ -1034,14 +1190,26 @@ transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.553
 [node name="building_01" parent="Buildings" instance=ExtResource("4_x4s48")]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 38.1594, -9.25245, -19.3945)
 
+[node name="building_18" parent="Buildings" instance=ExtResource("4_x4s48")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 38.1594, -48.0315, -19.3945)
+
 [node name="building_06" parent="Buildings" instance=ExtResource("4_x4s48")]
 transform = Transform3D(1.5, 0, 2.62268e-07, 0, 1.5, 0, -2.62268e-07, 0, 1.5, 74.1594, -9.25245, 14.6055)
+
+[node name="building_23" parent="Buildings" instance=ExtResource("4_x4s48")]
+transform = Transform3D(1.5, 0, 2.62268e-07, 0, 1.5, 0, -2.62268e-07, 0, 1.5, 74.1594, -48.0358, 14.6055)
 
 [node name="building_05" parent="Buildings" instance=ExtResource("4_x4s48")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -20.6621, -11.8968, -15.8952)
 
 [node name="building_09" parent="Buildings" instance=ExtResource("4_x4s48")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 74.6319, -11.8968, -43.8617)
+
+[node name="building_20" parent="Buildings" instance=ExtResource("4_x4s48")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 74.6319, -50.5588, -43.8617)
+
+[node name="building_24" parent="Buildings" instance=ExtResource("4_x4s48")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 45.7428, -46.5566, -47.4296)
 
 [node name="building_02" parent="Buildings" instance=ExtResource("5_5qlbs")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.12777, -5.29087, -18.1755)
@@ -1058,6 +1226,9 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -27.3439, -3.01931, -36
 [node name="building_12" parent="Buildings" instance=ExtResource("6_fwq12")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 69.228, -10.1086, -58.3036)
 
+[node name="building_21" parent="Buildings" instance=ExtResource("6_fwq12")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 69.228, -54.2141, -58.3036)
+
 [node name="building_15" parent="Buildings" instance=ExtResource("6_fwq12")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -9.23847, -10.1086, -30.7915)
 
@@ -1067,14 +1238,23 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 51.3632, -10.1086, -66.
 [node name="building_07" parent="Buildings" instance=ExtResource("6_fwq12")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 78.3829, -10.1086, -2.81682)
 
+[node name="building_22" parent="Buildings" instance=ExtResource("6_fwq12")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 78.3829, -54.9492, -2.81682)
+
 [node name="building_04" parent="Buildings" instance=ExtResource("7_cwii1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36.6772, -21.9082, -18.3039)
 
 [node name="building_08" parent="Buildings" instance=ExtResource("7_cwii1")]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 80.4074, -19.9479, -23.3039)
 
+[node name="building_19" parent="Buildings" instance=ExtResource("7_cwii1")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 80.4074, -79.8388, -23.3039)
+
 [node name="building_11" parent="Buildings" instance=ExtResource("7_cwii1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36.4516, -19.9479, -46.7461)
+
+[node name="building_17" parent="Buildings" instance=ExtResource("7_cwii1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36.4516, -71.426, -46.7461)
 
 [node name="building_14" parent="Buildings" instance=ExtResource("7_cwii1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12.0326, -19.9479, -38.7693)
