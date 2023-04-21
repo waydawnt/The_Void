@@ -1,5 +1,8 @@
 extends Node3D
 
+@onready var main_menu = preload("res://scenes/main_menu/main_menu.tscn")
+
+var next_scene_ready : bool = false
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var music : AudioStream = preload("res://sounds/just_evil(cyberpunk).mp3")
@@ -25,13 +28,13 @@ func _on_animation_player_animation_finished(anim_name):
 		animation_player.play("establishing_shot")
 #		audio_player.set_stream(music)
 #		audio_player.play()
-	elif anim_name == "fade_out" and !player_2.visible and !waitress.visible:
+	elif anim_name == "fade_out" and !player_2.visible and !waitress.visible and not next_scene_ready:
 		player.hide()
 		player_2.show()
 		waitress.show()
 		waitress_animation.play("walk")
 		animation_player.play("fade_in_2")
-	elif  anim_name == "fade_out" and player_2.visible and waitress.visible:
+	elif  anim_name == "fade_out" and player_2.visible and waitress.visible and not next_scene_ready:
 		player_2.hide()
 		waitress.hide()
 		$Player/PlayerSprite.flip_h = true
@@ -41,10 +44,10 @@ func _on_animation_player_animation_finished(anim_name):
 		player_animation.play("walk")
 		player_speed = -2
 		await get_tree().create_timer(5.0).timeout
+		next_scene_ready = true
 		animation_player.play("fade_out")
-		Global.next_scene = "res://scenes/level_01/act_01.tscn"
-		get_tree().change_scene_to_file("res://scenes/misc/load.tscn")
-		queue_free()
+	elif anim_name == "fade_out" and next_scene_ready:
+		get_tree().change_scene_to_packed(main_menu)
 
 
 func _on_hotel_area_area_entered(area):

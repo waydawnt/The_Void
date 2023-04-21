@@ -13,6 +13,7 @@
 noise_type = 3
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c8r7f"]
+width = 645
 seamless = true
 noise = SubResource("FastNoiseLite_bq7ij")
 
@@ -109,6 +110,7 @@ environment = SubResource("Environment_fpgb1")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 script = ExtResource("3_xr8ec")
+noise_freq = 60.0
 
 [node name="title" parent="." instance=ExtResource("2_tijs0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 2)
