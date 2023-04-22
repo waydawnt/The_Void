@@ -18,4 +18,3 @@ func audio_start():
 
 func audio_stop():
 	audio_player.stop()
-	audio_player.queue_free()

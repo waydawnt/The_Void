@@ -1,10 +1,10 @@
-[gd_scene load_steps=51 format=3]
+[gd_scene load_steps=53 format=3 uid="uid://c6hv2s3spolqj"]
 
 [ext_resource type="Shader" uid="uid://b7nsg66n2p8h5" path="res://shaders/level_01_ground.tres" id="1_sjh5s"]
 [ext_resource type="Texture2D" uid="uid://bhhj4yab4hc04" path="res://imports/level_01/road/Dirt 04 seamless.jpg" id="2_0kryc"]
 [ext_resource type="ArrayMesh" uid="uid://cbhxyei16xy2h" path="res://objects/level_01_objects/road.res" id="3_3sprq"]
 [ext_resource type="ArrayMesh" uid="uid://5mxstlrmbcoq" path="res://objects/level_01_objects/alley_01.res" id="4_i85q1"]
-[ext_resource type="PackedScene" path="res://scenes/level_01/Medical_Store/medical_store.tscn" id="5_x14fc"]
+[ext_resource type="PackedScene" uid="uid://bxlid5ilnrsij" path="res://scenes/level_01/Medical_Store/medical_store.tscn" id="5_x14fc"]
 [ext_resource type="Texture2D" uid="uid://bx72vhulk8xhd" path="res://imports/2d_sprites/level_01_sprites/ground/fence.png" id="6_qhrv7"]
 [ext_resource type="Texture2D" uid="uid://1lwalqstyav5" path="res://imports/2d_sprites/level_01_sprites/ground/fence_normal_map.png" id="7_7cfq3"]
 [ext_resource type="Shader" path="res://shaders/level_01_grass.gdshader" id="8_320xm"]
@@ -31,11 +31,13 @@
 [ext_resource type="Texture2D" uid="uid://cssh6b2vuoabo" path="res://imports/2d_sprites/level_01_sprites/kachra2.png" id="24_ikv7g"]
 [ext_resource type="Texture2D" uid="uid://dt4fqednkdwxk" path="res://imports/2d_sprites/level_01_sprites/bt1.png" id="26_wdy8a"]
 [ext_resource type="Texture2D" uid="uid://7tucqrfaht02" path="res://imports/2d_sprites/level_01_sprites/bt.png" id="27_k5w2a"]
-[ext_resource type="PackedScene" path="res://scenes/level_01/petrol_pump/petrol_pump.tscn" id="28_qeq03"]
+[ext_resource type="PackedScene" uid="uid://dya41eiihhbal" path="res://scenes/level_01/petrol_pump/petrol_pump.tscn" id="28_qeq03"]
 [ext_resource type="Texture2D" uid="uid://cyp850xlvw3vp" path="res://imports/2d_sprites/level_01_sprites/bb1.png" id="33_h6s3b"]
 [ext_resource type="Texture2D" uid="uid://d043jc4pkmunb" path="res://imports/2d_sprites/level_01_sprites/bb6.png" id="34_4kyic"]
+[ext_resource type="Texture2D" uid="uid://bs8xndple0v4r" path="res://imports/2d_sprites/level_01_sprites/tower.png" id="35_g0tmt"]
 [ext_resource type="PackedScene" path="res://scenes/level_01/Goons_Adda/goons_adda.tscn" id="35_lla24"]
 [ext_resource type="Texture2D" uid="uid://glgylkw5dmmr" path="res://imports/2d_sprites/level_01_sprites/busstop.png" id="36_jbqci"]
+[ext_resource type="Texture2D" uid="uid://by4l0tf1yhf2t" path="res://imports/2d_sprites/level_01_sprites/tree_01.png" id="38_u4et8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b72ai"]
 render_priority = 0
@@ -49,7 +51,10 @@ material = SubResource("ShaderMaterial_b72ai")
 size = Vector2(1000, 1000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tvpu"]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
 albedo_texture = ExtResource("6_qhrv7")
 normal_enabled = true
 normal_texture = ExtResource("7_7cfq3")
@@ -1007,6 +1012,7 @@ texture = ExtResource("6_qhrv7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53024, 0.000800014, -0.000418901)
 material_override = SubResource("StandardMaterial3D_7tvpu")
 shaded = true
+alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("6_qhrv7")
 
@@ -3051,6 +3057,13 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("34_4kyic")
 
+[node name="Tower" type="Sprite3D" parent="DestroyedBuildings2"]
+transform = Transform3D(-100, 0, -1.50996e-05, 0, 100, 0, 1.50996e-05, 0, -100, -134.723, 73.395, -23.1689)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("35_g0tmt")
+
 [node name="GoonsAdda" parent="." instance=ExtResource("35_lla24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.94, 0.0399761, -12.0835)
 
@@ -3060,3 +3073,12 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("36_jbqci")
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="Tree_00" type="Sprite3D" parent="Trees"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -137.026, 2.79989, -5.04352)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_u4et8")

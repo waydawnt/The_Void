@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3]
+[gd_scene load_steps=42 format=3 uid="uid://bxlid5ilnrsij"]
 
 [ext_resource type="ArrayMesh" uid="uid://b7bfrag1un7uq" path="res://objects/level_01_objects/medical_store.res" id="1_7nmpq"]
 [ext_resource type="Texture2D" uid="uid://box8qqghmv5hh" path="res://imports/2d_sprites/level_01_sprites/medical_store_sprites/shelf.png" id="2_4kqx1"]
@@ -935,16 +935,13 @@ transform = Transform3D(-2.18557e-08, 0, 0.4, 0, 0.5, 0, -0.5, 0, -1.74846e-08, 
 transform = Transform3D(-2.18557e-08, 0, 0.4, 0, 0.5, 0, -0.5, 0, -1.74846e-08, -2.15555, 0.018903, -9.91635)
 
 [node name="Wall_00" parent="." instance=ExtResource("33_d3osv")]
-visible = false
 
 [node name="Wall_01" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 1, -6.09593)
-visible = false
 mesh = ExtResource("30_jq10r")
 
 [node name="Wall_02" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 1, -6.09593)
-visible = false
 mesh = ExtResource("30_jq10r")
 
 [node name="Car" type="Sprite3D" parent="."]

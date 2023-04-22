@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://dya41eiihhbal"]
 
 [ext_resource type="ArrayMesh" uid="uid://cnv8py6gb75dw" path="res://objects/level_01_objects/petrol_pump/petrol_pump_ground.res" id="1_y114f"]
 [ext_resource type="ArrayMesh" uid="uid://dahhcx07c2qlr" path="res://objects/level_01_objects/petrol_pump/petrol_pump_store.res" id="2_toqdh"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://gtb64qet3and" path="res://imports/2d_sprites/level_01_sprites/pp.png" id="7_b5704"]
 [ext_resource type="Texture2D" uid="uid://68gjyo6kycd8" path="res://imports/2d_sprites/level_01_sprites/Cars/Cars1.png" id="8_4p12t"]
 [ext_resource type="Texture2D" uid="uid://q16sdf12v4ce" path="res://imports/2d_sprites/level_01_sprites/billboard1.png" id="9_3mc0b"]
+[ext_resource type="Texture2D" uid="uid://c1uv7retv8jgw" path="res://imports/2d_sprites/level_01_sprites/truck.png" id="10_uemho"]
 
 [node name="PetrolPump" type="Node3D"]
 
@@ -80,3 +81,10 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("9_3mc0b")
+
+[node name="Truck" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 6.11671, 1.96457, 1.80949)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_uemho")

@@ -157,7 +157,7 @@ shader_parameter/x_offset = 0.0
 shader_parameter/y_offset = 0.0
 shader_parameter/time_speed = 0.1
 shader_parameter/x_uv_scale = 0.7
-shader_parameter/dot_scale = 70.0
+shader_parameter/dot_scale = 60.0
 shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
 shader_parameter/image = ExtResource("12_wbna0")
 

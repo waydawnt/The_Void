@@ -18,6 +18,10 @@ var next_scene_ready : bool = false
 @export var player_speed : int = 2
 
 
+func _ready():
+	Global.audio_start()
+
+
 func _physics_process(delta):
 	player.global_position.x += player_speed * delta
 
