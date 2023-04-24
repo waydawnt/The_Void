@@ -9,6 +9,9 @@ extends CharacterBody3D
 var current_bullet: int = 6
 var is_reloading : bool = false
 
+@onready var blood_point : Node3D = $PlayerSprite/Muzzle/BloodPoint
+@onready var player_health : int = 100
+@onready var health_text : Label = $Control/HealthText
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var player_sprite : Sprite3D = $PlayerSprite
@@ -29,9 +32,17 @@ var is_reloading : bool = false
 var vel : Vector3 = Vector3.ZERO
 var bullet_direction : int = 1
 
+var dead : bool = false
+var hurt : bool = false
+var damage_power : int
+
 
 func _process(delta):
 	update_text()
+	
+	if player_health <= 0:
+		dead = true
+	
 	if Input.is_action_just_pressed("reload") or current_bullet == 0:
 		if current_bullet < total_bullet:
 			is_reloading = true
@@ -39,7 +50,7 @@ func _process(delta):
 			await get_tree().create_timer(2.0).timeout
 			is_reloading = false
 	
-	
+	# when player actionablefinder detects other actionabale area set interact_text visible
 	if interact_text.visible == true:
 			if Input.is_action_just_pressed("interact"):
 				interact_text.visible = false
@@ -56,43 +67,71 @@ func get_input(delta):
 	var speed : int
 	var direction : Vector3 = Vector3.ZERO
 	
-	# get and set X direction of Player
-	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	if direction.x != 0:
-		if direction.x < 0:
-			player_sprite.flip_h = true
-			muzzle_flash.flip_h = true
-			barrel_point.transform.origin = Vector3(-0.7, 0.28, 0)
-			bullet_direction = -1
-		elif direction.x > 0:
-			player_sprite.flip_h = false
-			muzzle_flash.flip_h = false
-			barrel_point.transform.origin = Vector3(0.7, 0.28, 0)
-			bullet_direction = 1
-		
-		# multiply speed if shift is pressed
-		if Input.is_action_pressed("run"):
-			state_machine.travel("run")
-			speed = 5
-			movement_sfx("run")
-		else:
-			state_machine.travel("walk")
-			speed = 2
-			movement_sfx("walk")
-	elif direction.x == 0:
-		movement_sfx("stand")
-		state_machine.travel("idle")
-	
-	# call shoot function and show muzzle flash
-	if Input.is_action_pressed("fire") and not is_reloading:
-		state_machine.travel("fire")
-		movement_sfx("stand")
-		shoot()
-		set_physics_process(false)
-	
-	direction = direction.normalized()
-	
-	velocity = velocity.lerp(direction * speed, acceleration * delta)
+	if not dead:
+		if not hurt:
+			# get and set X direction of Player
+			direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+			
+			if direction.x != 0:
+				if direction.x < 0:
+					player_sprite.flip_h = true
+					muzzle_flash.flip_h = true
+					barrel_point.transform.origin = Vector3(-0.7, 0.28, 0)
+					$PlayerSprite/Muzzle/PunchArea.transform.origin = Vector3(0.43, 0.016, 0)
+					bullet_direction = -1
+				elif direction.x > 0:
+					player_sprite.flip_h = false
+					muzzle_flash.flip_h = false
+					barrel_point.transform.origin = Vector3(0.7, 0.28, 0)
+					$PlayerSprite/Muzzle/PunchArea.transform.origin = Vector3(-0.28, 0.016, 0)
+					bullet_direction = 1
+				
+				# multiply speed if shift is pressed
+				if Input.is_action_pressed("run"):
+					state_machine.travel("run")
+					speed = 5
+					movement_sfx("run")
+				else:
+					state_machine.travel("walk")
+					speed = 2
+					movement_sfx("walk")
+			elif direction.x == 0:
+				movement_sfx("stand")
+				state_machine.travel("idle")
+			
+			if Input.is_action_pressed("punch"):
+				state_machine.travel("punch_01")
+			
+			# call shoot function and show muzzle flash
+			if Input.is_action_just_pressed("fire") and not is_reloading:
+				state_machine.travel("fire")
+				movement_sfx("stand")
+				shoot()
+				set_physics_process(false)
+			
+			direction = direction.normalized()
+			
+			velocity = velocity.lerp(direction * speed, acceleration * delta)
+		elif hurt:
+			deal_damage()
+			hurt = false
+	else:
+		die()
+
+
+func deal_damage():
+	state_machine.travel("hurt")
+	var blood_splatter = load("res://scenes/player/blood_splatter.tscn").instantiate()
+	blood_splatter.transform = blood_point.global_transform
+	owner.add_child(blood_splatter)
+	player_health -= damage_power
+	if player_health == 0:
+		queue_free()
+	return
+
+func die():
+	state_machine.travel("die")
+	set_physics_process(false)
 
 
 # Pistol Shoot function
@@ -144,6 +183,10 @@ func movement_sfx(movement):
 
 # Update ammo text
 func update_text():
+	if player_health <= 0:
+		health_text.text = "Health: 0"
+	else:
+		health_text.text = "Health: " + str(player_health)
 	if is_reloading:
 		ammo.text = "Reloading"
 	else:
@@ -162,3 +205,10 @@ func _on_actionable_finder_area_entered(area):
 
 func _on_actionable_finder_area_exited(area):
 	interact_text.visible = false
+
+
+func _on_punch_area_area_entered(area):
+	var parent = area.get_parent()
+	if parent.is_in_group("Enemy"):
+		parent.deal_damage(3)
+		print(parent.enemy_health)

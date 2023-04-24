@@ -483,15 +483,15 @@ texture_filter = 0
 texture = ExtResource("11_1yrct")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98663, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98663, 0, 4.14639)
 light_color = Color(0, 1, 1, 1)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29826, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29826, 0, 4.14639)
 light_color = Color(0, 1, 1, 1)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222937, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222937, 0, 4.14639)
 light_color = Color(0, 1, 1, 1)
 
 [node name="pipe" type="Sprite3D" parent="."]

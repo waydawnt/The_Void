@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dljk4wn7p77j" path="res://sounds/keyboard_typing.mp3" id="6_rtnye"]
 [ext_resource type="Texture2D" uid="uid://dc08gs121o6cp" path="res://imports/player/player_spritesheet_normalmap.png" id="7_ssam5"]
 [ext_resource type="Texture2D" uid="uid://cg8yqqislaocn" path="res://imports/NPCs/waitress/waiter_sheet.png" id="8_nguv7"]
-[ext_resource type="Texture2D" uid="uid://bae508acwq106" path="res://icon.svg" id="9_5a3tx"]
+[ext_resource type="Texture2D" uid="uid://dw25a8dtad03d" path="res://imports/images/cutscene_01.png" id="9_12d8u"]
 [ext_resource type="PackedScene" uid="uid://co8ygvj1ocewe" path="res://scenes/level_02/civilians/civilian_00.tscn" id="10_w1w3o"]
 [ext_resource type="Script" path="res://scripts/level_02/CrowControl.gd" id="11_3lrnl"]
 [ext_resource type="PackedScene" uid="uid://cjobtlbdco7e1" path="res://scenes/level_02/civilians/civilian_01.tscn" id="11_wyxo2"]
@@ -366,6 +366,21 @@ normal_enabled = true
 normal_texture = ExtResource("18_bi2ar")
 texture_filter = 0
 
+[sub_resource type="Animation" id="Animation_tua82"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_eyn67"]
 resource_name = "idle"
 length = 0.7
@@ -381,21 +396,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-
-[sub_resource type="Animation" id="Animation_tua82"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0brb1"]
@@ -469,8 +469,7 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("6_4opuf")
-hframes = 65
-vframes = 2
+hframes = 72
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 autoplay = "walk"
@@ -484,7 +483,7 @@ libraries = {
 shape = SubResource("CapsuleShape3D_s34s5")
 
 [node name="Player2" type="Node3D" parent="."]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 47.3187, 1.80262, 3.56351)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 47.5081, 1.6997, 3.56351)
 visible = false
 
 [node name="PlayerSprite" type="Sprite3D" parent="Player2"]
@@ -493,7 +492,6 @@ shaded = true
 texture_filter = 0
 texture = ExtResource("6_4opuf")
 hframes = 65
-vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player2"]
 autoplay = "statue"
@@ -530,10 +528,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.316473, -0.96906, 0)
 shape = SubResource("BoxShape3D_xpghi")
 
 [node name="Image" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(997.5, 533.5)
-scale = Vector2(8.46094, 8.46094)
-texture = ExtResource("9_5a3tx")
+texture_filter = 1
+position = Vector2(960, 540)
+texture = ExtResource("9_12d8u")
 
 [node name="Civilians" type="Node3D" parent="."]
 
@@ -700,10 +697,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3287, 3.84361, 14.3347)
 omni_range = 6.5
 
 [node name="TrashCan" parent="." instance=ExtResource("16_kipoj")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 63.2335, 0.797862, 3.38164)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 65.6416, 0.797862, 3.38164)
 
 [node name="ShakotiMan" type="Sprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 62.9865, 1.91037, 2.50965)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 64.5057, 1.91037, 2.50965)
 material_override = SubResource("StandardMaterial3D_61b1b")
 shaded = true
 alpha_cut = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cv80xmr0e1ad2"]
+[gd_scene load_steps=54 format=3 uid="uid://cv80xmr0e1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://kcxvdg3hqxtj" path="res://imports/player/player_spritesheet.png" id="1_827c7"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qk0m8"]
@@ -35,6 +35,9 @@ orientation = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_kq2ab"]
 size = Vector3(0.363955, 0.363951, 0.351897)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3jgms"]
+size = Vector3(0.326025, 0.132652, 0.346987)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn5vw"]
 bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
@@ -69,6 +72,30 @@ tracks/1/path = NodePath("PlayerSprite/Muzzle/MuzzleFlash:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite/Muzzle/PunchArea:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerSprite/Muzzle/PunchArea:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -122,7 +149,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_tafi1"]
 resource_name = "hurt"
 length = 0.3
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -138,7 +164,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0jmsm"]
 resource_name = "idle"
-length = 1.3
+length = 1.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -151,6 +177,62 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_21ama"]
+resource_name = "punch_01"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [66, 67, 68]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite/Muzzle/PunchArea:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_3y36w"]
+resource_name = "punch_02"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [68, 69, 70]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite/Muzzle/PunchArea:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_72prt"]
@@ -194,6 +276,8 @@ _data = {
 "fire": SubResource("Animation_l7nh7"),
 "hurt": SubResource("Animation_tafi1"),
 "idle": SubResource("Animation_0jmsm"),
+"punch_01": SubResource("Animation_21ama"),
+"punch_02": SubResource("Animation_3y36w"),
 "run": SubResource("Animation_72prt"),
 "walk": SubResource("Animation_mnncn")
 }
@@ -209,6 +293,9 @@ animation = &"hurt"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5xkt"]
 animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jf36k"]
+animation = &"punch_01"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x06nh"]
 animation = &"run"
@@ -255,9 +342,15 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mhf55"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i01kj"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n8wau"]
 states/End/position = Vector2(1159, 39)
-states/Start/position = Vector2(92, 100)
+states/Start/position = Vector2(236, -39)
 states/die/node = SubResource("AnimationNodeAnimation_fi0bs")
 states/die/position = Vector2(953, 39)
 states/fire/node = SubResource("AnimationNodeAnimation_mtaeo")
@@ -266,12 +359,14 @@ states/hurt/node = SubResource("AnimationNodeAnimation_ortrf")
 states/hurt/position = Vector2(637, 100)
 states/idle/node = SubResource("AnimationNodeAnimation_c5xkt")
 states/idle/position = Vector2(409, 100)
+states/punch_01/node = SubResource("AnimationNodeAnimation_jf36k")
+states/punch_01/position = Vector2(409, -39)
 states/run/node = SubResource("AnimationNodeAnimation_x06nh")
 states/run/position = Vector2(409, 393)
 states/walk/node = SubResource("AnimationNodeAnimation_ddp44")
 states/walk/position = Vector2(180, 254)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6lifx"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jjydk"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_s6ms5"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ebdx8"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_7y8gn"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_3m62q"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wym1o"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_3ijwh"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_wsj06"), "walk", "fire", SubResource("AnimationNodeStateMachineTransition_0vkyf"), "run", "fire", SubResource("AnimationNodeStateMachineTransition_mbpl6"), "die", "End", SubResource("AnimationNodeStateMachineTransition_dtdoo"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_yekuw"), "walk", "hurt", SubResource("AnimationNodeStateMachineTransition_f1cfo"), "run", "hurt", SubResource("AnimationNodeStateMachineTransition_xwy1j"), "fire", "hurt", SubResource("AnimationNodeStateMachineTransition_gf43a"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_otnjy")]
-graph_offset = Vector2(-122, 5)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6lifx"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jjydk"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_s6ms5"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ebdx8"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_7y8gn"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_3m62q"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_wym1o"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_3ijwh"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_wsj06"), "walk", "fire", SubResource("AnimationNodeStateMachineTransition_0vkyf"), "run", "fire", SubResource("AnimationNodeStateMachineTransition_mbpl6"), "die", "End", SubResource("AnimationNodeStateMachineTransition_dtdoo"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_yekuw"), "walk", "hurt", SubResource("AnimationNodeStateMachineTransition_f1cfo"), "run", "hurt", SubResource("AnimationNodeStateMachineTransition_xwy1j"), "fire", "hurt", SubResource("AnimationNodeStateMachineTransition_gf43a"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_otnjy"), "idle", "punch_01", SubResource("AnimationNodeStateMachineTransition_mhf55"), "punch_01", "idle", SubResource("AnimationNodeStateMachineTransition_i01kj")]
+graph_offset = Vector2(-237, -123)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_lel6j"]
 
@@ -285,8 +380,7 @@ shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("1_827c7")
-hframes = 65
-vframes = 2
+hframes = 72
 
 [node name="Muzzle" type="Node3D" parent="PlayerSprite"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.28, 0)
@@ -313,6 +407,19 @@ collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerSprite/Muzzle/ActionableFinder"]
 shape = SubResource("BoxShape3D_kq2ab")
+
+[node name="PunchArea" type="Area3D" parent="PlayerSprite/Muzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.285922, 0.0161842, 0)
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerSprite/Muzzle/PunchArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.086316, 0, 0)
+shape = SubResource("BoxShape3D_3jgms")
+
+[node name="BloodPoint" type="Node3D" parent="PlayerSprite/Muzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646513, -0.0441194, 0.0311618)
 
 [node name="InteractText" type="Label" parent="PlayerSprite"]
 visible = false
@@ -366,7 +473,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HealthText" type="Label" parent="Control"]
-visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -388,4 +494,5 @@ text = "6 / 6"
 
 [connection signal="area_entered" from="PlayerSprite/Muzzle/ActionableFinder" to="." method="_on_actionable_finder_area_entered"]
 [connection signal="area_exited" from="PlayerSprite/Muzzle/ActionableFinder" to="." method="_on_actionable_finder_area_exited"]
+[connection signal="area_entered" from="PlayerSprite/Muzzle/PunchArea" to="." method="_on_punch_area_area_entered"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

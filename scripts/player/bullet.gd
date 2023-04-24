@@ -27,9 +27,9 @@ func _physics_process(delta):
 		queue_free()
 
 
-func _on_body_entered(body):
-	var parent = body.get_parent()
-	print(parent)
+func _on_area_entered(area):
+	var parent = area.get_parent()
+	print(parent.name)
 	if hit_something == false:
 		if parent.is_in_group("Enemy"):
 			parent.deal_damage(bullet_damage)

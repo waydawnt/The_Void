@@ -24,4 +24,4 @@ light_color = Color(1, 0.843137, 0.231373, 1)
 light_indirect_energy = 16.0
 omni_range = 0.02
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

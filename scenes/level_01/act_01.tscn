@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4sjxor8spc62"]
+[gd_scene load_steps=25 format=3 uid="uid://c4sjxor8spc62"]
 
 [ext_resource type="Script" path="res://scripts/act_01.gd" id="1_bqy3t"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="1_fgpdl"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ta4dcsv2he5s" path="res://scenes/interactive_civilians/store_owner.tscn" id="4_c56u7"]
 [ext_resource type="PackedScene" uid="uid://c54eav2pfd8i1" path="res://scenes/misc/actionable.tscn" id="5_nnf8p"]
 [ext_resource type="Resource" uid="uid://i0u0e6rmwpgi" path="res://dialogues/act_01_dialogues.dialogue" id="6_co8uk"]
+[ext_resource type="FontFile" uid="uid://djpj6jue28dw3" path="res://fonts/digital/Digital7-rg1mL.ttf" id="8_jra8h"]
+[ext_resource type="AudioStream" uid="uid://dljk4wn7p77j" path="res://sounds/keyboard_typing.mp3" id="9_5y3e8"]
+[ext_resource type="PackedScene" uid="uid://beftlvo6kiql3" path="res://scenes/misc/crows.tscn" id="10_dn8ph"]
 
 [sub_resource type="Gradient" id="Gradient_r1fex"]
 offsets = PackedFloat32Array(0.327869, 1)
@@ -56,6 +59,108 @@ size = Vector3(0.250902, 1.94723, 7.42596)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ixtpr"]
 size = Vector3(1, 1, 7.06946)
 
+[sub_resource type="Animation" id="Animation_7w5dx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeAnimation:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeAnimation/RichTextLabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FadeAnimation/TypeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_w0djp"]
+resource_name = "opening_fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeAnimation:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeAnimation/RichTextLabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FadeAnimation/TypeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2oaeo"]
+resource_name = "dead_fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeAnimation:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v5y0n"]
+_data = {
+"RESET": SubResource("Animation_7w5dx"),
+"dead_fade_out": SubResource("Animation_2oaeo"),
+"opening_fade_in": SubResource("Animation_w0djp")
+}
+
 [node name="Act_01" type="Node3D"]
 script = ExtResource("1_bqy3t")
 
@@ -64,7 +169,7 @@ environment = SubResource("Environment_k5q46")
 camera_attributes = SubResource("CameraAttributesPractical_iip2e")
 
 [node name="Player" parent="." instance=ExtResource("1_fgpdl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175.061, 1.103, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.757, 1.103, -3)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.908508, -0.0306038, 0.416745, 0, 0.997315, 0.0732381, -0.417867, 0.0665375, -0.906068, 0, 33.99, 0)
@@ -105,4 +210,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.4529, 0.700081, -2.41372)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BusTrigger"]
 shape = SubResource("BoxShape3D_ixtpr")
 
+[node name="FadeAnimation" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FadeAnimation"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("8_jra8h")
+theme_override_font_sizes/normal_font_size = 85
+text = "WestWood"
+fit_content = true
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="TypeSound" type="AudioStreamPlayer" parent="FadeAnimation"]
+stream = ExtResource("9_5y3e8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v5y0n")
+}
+
+[node name="Crows" type="Node3D" parent="."]
+
+[node name="Crows" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -216.042, 0.207925, -13.0154)
+
+[node name="Crows2" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -214.232, 0.207925, -10.8738)
+
+[node name="Crows3" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -213.3, 0.207925, -12.8639)
+
+[node name="Crows4" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -214.61, 0.207925, -12.8639)
+
+[node name="Crows5" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -216.969, 0.207925, -11.4455)
+
+[node name="Crows6" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -187.803, 0.207925, -11.9612)
+
+[node name="Crows7" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -185.993, 0.207925, -9.8196)
+
+[node name="Crows8" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -185.061, 0.207925, -11.8097)
+
+[node name="Crows9" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -186.371, 0.207925, -11.8097)
+
+[node name="Crows10" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -188.73, 0.207925, -10.3914)
+
 [connection signal="body_entered" from="BusTrigger" to="." method="_on_bus_trigger_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
