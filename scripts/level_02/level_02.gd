@@ -8,6 +8,8 @@ var next_scene_ready : bool = false
 @onready var music : AudioStream = preload("res://sounds/just_evil(cyberpunk).mp3")
 @onready var audio_player : AudioStreamPlayer = $AudioPlayer
 
+@onready var goon : Sprite3D = $goon
+
 @onready var player : Node3D = $Player
 @onready var player_2 : Node3D = $Player2
 @onready var player_animation : AnimationPlayer = $Player/AnimationPlayer
@@ -43,6 +45,8 @@ func _on_animation_player_animation_finished(anim_name):
 		waitress.hide()
 		$Player/PlayerSprite.flip_h = true
 		player.show()
+		goon.show()
+		goon.speed = -1
 		animation_player.play("fade_in_2")
 	elif anim_name == "fade_in_2" and player.visible:
 		player_animation.play("walk")
@@ -64,7 +68,8 @@ func _on_hotel_area_area_entered(area):
 
 func _on_animation_waitress_animation_finished(anim_name):
 	if anim_name == "walk":
+		await get_tree().create_timer(1.0).timeout
 		$Image.show()
 		await get_tree().create_timer(5.0).timeout
-		$Image.hide()
 		animation_player.play("fade_out")
+		$Image.hide()

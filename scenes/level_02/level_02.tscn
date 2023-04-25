@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://b8vwywexas22f"]
+[gd_scene load_steps=55 format=3 uid="uid://b8vwywexas22f"]
 
 [ext_resource type="Script" path="res://scripts/level_02/level_02.gd" id="1_fb601"]
 [ext_resource type="PackedScene" uid="uid://cju8r7mme5683" path="res://scenes/level_02/ground/ground.tscn" id="1_l64pm"]
@@ -7,17 +7,23 @@
 [ext_resource type="Texture2D" uid="uid://kcxvdg3hqxtj" path="res://imports/player/player_spritesheet.png" id="6_4opuf"]
 [ext_resource type="AudioStream" uid="uid://dljk4wn7p77j" path="res://sounds/keyboard_typing.mp3" id="6_rtnye"]
 [ext_resource type="Texture2D" uid="uid://dc08gs121o6cp" path="res://imports/player/player_spritesheet_normalmap.png" id="7_ssam5"]
+[ext_resource type="Script" path="res://scripts/level_02/goon_walk.gd" id="8_hngaa"]
 [ext_resource type="Texture2D" uid="uid://cg8yqqislaocn" path="res://imports/NPCs/waitress/waiter_sheet.png" id="8_nguv7"]
 [ext_resource type="Texture2D" uid="uid://dw25a8dtad03d" path="res://imports/images/cutscene_01.png" id="9_12d8u"]
 [ext_resource type="PackedScene" uid="uid://co8ygvj1ocewe" path="res://scenes/level_02/civilians/civilian_00.tscn" id="10_w1w3o"]
 [ext_resource type="Script" path="res://scripts/level_02/CrowControl.gd" id="11_3lrnl"]
 [ext_resource type="PackedScene" uid="uid://cjobtlbdco7e1" path="res://scenes/level_02/civilians/civilian_01.tscn" id="11_wyxo2"]
 [ext_resource type="PackedScene" uid="uid://cejoup4l6jbo4" path="res://scenes/level_02/civilians/civilian_02.tscn" id="12_5m3w5"]
+[ext_resource type="PackedScene" uid="uid://cn2uk416xu6vq" path="res://scenes/level_02/civilians/civilian_04.tscn" id="13_ax061"]
 [ext_resource type="PackedScene" uid="uid://dd78d0wouf2g6" path="res://scenes/level_02/civilians/civilian_03.tscn" id="13_yr7w0"]
 [ext_resource type="AudioStream" uid="uid://faxms24obfm2" path="res://sounds/crowd_noise.mp3" id="15_x8vrm"]
 [ext_resource type="PackedScene" uid="uid://bfsh4axqrncds" path="res://scenes/misc/trash_can.tscn" id="16_kipoj"]
 [ext_resource type="Texture2D" uid="uid://cipit6u2jhugd" path="res://imports/civilians/med_man_idealsheet.png" id="17_jip8x"]
 [ext_resource type="Texture2D" uid="uid://0347rmg0sl4p" path="res://imports/civilians/med_man_idealsheet-Nsheet.png" id="18_bi2ar"]
+[ext_resource type="PackedScene" uid="uid://cvka2w8f70s1q" path="res://scenes/level_02/civilians/civilian_05.tscn" id="18_p7owo"]
+[ext_resource type="PackedScene" uid="uid://b40gyummkt1gd" path="res://scenes/level_02/civilians/civilian_06.tscn" id="19_0s4hh"]
+[ext_resource type="Texture2D" uid="uid://buo42nppguiir" path="res://imports/enemies/Enemy_00/enemy_00.png" id="19_dl48g"]
+[ext_resource type="Texture2D" uid="uid://dptydyeppfkor" path="res://imports/enemies/Enemy_00/enemy_00_normals.png" id="20_27pho"]
 
 [sub_resource type="Environment" id="Environment_mjnp1"]
 background_mode = 1
@@ -176,13 +182,95 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_wlrcf"]
+resource_name = "waitress_fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeTransition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w84px"]
+resource_name = "waitress_fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeTransition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yxjro"]
 _data = {
 "RESET": SubResource("Animation_7kgww"),
 "establishing_shot": SubResource("Animation_xhgbc"),
 "fade_in": SubResource("Animation_oypgi"),
 "fade_in_2": SubResource("Animation_oslbq"),
-"fade_out": SubResource("Animation_hurxn")
+"fade_out": SubResource("Animation_hurxn"),
+"waitress_fade_in": SubResource("Animation_wlrcf"),
+"waitress_fade_out": SubResource("Animation_w84px")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1ipq"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("19_dl48g")
+normal_enabled = true
+normal_texture = ExtResource("20_27pho")
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_eo1x0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_m6r7r"]
+resource_name = "walk"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mtoox"]
+_data = {
+"RESET": SubResource("Animation_eo1x0"),
+"walk": SubResource("Animation_m6r7r")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egu8u"]
@@ -460,6 +548,24 @@ libraries = {
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rtnye")
 
+[node name="goon" type="Sprite3D" parent="."]
+transform = Transform3D(-2.5, 0, -2.18557e-07, 0, 2.5, 0, 2.18557e-07, 0, -2.5, 56.9354, 2.26398, 6.55467)
+visible = false
+material_override = SubResource("StandardMaterial3D_e1ipq")
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("19_dl48g")
+hframes = 80
+script = ExtResource("8_hngaa")
+speed = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="goon"]
+autoplay = "walk"
+libraries = {
+"": SubResource("AnimationLibrary_mtoox")
+}
+
 [node name="Player" type="Node3D" parent="."]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -10.9341, 2.25464, 6.44577)
 
@@ -535,125 +641,179 @@ texture = ExtResource("9_12d8u")
 
 [node name="Civilians" type="Node3D" parent="."]
 
+[node name="Civilian_01" parent="Civilians" instance=ExtResource("11_wyxo2")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 32.4083, 2.09053, 12.4794)
+
+[node name="Civilian_47" parent="Civilians" instance=ExtResource("11_wyxo2")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 60.0839, 2.09053, 4.85249)
+
 [node name="Civilian_00" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 22.0695, 2.02548, 6.82718)
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 46.447, 2.02846, 6.92425)
 
 [node name="Civilian_09" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 28.6464, 2.02548, 11.8082)
-
-[node name="Civilian_27" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 28.5216, 2.02548, 12.5867)
-
-[node name="Civilian_28" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 42.7426, 2.02548, 9.62049)
-
-[node name="Civilian_29" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 54.016, 2.02548, 12.0603)
-
-[node name="Civilian_30" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 61.8123, 2.02548, 10.0707)
-
-[node name="Civilian_31" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 69.5406, 2.02548, 11.3918)
-
-[node name="Civilian_32" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 48.2292, 2.02548, 11.3918)
-
-[node name="Civilian_33" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 43.3682, 2.02548, 5.66477)
-
-[node name="Civilian_10" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 64.4389, 2.02548, 7.77149)
-
-[node name="Civilian_11" parent="Civilians" instance=ExtResource("10_w1w3o")]
-transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 51.4867, 2.02548, 9.94116)
-
-[node name="Civilian_01" parent="Civilians" instance=ExtResource("11_wyxo2")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 39.2296, 2.05645, 12.57)
-
-[node name="Civilian_07" parent="Civilians" instance=ExtResource("11_wyxo2")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 57.5877, 2.07473, 4.68538)
-
-[node name="Civilian_37" parent="Civilians" instance=ExtResource("11_wyxo2")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 36.7626, 2.07473, 4.68538)
-
-[node name="Civilian_38" parent="Civilians" instance=ExtResource("11_wyxo2")]
-transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 34.9365, 2.07473, 4.68538)
-
-[node name="Civilian_39" parent="Civilians" instance=ExtResource("11_wyxo2")]
-transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 44.1648, 2.07473, 4.57107)
-
-[node name="Civilian_08" parent="Civilians" instance=ExtResource("11_wyxo2")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 64.2661, 2.05645, 11.5905)
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 38.4967, 2.02846, 10.4331)
 
 [node name="Civilian_02" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 35.5934, 2.04725, 6.2611)
-
-[node name="Civilian_12" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 23.274, 2.04725, 11.2775)
-
-[node name="Civilian_13" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 31.9092, 2.04725, 8.91086)
-
-[node name="Civilian_34" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 38.667, 2.04725, 6.02426)
-
-[node name="Civilian_35" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 28.0221, 2.04725, 6.83966)
-
-[node name="Civilian_36" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 34.5259, 2.04725, 13.1575)
-
-[node name="Civilian_24" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 16.5698, 2.04725, 10.3698)
-
-[node name="Civilian_25" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 31.0606, 2.04725, 12.3922)
-
-[node name="Civilian_26" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 25.4158, 2.04725, 7.03925)
-
-[node name="Civilian_14" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 40.0981, 2.04725, 10.8171)
-
-[node name="Civilian_15" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 44.8095, 2.04725, 11.9482)
-
-[node name="Civilian_16" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 51.9731, 2.04725, 13.1784)
-
-[node name="Civilian_17" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 55.8107, 2.04725, 7.21735)
-
-[node name="Civilian_18" parent="Civilians" instance=ExtResource("12_5m3w5")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 61.8299, 2.04725, 12.9617)
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 28.2424, 2.01355, 6.61853)
 
 [node name="Civilian_03" parent="Civilians" instance=ExtResource("13_yr7w0")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 27, 2.08441, 10.6937)
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 51.5257, 2.09804, 10.6593)
 
-[node name="Civilian_19" parent="Civilians" instance=ExtResource("13_yr7w0")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 38.2371, 2.08441, 7.03786)
+[node name="Civilian_38" parent="Civilians" instance=ExtResource("13_yr7w0")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 55.9992, 2.09804, 6.40493)
 
-[node name="Civilian_20" parent="Civilians" instance=ExtResource("13_yr7w0")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 45.6773, 2.08441, 8.89052)
+[node name="Civilian_24" parent="Civilians" instance=ExtResource("13_yr7w0")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 58.3003, 2.09804, 12.0524)
+
+[node name="Civilian_04" parent="Civilians" instance=ExtResource("13_ax061")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 43.7121, 2.13406, 9.11332)
+speed = 0.71
+
+[node name="Civilian_42" parent="Civilians" instance=ExtResource("13_ax061")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 34.0795, 2.13406, 11.7579)
+speed = 0.71
+
+[node name="Civilian_43" parent="Civilians" instance=ExtResource("13_ax061")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 4.58363, 2.13406, 7.91439)
+speed = 0.71
+
+[node name="Civilian_44" parent="Civilians" instance=ExtResource("13_ax061")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 18.1674, 2.13406, 9.23616)
+speed = 0.71
+
+[node name="Civilian_05" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 57.6994, 2.02428, 8.95067)
+speed = 0.65
+
+[node name="Civilian_37" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 59.8591, 2.02428, 10.6234)
+speed = 0.65
+
+[node name="Civilian_08" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 30.8196, 2.02428, 5.95442)
+speed = 0.65
+
+[node name="Civilian_35" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 12.7439, 2.02428, 9.16805)
+speed = 0.65
+
+[node name="Civilian_07" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 47.0888, 2.02428, 11.3536)
+speed = 0.65
+
+[node name="Civilian_36" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 65.7222, 2.02428, 6.66661)
+speed = 0.65
+
+[node name="Civilian_06" parent="Civilians" instance=ExtResource("19_0s4hh")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 49.0833, 2.03352, 12.4135)
+speed = 0.75
+
+[node name="Civilian_49" parent="Civilians" instance=ExtResource("19_0s4hh")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 24.9428, 2.03352, 9.4093)
+speed = 0.75
+
+[node name="Civilian_10" parent="Civilians" instance=ExtResource("10_w1w3o")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 44.2799, 2.02846, 12.1192)
+
+[node name="Civilian_25" parent="Civilians" instance=ExtResource("10_w1w3o")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 53.5872, 2.02846, 9.37735)
+
+[node name="Civilian_45" parent="Civilians" instance=ExtResource("10_w1w3o")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 24.9063, 2.02846, 8.6551)
+
+[node name="Civilian_46" parent="Civilians" instance=ExtResource("10_w1w3o")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 16.4609, 2.02846, 13.0267)
+
+[node name="Civilian_11" parent="Civilians" instance=ExtResource("10_w1w3o")]
+transform = Transform3D(1.4, 0, 4.89568e-07, 0, 1.4, 0, -4.89568e-07, 0, 1.4, 45.8622, 2.02846, 8.61033)
+
+[node name="Civilian_12" parent="Civilians" instance=ExtResource("12_5m3w5")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 56.1165, 2.01355, 12.4249)
+
+[node name="Civilian_48" parent="Civilians" instance=ExtResource("12_5m3w5")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 48.4304, 2.01355, 8.39209)
+
+[node name="Civilian_39" parent="Civilians" instance=ExtResource("12_5m3w5")]
+transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 69.0328, 2.01355, 10.3499)
+
+[node name="Civilian_40" parent="Civilians" instance=ExtResource("12_5m3w5")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 67.5095, 2.01355, 8.04035)
+
+[node name="Civilian_41" parent="Civilians" instance=ExtResource("12_5m3w5")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 63.6732, 2.01355, 11.5396)
+
+[node name="Civilian_13" parent="Civilians" instance=ExtResource("13_yr7w0")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 32.8332, 2.09804, 8.38409)
 
 [node name="Civilian_21" parent="Civilians" instance=ExtResource("13_yr7w0")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 36.4381, 2.08441, 10.012)
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 32.8332, 2.09804, 10.6091)
+
+[node name="Civilian_27" parent="Civilians" instance=ExtResource("10_w1w3o")]
+transform = Transform3D(-1.4, 0, -6.1196e-07, 0, 1.4, 0, 6.1196e-07, 0, -1.4, 1.68499, 2.02846, 12.8474)
+
+[node name="Civilian_28" parent="Civilians" instance=ExtResource("12_5m3w5")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, -8.56931, 2.01355, 9.03288)
+
+[node name="Civilian_29" parent="Civilians" instance=ExtResource("13_yr7w0")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 14.714, 2.09804, 13.0737)
+
+[node name="Civilian_30" parent="Civilians" instance=ExtResource("13_yr7w0")]
+transform = Transform3D(1.4, 0, 4.89568e-07, 0, 1.4, 0, -4.89568e-07, 0, 1.4, 14.714, 2.09804, 10.8486)
+
+[node name="Civilian_26" parent="Civilians" instance=ExtResource("13_yr7w0")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 9.44761, 2.09804, 7.64715)
 
 [node name="Civilian_22" parent="Civilians" instance=ExtResource("13_yr7w0")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 59.1927, 2.08441, 12.3556)
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 48.9916, 2.09804, 7.53521)
 
-[node name="Civilian_23" parent="Civilians" instance=ExtResource("13_yr7w0")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 62.4975, 2.08441, 8.44014)
+[node name="Civilian_14" parent="Civilians" instance=ExtResource("13_ax061")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 40.6468, 2.13406, 9.93009)
+speed = 0.71
 
-[node name="Civilian_04" parent="Civilians" instance=ExtResource("13_yr7w0")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 34.0293, 2.08441, 12.7475)
+[node name="Civilian_33" parent="Civilians" instance=ExtResource("13_ax061")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 53.5415, 2.13406, 12.0129)
+speed = 0.71
 
-[node name="Civilian_05" parent="Civilians" instance=ExtResource("13_yr7w0")]
-transform = Transform3D(-1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 66.9118, 2.08441, 12.1583)
+[node name="Civilian_15" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 26.6595, 2.02428, 10.0927)
+speed = 0.65
 
-[node name="Civilian_06" parent="Civilians" instance=ExtResource("13_yr7w0")]
-transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 66.9118, 2.08441, 8.87462)
+[node name="Civilian_31" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 42.0091, 2.02428, 8.42351)
+speed = 0.65
+
+[node name="Civilian_16" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 53.5393, 2.02428, 13.089)
+speed = 0.65
+
+[node name="Civilian_17" parent="Civilians" instance=ExtResource("18_p7owo")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 37.2701, 2.02428, 7.68981)
+speed = 0.65
+
+[node name="Civilian_18" parent="Civilians" instance=ExtResource("19_0s4hh")]
+transform = Transform3D(1.4, 0, 2.44784e-07, 0, 1.4, 0, -2.44784e-07, 0, 1.4, 35.2756, 2.03352, 6.62992)
+speed = 0.75
+
+[node name="Civilian_32" parent="Civilians" instance=ExtResource("19_0s4hh")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 35.2756, 2.03352, 10.7747)
+speed = 0.75
+
+[node name="Civilian_19" parent="Civilians" instance=ExtResource("19_0s4hh")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 42.6087, 2.03352, 10.2206)
+speed = 0.75
+
+[node name="Civilian_34" parent="Civilians" instance=ExtResource("19_0s4hh")]
+transform = Transform3D(-1.4, 0, -3.67176e-07, 0, 1.4, 0, 3.67176e-07, 0, -1.4, 32.7242, 2.03352, 6.9627)
+speed = 0.75
+
+[node name="Civilian_20" parent="Civilians" instance=ExtResource("19_0s4hh")]
+transform = Transform3D(1.4, 0, 4.89568e-07, 0, 1.4, 0, -4.89568e-07, 0, 1.4, 39.5142, 2.03352, 9.2005)
+speed = 0.75
+
+[node name="Civilian_23" parent="Civilians" instance=ExtResource("19_0s4hh")]
+transform = Transform3D(1.4, 0, 4.89568e-07, 0, 1.4, 0, -4.89568e-07, 0, 1.4, 29.4813, 2.03352, 11.7025)
+speed = 0.75
 
 [node name="CrowControl" type="Node3D" parent="."]
 script = ExtResource("11_3lrnl")
@@ -701,7 +861,7 @@ omni_range = 6.5
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 65.6416, 0.797862, 3.38164)
 
 [node name="ShakotiMan" type="Sprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 64.5057, 1.91037, 2.50965)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 64.5057, 2.19442, 2.50965)
 material_override = SubResource("StandardMaterial3D_61b1b")
 shaded = true
 alpha_cut = 1

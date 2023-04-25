@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://dre2pbgswet12"]
 
 [ext_resource type="Script" path="res://scripts/misc/bus.gd" id="1_7ji7l"]
 [ext_resource type="Texture2D" uid="uid://c6av57cheylrv" path="res://imports/2d_sprites/level_01_sprites/bus1.png" id="1_t676f"]

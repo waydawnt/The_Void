@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://dcolw8bfngbfb"]
+[gd_scene load_steps=103 format=3 uid="uid://dcolw8bfngbfb"]
 
 [ext_resource type="Texture2D" uid="uid://dmu2srjx72lmt" path="res://imports/level_02/shop_02/shop_02_00.png" id="1_6q34q"]
 [ext_resource type="Texture2D" uid="uid://rhvhhd6ifd7d" path="res://imports/level_02/shop_02/shop_02_00_1.png" id="2_gs2ug"]
@@ -27,12 +27,32 @@
 [ext_resource type="Texture2D" uid="uid://dqmyksvh0btk2" path="res://imports/2d_sprites/plants/climbing plants pack/liana_2.png" id="25_6v2u6"]
 [ext_resource type="Texture2D" uid="uid://dxioltttyxjwk" path="res://imports/2d_sprites/plants/climbing plants pack/liana_20.png" id="26_aramy"]
 [ext_resource type="Texture2D" uid="uid://xjj5ia6hqrtu" path="res://imports/2d_sprites/plants/YELL-ORG-RED-PLANTER.png" id="26_d8quu"]
+[ext_resource type="Texture2D" uid="uid://cmkueauubumqg" path="res://imports/2d_sprites/plants/climbing plants pack/liana_15.png" id="27_ggft1"]
 [ext_resource type="Texture2D" uid="uid://3lgwhqwwdic7" path="res://imports/2d_sprites/plants/climbing plants pack/liana_11.png" id="28_dc5ci"]
 [ext_resource type="Shader" path="res://shaders/billboard.gdshader" id="29_lds8d"]
 [ext_resource type="Texture2D" uid="uid://ude0pib32hqa" path="res://imports/images/burger.jpg" id="30_iii3l"]
 [ext_resource type="Texture2D" uid="uid://bogtyg8injvah" path="res://imports/2d_sprites/level_02_sprites/coffee_cup.png" id="31_ciths"]
 [ext_resource type="Texture2D" uid="uid://c3gpi2r8lhpat" path="res://imports/2d_sprites/level_02_sprites/pizza_menu_tips_albedo.png" id="32_re8nd"]
 [ext_resource type="Texture2D" uid="uid://cgk82miuq6daf" path="res://imports/2d_sprites/level_02_sprites/bin1.png" id="33_rap5i"]
+[ext_resource type="Texture2D" uid="uid://cq02nvsntl151" path="res://imports/2d_sprites/level_02_sprites/fridge.png" id="34_3x3c2"]
+[ext_resource type="Texture2D" uid="uid://do8ivt6k0ewoc" path="res://imports/2d_sprites/level_02_sprites/chef_robot.png" id="34_qjqdb"]
+[ext_resource type="Texture2D" uid="uid://b35kss0a3cs2v" path="res://imports/2d_sprites/level_02_sprites/micro.png" id="36_c6hxd"]
+[ext_resource type="Texture2D" uid="uid://bossskp52l6gu" path="res://imports/2d_sprites/level_02_sprites/cooker.png" id="37_da48e"]
+[ext_resource type="Texture2D" uid="uid://bpocs3l1h6tcu" path="res://imports/2d_sprites/level_02_sprites/furniture.png" id="38_cucts"]
+[ext_resource type="Texture2D" uid="uid://buar4g0aa8e1m" path="res://imports/2d_sprites/level_02_sprites/gas.png" id="39_e4arq"]
+[ext_resource type="Texture2D" uid="uid://s0lmvt0758ku" path="res://imports/customers/book_reader.png" id="39_o4s55"]
+[ext_resource type="Texture2D" uid="uid://cjs7yx2lhee41" path="res://imports/2d_sprites/level_02_sprites/ac.png" id="40_8l3ig"]
+[ext_resource type="Texture2D" uid="uid://c4h73lyio6uar" path="res://imports/2d_sprites/level_01_sprites/candy.png" id="40_bq08b"]
+[ext_resource type="Texture2D" uid="uid://1g3bpwq05m4q" path="res://imports/2d_sprites/level_02_sprites/coffee_board.png" id="41_34u0e"]
+[ext_resource type="Texture2D" uid="uid://b7sbnpwf7vk18" path="res://imports/2d_sprites/level_02_sprites/garagebillboard2.png" id="41_66vt5"]
+[ext_resource type="Texture2D" uid="uid://v0lt27sfuchj" path="res://imports/2d_sprites/level_02_sprites/marketboard.png" id="42_1wyw4"]
+[ext_resource type="Texture2D" uid="uid://cnmyaylajykcj" path="res://imports/customers/female_01.png" id="43_ujjcd"]
+[ext_resource type="Texture2D" uid="uid://bd4oagf6c3wht" path="res://imports/customers/customer_02.png" id="44_4gkpu"]
+[ext_resource type="Texture2D" uid="uid://dv5hq8ku8ugpb" path="res://imports/customers/female_02.png" id="44_pyis6"]
+[ext_resource type="Texture2D" uid="uid://bo55yonnukugp" path="res://imports/customers/customer_01.png" id="45_gbwjq"]
+[ext_resource type="Texture2D" uid="uid://bbfvsoe47hgx2" path="res://imports/customers/customer_00.png" id="46_y04ol"]
+[ext_resource type="Texture2D" uid="uid://cipit6u2jhugd" path="res://imports/civilians/med_man_idealsheet.png" id="48_7wctm"]
+[ext_resource type="Texture2D" uid="uid://0347rmg0sl4p" path="res://imports/civilians/med_man_idealsheet-Nsheet.png" id="49_yg8es"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crrmf"]
 resource_name = "Material"
@@ -577,6 +597,107 @@ material = SubResource("ShaderMaterial_vt8ml")
 size = Vector2(1, 1)
 orientation = 2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_invt8"]
+render_priority = 0
+shader = ExtResource("29_lds8d")
+shader_parameter/x_scale = 0.9
+shader_parameter/y_scale = 1.0
+shader_parameter/x_offset = -0.064
+shader_parameter/y_offset = 0.0
+shader_parameter/x_uv_scale = 1.0
+shader_parameter/dot_scale = 25.0
+shader_parameter/image = ExtResource("30_iii3l")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qmb74"]
+material = SubResource("ShaderMaterial_invt8")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[sub_resource type="Animation" id="Animation_gjgn1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_snklj"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u7wtb"]
+_data = {
+"RESET": SubResource("Animation_gjgn1"),
+"idle": SubResource("Animation_snklj")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sfum"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("48_7wctm")
+normal_enabled = true
+normal_texture = ExtResource("49_yg8es")
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_tua82"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_eyn67"]
+resource_name = "idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0brb1"]
+_data = {
+"RESET": SubResource("Animation_tua82"),
+"idle": SubResource("Animation_eyn67")
+}
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_ki5c3"]
 material = ExtResource("13_c30di")
 size = Vector2(2.976, 0.02)
@@ -595,22 +716,6 @@ orientation = 2
 [sub_resource type="PlaneMesh" id="PlaneMesh_bdtfp"]
 material = ExtResource("15_oikhw")
 size = Vector2(3.488, 0.02)
-orientation = 2
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_invt8"]
-render_priority = 0
-shader = ExtResource("29_lds8d")
-shader_parameter/x_scale = 0.9
-shader_parameter/y_scale = 1.0
-shader_parameter/x_offset = -0.064
-shader_parameter/y_offset = 0.0
-shader_parameter/x_uv_scale = 1.0
-shader_parameter/dot_scale = 25.0
-shader_parameter/image = ExtResource("30_iii3l")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_qmb74"]
-material = SubResource("ShaderMaterial_invt8")
-size = Vector2(0.5, 0.5)
 orientation = 2
 
 [node name="shop_02" type="Node3D"]
@@ -780,42 +885,6 @@ texture = ExtResource("12_yiy87")
 [node name="OmniLight3D" type="OmniLight3D" parent="Lanterns/Lantern3"]
 light_color = Color(0.87451, 0.678431, 0.356863, 1)
 
-[node name="strip" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29625, 2.65148, 1.75571)
-mesh = SubResource("PlaneMesh_ki5c3")
-
-[node name="strip8" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.04065, 3.97691, 0.295641)
-mesh = SubResource("PlaneMesh_ki5c3")
-
-[node name="strip9" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7926, 3.97691, 1.78806)
-mesh = SubResource("PlaneMesh_0nx15")
-
-[node name="strip5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80593, 2.65148, 2.4332)
-mesh = SubResource("PlaneMesh_4mwys")
-
-[node name="strip6" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80593, 2.44924, 2.4332)
-mesh = SubResource("PlaneMesh_4mwys")
-
-[node name="strip7" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80257, 1.76518, 1.75839)
-mesh = SubResource("PlaneMesh_bdtfp")
-
-[node name="strip2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29625, 2.46128, 1.75571)
-mesh = SubResource("PlaneMesh_ki5c3")
-
-[node name="strip3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.96503, 0.973879, 1.75571)
-mesh = SubResource("PlaneMesh_ki5c3")
-
-[node name="strip4" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.84272, 0.973879, 1.75571)
-mesh = SubResource("PlaneMesh_ki5c3")
-
 [node name="Lightning" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.94402, 1.08915, 1.75748)
 alpha_cut = 1
@@ -917,7 +986,7 @@ texture = ExtResource("23_h0v1i")
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamp"]
 
 [node name="Lamp2" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.2826, 1.42501, 0.898016)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.2826, 1.42501, 0.600668)
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("23_h0v1i")
@@ -1168,6 +1237,15 @@ texture = ExtResource("26_d8quu")
 region_enabled = true
 region_rect = Rect2(172, 64, 63, 85)
 
+[node name="Plant32" type="Sprite3D" parent="Plants"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.41083, 2.64155, 1.75694)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("26_d8quu")
+region_enabled = true
+region_rect = Rect2(172, 64, 63, 85)
+
 [node name="Plant11" type="Sprite3D" parent="Plants"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.82959, 2.1566, 2.86726)
 shaded = true
@@ -1177,32 +1255,46 @@ texture = ExtResource("26_d8quu")
 region_enabled = true
 region_rect = Rect2(240, 169, 33, 46)
 
-[node name="Burger" type="MeshInstance3D" parent="."]
+[node name="Plant30" type="Sprite3D" parent="Plants"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.29067, 1.89162, 2.86859)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("27_ggft1")
+
+[node name="Plant31" type="Sprite3D" parent="Plants"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99096, 2.18033, 1.77589)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("27_ggft1")
+
+[node name="BurgerMenu" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19459, 1.4395, 1.62498)
 mesh = SubResource("PlaneMesh_qmb74")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
+[node name="CoffeeCup02" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.70019, 0.869824, 1.52988)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("31_ciths")
 
-[node name="Sprite3D3" type="Sprite3D" parent="."]
+[node name="CoffeeCup01" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.89682, 0.869824, 1.67188)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("31_ciths")
 
-[node name="Sprite3D4" type="Sprite3D" parent="."]
+[node name="CoffeeCup" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.6121, 0.869824, 1.70384)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("31_ciths")
 
-[node name="Sprite3D5" type="Sprite3D" parent="."]
+[node name="MenuBoard" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.65086, 1.5392, 1.37888)
 shaded = true
 alpha_cut = 1
@@ -1223,3 +1315,230 @@ light_color = Color(1, 0.462745, 0.392157, 1)
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57298, 0.700643, 1.96899)
 light_color = Color(1, 0.462745, 0.392157, 1)
+
+[node name="Robot" type="Sprite3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.13068, 0.998804, 0.835597)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("34_qjqdb")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Robot"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_u7wtb")
+}
+
+[node name="Stuffs" type="Node3D" parent="."]
+
+[node name="Fridge" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96238, 0.851124, -0.748414)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("34_3x3c2")
+
+[node name="Microwave" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08364, 1.33216, 1.36669)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("36_c6hxd")
+
+[node name="Cooker" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -6.28581, 0.837149, 1.13244)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("37_da48e")
+
+[node name="Furniture" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -6.60249, 1.30278, -0.785818)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_cucts")
+
+[node name="Furniture2" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -6.60249, 0.944461, -0.785818)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_cucts")
+
+[node name="Furniture3" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -6.60249, 0.586996, -0.785818)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_cucts")
+
+[node name="Furniture4" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -7.04218, 0.586996, -0.785818)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_cucts")
+
+[node name="Furniture5" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -7.04218, 0.951817, -0.785818)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("38_cucts")
+
+[node name="Gas" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -5.63916, 0.922691, 1.14518)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("39_e4arq")
+
+[node name="Candy" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -7.79859, 0.500609, 1.89943)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("40_bq08b")
+
+[node name="AC" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -5.34151, 2.68724, 2.48019)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("40_8l3ig")
+
+[node name="Garage" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -4.59244, 1.26941, 1.06826)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("41_66vt5")
+
+[node name="MarketBoard" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, -3.00973, 1.26941, 1.25259)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_1wyw4")
+
+[node name="Board" type="Sprite3D" parent="Stuffs"]
+transform = Transform3D(-0.8, 0, -6.99382e-08, 0, 0.8, 0, 6.99382e-08, 0, -0.8, -5.3712, 1.38664, 1.73196)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("41_34u0e")
+
+[node name="Customers" type="Node3D" parent="."]
+
+[node name="Customer" type="Sprite3D" parent="Customers"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -3.61474, 0.721307, 1.66938)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("39_o4s55")
+
+[node name="Customer2" type="Sprite3D" parent="Customers"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.36253, 3.33113, 1.44229)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_ujjcd")
+
+[node name="Customer3" type="Sprite3D" parent="Customers"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.33351, 3.31085, -0.106287)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("44_pyis6")
+
+[node name="Customer4" type="Sprite3D" parent="Customers"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.32295, 0.693865, 2.01096)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("44_pyis6")
+
+[node name="Customer_06" type="Sprite3D" parent="Customers"]
+transform = Transform3D(1, 0, 3.49691e-07, 0, 1, 0, -3.49691e-07, 0, 1, -4.5231, 3.25574, 0.809523)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("44_4gkpu")
+
+[node name="Customer_02" type="Sprite3D" parent="Customers"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -3.58133, 3.27163, 1.44003)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("45_gbwjq")
+
+[node name="Customer_01" type="Sprite3D" parent="Customers"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.24921, 3.2552, 0.818055)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("46_y04ol")
+
+[node name="ShakotiMan" type="Sprite3D" parent="Customers"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -6.17922, 3.35988, 2.12977)
+material_override = SubResource("StandardMaterial3D_2sfum")
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("48_7wctm")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Customers/ShakotiMan"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_0brb1")
+}
+
+[node name="Strips" type="Node3D" parent="."]
+
+[node name="strip" type="MeshInstance3D" parent="Strips"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29625, 2.65148, 1.75571)
+mesh = SubResource("PlaneMesh_ki5c3")
+skeleton = NodePath("../..")
+
+[node name="strip8" type="MeshInstance3D" parent="Strips"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.04065, 3.97691, 0.295641)
+mesh = SubResource("PlaneMesh_ki5c3")
+skeleton = NodePath("../..")
+
+[node name="strip9" type="MeshInstance3D" parent="Strips"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7926, 3.97691, 1.78806)
+mesh = SubResource("PlaneMesh_0nx15")
+skeleton = NodePath("../..")
+
+[node name="strip5" type="MeshInstance3D" parent="Strips"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80593, 2.65148, 2.4332)
+mesh = SubResource("PlaneMesh_4mwys")
+skeleton = NodePath("../..")
+
+[node name="strip6" type="MeshInstance3D" parent="Strips"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80593, 2.44924, 2.4332)
+mesh = SubResource("PlaneMesh_4mwys")
+skeleton = NodePath("../..")
+
+[node name="strip7" type="MeshInstance3D" parent="Strips"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80257, 1.76518, 1.75839)
+mesh = SubResource("PlaneMesh_bdtfp")
+skeleton = NodePath("../..")
+
+[node name="strip2" type="MeshInstance3D" parent="Strips"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29625, 2.46128, 1.75571)
+mesh = SubResource("PlaneMesh_ki5c3")
+skeleton = NodePath("../..")
+
+[node name="strip3" type="MeshInstance3D" parent="Strips"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.96503, 0.973879, 1.75571)
+mesh = SubResource("PlaneMesh_ki5c3")
+skeleton = NodePath("../..")
+
+[node name="strip4" type="MeshInstance3D" parent="Strips"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.84272, 0.973879, 1.75571)
+mesh = SubResource("PlaneMesh_ki5c3")
+skeleton = NodePath("../..")

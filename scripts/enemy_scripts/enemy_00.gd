@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 var enemy_health : int = 100
-var enemy_speed : int = 3
+@export var enemy_speed : float = 3
 
 @export var player_position : CharacterBody3D
 @onready var blood_point = $EnemySprite/BloodPoint

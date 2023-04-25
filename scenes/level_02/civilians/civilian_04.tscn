@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://cn2uk416xu6vq"]
+
+[ext_resource type="Script" path="res://scripts/civilian_scripts/civilian_00.gd" id="1_04yix"]
+[ext_resource type="Texture2D" uid="uid://lnb52ur67s8h" path="res://imports/level_02/civilians/civilian_04/Walk_Mcivilian1.png" id="2_15kl2"]
+[ext_resource type="Texture2D" uid="uid://ccjtb2wngj4ki" path="res://imports/level_02/civilians/civilian_04/Walk_Mcivilian1-Nsheet.png" id="3_gj6po"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5btqo"]
+radius = 0.194
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_poxmv"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_15kl2")
+normal_enabled = true
+normal_texture = ExtResource("3_gj6po")
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_iq3l8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CivilianSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8bcjw"]
+resource_name = "walk"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CivilianSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8neno"]
+_data = {
+"RESET": SubResource("Animation_iq3l8"),
+"walk": SubResource("Animation_8bcjw")
+}
+
+[node name="Civilian_04" type="Node3D" groups=["civilian"]]
+script = ExtResource("1_04yix")
+speed = 0.7
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0615206, 0, 0)
+shape = SubResource("CapsuleShape3D_5btqo")
+
+[node name="CivilianSprite" type="Sprite3D" parent="."]
+transform = Transform3D(-1.65, 0, -1.44248e-07, 0, 1.65, 0, 1.44248e-07, 0, -1.65, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_poxmv")
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_15kl2")
+hframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "walk"
+libraries = {
+"": SubResource("AnimationLibrary_8neno")
+}

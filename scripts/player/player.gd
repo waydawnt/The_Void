@@ -10,7 +10,7 @@ var current_bullet: int = 6
 var is_reloading : bool = false
 
 @onready var blood_point : Node3D = $PlayerSprite/Muzzle/BloodPoint
-@onready var player_health : int = 100
+@export var player_health : int = 100
 @onready var health_text : Label = $Control/HealthText
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer

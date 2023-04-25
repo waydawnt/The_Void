@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=3 uid="uid://cju8r7mme5683"]
+[gd_scene load_steps=148 format=3 uid="uid://cju8r7mme5683"]
 
 [ext_resource type="ArrayMesh" uid="uid://dmll02wiyb8ud" path="res://objects/level_02_objects/ground.res" id="1_igqwl"]
 [ext_resource type="PackedScene" path="res://scenes/level_02/building_00/building_00.tscn" id="3_4jrto"]
@@ -60,6 +60,9 @@
 [ext_resource type="Texture2D" uid="uid://cq5idccgxshq8" path="res://imports/2d_sprites/level_01_sprites/car_01.png" id="55_jxh5a"]
 [ext_resource type="Texture2D" uid="uid://47efyo24bpaf" path="res://imports/2d_sprites/level_01_sprites/chain_railing.png" id="55_kjg0h"]
 [ext_resource type="PackedScene" uid="uid://22a858lx1is3" path="res://scenes/level_02/Hotel/hotel_02.tscn" id="56_afw0u"]
+[ext_resource type="Texture2D" uid="uid://nrqsh7r6vri7" path="res://imports/2d_sprites/level_02_sprites/dirtbikeblue.png" id="60_g61vw"]
+[ext_resource type="Texture2D" uid="uid://p1jsth5nug8c" path="res://imports/2d_sprites/level_02_sprites/car.png" id="61_hkreh"]
+[ext_resource type="Texture2D" uid="uid://dt4fqednkdwxk" path="res://imports/2d_sprites/level_01_sprites/bt1.png" id="61_mebhq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_musea"]
 render_priority = 0
@@ -508,6 +511,24 @@ material = SubResource("ShaderMaterial_bdl1b")
 size = Vector2(15, 2)
 orientation = 2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10pjj"]
+render_priority = 0
+shader = ExtResource("27_q0f1h")
+shader_parameter/x_scale = 0.3
+shader_parameter/y_scale = 0.483
+shader_parameter/x_offset = 0.0
+shader_parameter/y_offset = -0.135
+shader_parameter/moving_speed = 0.1
+shader_parameter/x_uv_scale = 9.2
+shader_parameter/dot_scale = 20.0
+shader_parameter/emission_color = Color(0.2, 0.82, 0.98, 1)
+shader_parameter/image = ExtResource("29_21mq2")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qtada"]
+material = SubResource("ShaderMaterial_10pjj")
+size = Vector2(28, 3)
+orientation = 2
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wkgt7"]
 render_priority = 0
 shader = ExtResource("27_q0f1h")
@@ -757,7 +778,6 @@ skeleton = NodePath("../..")
 
 [node name="CupCake" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5614, 2.71519, -13.2196)
-visible = false
 mesh = SubResource("PlaneMesh_4mrmf")
 skeleton = NodePath("../..")
 
@@ -943,8 +963,8 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 64.9646,
 mesh = SubResource("PlaneMesh_0kfyl")
 
 [node name="Quote_02" type="MeshInstance3D" parent="Billboards"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2811, 25.7636, -13.2707)
-mesh = SubResource("PlaneMesh_6rcss")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1457, 25.7636, -13.3067)
+mesh = SubResource("PlaneMesh_qtada")
 
 [node name="Quote_03" type="MeshInstance3D" parent="Billboards"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 72.5206, 21.6597, -23.205)
@@ -1524,5 +1544,42 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("55_jxh5a")
 
+[node name="DirtBike" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6.29238, 0.766641, 0.535403)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("60_g61vw")
+
+[node name="DirtBike2" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.81411, 0.766641, 1.51935)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("60_g61vw")
+
+[node name="Car2" type="Sprite3D" parent="."]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 4.90242, 0.872076, 1.34748)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("61_hkreh")
+
 [node name="Hotel2" parent="." instance=ExtResource("56_afw0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05276, 1.67016, 0.0023185)
+
+[node name="StreetStuffs" type="Node3D" parent="."]
+
+[node name="Bottle_01" type="Sprite3D" parent="StreetStuffs"]
+transform = Transform3D(2.18557e-08, -0.5, -7.54979e-08, -0.5, -2.18557e-08, 0, 0, 7.54979e-08, -0.5, 7.79897, 0.447821, 2.84306)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("61_mebhq")
+
+[node name="Bottle_02" type="Sprite3D" parent="StreetStuffs"]
+transform = Transform3D(-2.18557e-08, 0.5, 1.19209e-07, -0.5, -2.18557e-08, 0, 1.91069e-15, -1.19209e-07, 0.5, 13.3841, 0.447821, 5.28526)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("61_mebhq")

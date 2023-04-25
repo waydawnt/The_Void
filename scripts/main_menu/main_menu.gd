@@ -20,7 +20,7 @@ func _ready():
 	current_option(current_index)
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_down"):
 		reset_previous(current_index)
 		current_index += 1

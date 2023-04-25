@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var speed : float = 1
-@export var turn_time : int = 20
+#@export var turn_time : int = 20
 
 @onready var sprite : Sprite3D = $CivilianSprite
 @onready var is_turned : bool = false
@@ -17,7 +17,7 @@ func _physics_process(delta):
 
 func turn():
 	is_turned = true
-	await get_tree().create_timer(turn_time).timeout
+#	await get_tree().create_timer(turn_time).timeout
 	if sprite.flip_h == false:
 		sprite.flip_h = true
 		speed = -1

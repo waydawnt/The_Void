@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfsh4axqrncds"]
+[gd_scene load_steps=5 format=3 uid="uid://bfsh4axqrncds"]
 
-[ext_resource type="Script" path="res://scripts/misc/trash_can.gd" id="1_4il4j"]
 [ext_resource type="ArrayMesh" uid="uid://1joy1vtptvws" path="res://objects/level_02_objects/trash_can.res" id="1_mkn5n"]
 
 [sub_resource type="Animation" id="Animation_kocql"]
@@ -42,7 +41,6 @@ _data = {
 }
 
 [node name="TrashCan" type="Node3D"]
-script = ExtResource("1_4il4j")
 
 [node name="CanModel" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)

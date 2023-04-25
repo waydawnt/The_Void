@@ -9,13 +9,13 @@ const Ballon = preload("res://dialogues/balloon.tscn")
 
 
 func _ready():
-	player.player_health = 50
 	animation_player.play("opening_fade_in")
 
 
 func _process(delta):
 	if State.take_aspirin:
 		player.player_health = 100
+		State.take_aspirin = false
 	
 	if player.dead:
 		animation_player.play("dead_fade_out")
