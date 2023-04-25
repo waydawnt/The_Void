@@ -528,6 +528,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.316473, -0.96906, 0)
 shape = SubResource("BoxShape3D_xpghi")
 
 [node name="Image" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(960, 540)
 texture = ExtResource("9_12d8u")

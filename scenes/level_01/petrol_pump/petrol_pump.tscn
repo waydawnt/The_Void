@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dya41eiihhbal"]
+[gd_scene load_steps=15 format=3 uid="uid://dya41eiihhbal"]
 
 [ext_resource type="ArrayMesh" uid="uid://cnv8py6gb75dw" path="res://objects/level_01_objects/petrol_pump/petrol_pump_ground.res" id="1_y114f"]
 [ext_resource type="ArrayMesh" uid="uid://dahhcx07c2qlr" path="res://objects/level_01_objects/petrol_pump/petrol_pump_store.res" id="2_toqdh"]
@@ -10,6 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://68gjyo6kycd8" path="res://imports/2d_sprites/level_01_sprites/Cars/Cars1.png" id="8_4p12t"]
 [ext_resource type="Texture2D" uid="uid://q16sdf12v4ce" path="res://imports/2d_sprites/level_01_sprites/billboard1.png" id="9_3mc0b"]
 [ext_resource type="Texture2D" uid="uid://c1uv7retv8jgw" path="res://imports/2d_sprites/level_01_sprites/truck.png" id="10_uemho"]
+[ext_resource type="PackedScene" uid="uid://fc42tlaktuqt" path="res://scenes/level_01/vending_machines/vending_machine_01.tscn" id="11_8tyvk"]
+[ext_resource type="PackedScene" uid="uid://c54eav2pfd8i1" path="res://scenes/misc/actionable.tscn" id="12_cg7re"]
+[ext_resource type="Resource" uid="uid://i0u0e6rmwpgi" path="res://dialogues/act_01_dialogues.dialogue" id="13_g6mle"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_626jr"]
+size = Vector3(1, 2.67, 5)
 
 [node name="PetrolPump" type="Node3D"]
 
@@ -88,3 +94,14 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("10_uemho")
+
+[node name="vending_machine_01" parent="." instance=ExtResource("11_8tyvk")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -9.10126, 0, 9.66493)
+
+[node name="Actionable" parent="vending_machine_01" instance=ExtResource("12_cg7re")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77468, 2.42282)
+dialogue_resource = ExtResource("13_g6mle")
+dialogue_start = "vending_machine"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vending_machine_01/Actionable"]
+shape = SubResource("BoxShape3D_626jr")

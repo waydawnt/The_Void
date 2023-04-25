@@ -7,6 +7,7 @@ Detective: At least I got some intel.
 => END
 
 
+
 ~ chemist_store
 
 (In dismiss tone)
@@ -19,11 +20,89 @@ Store Owner: Welcome to WESTWOOD town then, city lad.
 Detective: Give me some meds, I am no thug alright.
 Detective: I am a detective, and it is very important that I go to hub as soon as possible.
 
-Store Owner: It's all the same for you city punks, the nearest bus station is 2kms straight ahead,...
-Store Owner: if you cross the west bloods that is.
+Store Owner: It's been a long time since I have seen a government official roaming around here,
+Store Owner: Here! some asprine
+set State.take_aspirin = true
 
+Health Restored!
+- Give 50$ to the owner.
+	set State.give_money = "gave"
+- Take Aspirin and leave.
+	set State.give_money = "none"
+
+if State.give_money == "gave":
+	Store Owner: You are a fine detective, here take this, you will need it to defend yourself.
+	set State.gun_status = true
+	Detective: A gun! why?
+	Store Owner: You will need it in case you meet the west bloods goons.
+	Detective: Thanks
+elif State.give_money == "none":
+	Store Owner: You are just another servant of higher level, just want to rob everything from poor.
+	Store Owner: Now get lost!
 
 => END
 
 
+
+~ vending_machine
+
+Detective: I dont have enough money!
+- Shake the machine to get a drink.
+	set State.shake_machine = true
+- Leave it...
+	set State.shake_machine = false
+
+if State.shake_machine == true:
+	(Shake...Shake...Shake)
+	Detective: Huh! What is this?
+	Detective: A Pendrive?
+	Detective: It looks similar to the pendrive I got from the goons.
+	Look for the owner?
+	- Ask the Petrol Pump manager
+		Detective: If this pendrive is too important, the the owner will definitely come looking for it.
+		Detective: I'll just leave it here.
+		set State.keep_pendrive = false
+	- Keep it to yourself
+		set State.keep_pendrive = true
+else:
+	Detective: By the way I am not thirsty.
+
+=> END
+
+
+
+~ lady
+
+Detective: Excuse me, Mam! Would you know about this West Bloods by chance?
+
+(In a scared way)
+Lady: Why are you asking about them?
+Lady: Do you have a death wish? I do not know anything now go away.
+
+Detective: Oh come on, I am an officer of the state Mam. No need to scared.
+Detective: Please tell me everything you know, this is an urgent matter.
+
+Lady: Really, a police officer? Good Lord.
+Lady: They are a band of punks who thinks everyone is beneath them.
+Lady: They take money from us in the name of protection charges, kill anyone who opposes them and smuggle any white thing they can find from the Hub.
+
+=> END
+
+
+
+~ kid_on_stone
+
+Kid: Hey! what would you do if we both got super powers?
+
+Detective: Then we will save the world!
+
+Kid: No, you'll save the world.
+
+Detective: What about you?
+
+Kid: Who do you think you're saving it from?
+
+Detective: ...
+
+=> END
 

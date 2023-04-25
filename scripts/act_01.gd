@@ -2,14 +2,23 @@ extends Node3D
 
 const Ballon = preload("res://dialogues/balloon.tscn")
 
-@onready var main_menu_scene = preload("res://scenes/main_menu/main_menu.tscn")
 @onready var bus = preload("res://scenes/misc/bus.tscn")
 @onready var bus_trigger_point : Node3D = $BusTriggerPoint
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var player = $Player
 
 
 func _ready():
+	player.player_health = 50
 	animation_player.play("opening_fade_in")
+
+
+func _process(delta):
+	if State.take_aspirin:
+		player.player_health = 100
+	
+	if player.dead:
+		animation_player.play("dead_fade_out")
 
 
 func _on_bus_trigger_body_entered(body):
@@ -27,5 +36,7 @@ func _on_animation_player_animation_finished(anim_name):
 		ballon.start(load("res://dialogues/act_01_dialogues.dialogue"), "start")
 		return
 	elif anim_name == "dead_fade_out":
-		get_tree().change_scene_to_packed(main_menu_scene)
+		Global.audio_start()
+		Global.next_scene = "res://scenes/main_menu/main_menu.tscn"
+		get_tree().change_scene_to_file("res://scenes/misc/load.tscn")
 		queue_free()

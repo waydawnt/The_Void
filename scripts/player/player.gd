@@ -22,6 +22,7 @@ var is_reloading : bool = false
 @onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
 @onready var actionable_finder : Area3D = $PlayerSprite/Muzzle/ActionableFinder
 @onready var interact_text : Label = $PlayerSprite/InteractText
+@onready var camera_animation : AnimationPlayer = $AnimationPlayer2
 
 @onready var bullet_scene = preload("res://scenes/player/bullet.tscn")
 
@@ -34,7 +35,7 @@ var bullet_direction : int = 1
 
 var dead : bool = false
 var hurt : bool = false
-var damage_power : int
+var damage_power : int = 5
 
 
 func _process(delta):
@@ -43,6 +44,11 @@ func _process(delta):
 	if player_health <= 0:
 		dead = true
 	
+	if State.gun_status == true:
+		ammo.visible = true
+	else:
+		ammo.visible = false
+		
 	if Input.is_action_just_pressed("reload") or current_bullet == 0:
 		if current_bullet < total_bullet:
 			is_reloading = true
@@ -67,8 +73,8 @@ func get_input(delta):
 	var speed : int
 	var direction : Vector3 = Vector3.ZERO
 	
-	if not dead:
-		if not hurt:
+	if !dead:
+		if !hurt:
 			# get and set X direction of Player
 			direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 			
@@ -103,16 +109,17 @@ func get_input(delta):
 				state_machine.travel("punch_01")
 			
 			# call shoot function and show muzzle flash
-			if Input.is_action_just_pressed("fire") and not is_reloading:
-				state_machine.travel("fire")
-				movement_sfx("stand")
-				shoot()
-				set_physics_process(false)
+			if State.gun_status == true:
+				if Input.is_action_just_pressed("fire") and not is_reloading:
+					state_machine.travel("fire")
+					movement_sfx("stand")
+					shoot()
+					set_physics_process(false)
 			
 			direction = direction.normalized()
 			
 			velocity = velocity.lerp(direction * speed, acceleration * delta)
-		elif hurt:
+		else:
 			deal_damage()
 			hurt = false
 	else:
@@ -125,9 +132,6 @@ func deal_damage():
 	blood_splatter.transform = blood_point.global_transform
 	owner.add_child(blood_splatter)
 	player_health -= damage_power
-	if player_health == 0:
-		queue_free()
-	return
 
 func die():
 	state_machine.travel("die")
@@ -210,5 +214,6 @@ func _on_actionable_finder_area_exited(area):
 func _on_punch_area_area_entered(area):
 	var parent = area.get_parent()
 	if parent.is_in_group("Enemy"):
+		camera_animation.play("camera_shake")
 		parent.deal_damage(3)
 		print(parent.enemy_health)

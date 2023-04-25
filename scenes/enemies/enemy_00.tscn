@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bghtab3mormds"]
+[gd_scene load_steps=27 format=3 uid="uid://bghtab3mormds"]
 
 [ext_resource type="Script" path="res://scripts/enemy_scripts/enemy_00.gd" id="1_jv7a1"]
 [ext_resource type="Texture2D" uid="uid://buo42nppguiir" path="res://imports/enemies/Enemy_00/enemy_00.png" id="2_nnj3c"]
+[ext_resource type="AudioStream" uid="uid://bft2sex46al4l" path="res://sounds/run.mp3" id="3_jyiqg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uekh6"]
 radius = 0.4
@@ -20,22 +21,17 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
-
-[sub_resource type="Animation" id="Animation_1m8u2"]
-resource_name = "run"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EnemySprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackArea:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [36, 39, 42, 45]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_7rmsj"]
@@ -53,6 +49,82 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [56, 59, 62, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackArea:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_gmj2u"]
+resource_name = "die"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [79]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_16vaj"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [56, 59, 62]
+}
+
+[sub_resource type="Animation" id="Animation_1m8u2"]
+resource_name = "run"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [36, 39, 42, 45]
 }
 
 [sub_resource type="Animation" id="Animation_6xu4q"]
@@ -76,12 +148,65 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_wudav"),
 "attack": SubResource("Animation_7rmsj"),
+"die": SubResource("Animation_gmj2u"),
+"idle": SubResource("Animation_16vaj"),
 "run": SubResource("Animation_1m8u2"),
 "walk": SubResource("Animation_6xu4q")
 }
 
-[node name="Enemy_00" type="Node3D" groups=["Enemy"]]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jdxjh"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_whpth"]
+animation = &"die"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_km17f"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fsukm"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qr04h"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0u4m1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wviv7"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gkj43"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x80pc"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rovfi"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4xsaw"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5ack7"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3ejul"]
+states/End/position = Vector2(1077, 134)
+states/Start/position = Vector2(210, 65)
+states/attack/node = SubResource("AnimationNodeAnimation_jdxjh")
+states/attack/position = Vector2(572, 190)
+states/die/node = SubResource("AnimationNodeAnimation_whpth")
+states/die/position = Vector2(935, 134)
+states/idle/node = SubResource("AnimationNodeAnimation_km17f")
+states/idle/position = Vector2(488, 65)
+states/run/node = SubResource("AnimationNodeAnimation_fsukm")
+states/run/position = Vector2(410, 190)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qr04h"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_0u4m1"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_wviv7"), "die", "End", SubResource("AnimationNodeStateMachineTransition_gkj43"), "attack", "run", SubResource("AnimationNodeStateMachineTransition_x80pc"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_rovfi"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_4xsaw"), "run", "attack", SubResource("AnimationNodeStateMachineTransition_5ack7")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_k20bv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0rnvk"]
+size = Vector3(2.12995, 1, 0.508583)
+
+[node name="Enemy_00" type="CharacterBody3D" groups=["Enemy"]]
 script = ExtResource("1_jv7a1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_uekh6")
+disabled = true
 
 [node name="EnemySprite" type="Sprite3D" parent="."]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0.451206, 0, 0)
@@ -105,3 +230,21 @@ shape = SubResource("CapsuleShape3D_uekh6")
 libraries = {
 "": SubResource("AnimationLibrary_n8u4l")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_3ejul")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_k20bv")
+
+[node name="AttackArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0169043, 0.255747, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+shape = SubResource("BoxShape3D_0rnvk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jyiqg")
+volume_db = 24.0
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

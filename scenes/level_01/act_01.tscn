@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c4sjxor8spc62"]
+[gd_scene load_steps=36 format=3 uid="uid://c4sjxor8spc62"]
 
 [ext_resource type="Script" path="res://scripts/act_01.gd" id="1_bqy3t"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="1_fgpdl"]
@@ -10,6 +10,9 @@
 [ext_resource type="FontFile" uid="uid://djpj6jue28dw3" path="res://fonts/digital/Digital7-rg1mL.ttf" id="8_jra8h"]
 [ext_resource type="AudioStream" uid="uid://dljk4wn7p77j" path="res://sounds/keyboard_typing.mp3" id="9_5y3e8"]
 [ext_resource type="PackedScene" uid="uid://beftlvo6kiql3" path="res://scenes/misc/crows.tscn" id="10_dn8ph"]
+[ext_resource type="Texture2D" uid="uid://bwvoukhqq4f5o" path="res://imports/civilians/lady.png" id="11_2inmi"]
+[ext_resource type="Texture2D" uid="uid://c22ihxfjal3if" path="res://imports/civilians/kid_on_stone.png" id="12_hbjwm"]
+[ext_resource type="AudioStream" uid="uid://ckvfrd01letkb" path="res://sounds/badlands.mp3" id="13_4qt00"]
 
 [sub_resource type="Gradient" id="Gradient_r1fex"]
 offsets = PackedFloat32Array(0.327869, 1)
@@ -98,6 +101,22 @@ tracks/2/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_2oaeo"]
+resource_name = "dead_fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeAnimation:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_w0djp"]
 resource_name = "opening_fade_in"
 length = 5.0
@@ -138,27 +157,93 @@ tracks/2/keys = {
 "values": [true, false, true, false]
 }
 
-[sub_resource type="Animation" id="Animation_2oaeo"]
-resource_name = "dead_fade_out"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FadeAnimation:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1.5, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v5y0n"]
 _data = {
 "RESET": SubResource("Animation_7w5dx"),
 "dead_fade_out": SubResource("Animation_2oaeo"),
 "opening_fade_in": SubResource("Animation_w0djp")
+}
+
+[sub_resource type="Animation" id="Animation_ckw3t"]
+resource_name = "idle"
+length = 1.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_jlw3k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i7mk0"]
+_data = {
+"RESET": SubResource("Animation_jlw3k"),
+"idle": SubResource("Animation_ckw3t")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gy4cg"]
+size = Vector3(1, 1, 2.13665)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ofyle"]
+size = Vector3(1, 1.48119, 1.97918)
+
+[sub_resource type="Animation" id="Animation_l4aie"]
+resource_name = "idle"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_7qxko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rxsva"]
+_data = {
+"RESET": SubResource("Animation_7qxko"),
+"idle": SubResource("Animation_l4aie")
 }
 
 [node name="Act_01" type="Node3D"]
@@ -170,6 +255,12 @@ camera_attributes = SubResource("CameraAttributesPractical_iip2e")
 
 [node name="Player" parent="." instance=ExtResource("1_fgpdl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.757, 1.103, -3)
+axis_lock_linear_z = true
+
+[node name="Enemy_00" parent="." node_paths=PackedStringArray("player_position") instance=ExtResource("3_aka3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215.685, 1.09, -3)
+axis_lock_linear_z = true
+player_position = NodePath("../Player")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.908508, -0.0306038, 0.416745, 0, 0.997315, 0.0732381, -0.417867, 0.0665375, -0.906068, 0, 33.99, 0)
@@ -177,9 +268,6 @@ light_color = Color(1, 0.662745, 0.364706, 1)
 shadow_enabled = true
 
 [node name="Level_01_Ground" parent="." instance=ExtResource("1_jl1n3")]
-
-[node name="Enemy_00" parent="." instance=ExtResource("3_aka3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.64, 1.14572, -3)
 
 [node name="StoreOwner" parent="." instance=ExtResource("4_c56u7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -164.715, 1.07154, -4.02189)
@@ -272,6 +360,90 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -186.371, 0.207925, -11.8097)
 
 [node name="Crows10" parent="Crows" instance=ExtResource("10_dn8ph")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -188.73, 0.207925, -10.3914)
+
+[node name="Crows11" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -121.939, 0.207925, -15.2661)
+
+[node name="Crows12" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -121.007, 0.207925, -17.2562)
+
+[node name="Crows13" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -122.317, 0.207925, -17.2562)
+
+[node name="Crows14" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -124.676, 0.207925, -15.8379)
+
+[node name="Crows15" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -121.2, 0.207925, -14.1079)
+
+[node name="Crows16" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -120.268, 0.207925, -16.098)
+
+[node name="Crows17" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -121.578, 0.207925, -16.098)
+
+[node name="Crows18" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -123.937, 0.207925, -14.6797)
+
+[node name="Crows19" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -105.033, 0.207925, -10.5067)
+
+[node name="Crows20" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -104.101, 0.207925, -12.4968)
+
+[node name="Crows21" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -105.411, 0.207925, -12.4968)
+
+[node name="Crows22" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -107.77, 0.207925, -11.0785)
+
+[node name="Lady" type="Sprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -85.2091, 0.924401, -4.08945)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_2inmi")
+hframes = 17
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lady"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_i7mk0")
+}
+
+[node name="Actionable" parent="Lady" instance=ExtResource("5_nnf8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.945876)
+dialogue_resource = ExtResource("6_co8uk")
+dialogue_start = "lady"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lady/Actionable"]
+shape = SubResource("BoxShape3D_gy4cg")
+
+[node name="Kid" type="Sprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -72.6412, 0.913587, -3.79315)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("12_hbjwm")
+hframes = 14
+
+[node name="Actionable" parent="Kid" instance=ExtResource("5_nnf8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240433, 0.296056, 0.988982)
+dialogue_resource = ExtResource("6_co8uk")
+dialogue_start = "kid_on_stone"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kid/Actionable"]
+shape = SubResource("BoxShape3D_ofyle")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Kid"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_rxsva")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_4qt00")
+autoplay = true
 
 [connection signal="body_entered" from="BusTrigger" to="." method="_on_bus_trigger_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

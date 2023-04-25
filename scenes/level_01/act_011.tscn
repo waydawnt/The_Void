@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/act_01.gd" id="1_b6xw3"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="2_nmo1n"]
-[ext_resource type="PackedScene" uid="uid://c84j3cc4ymjp3" path="res://scenes/level_01/Ground/level_01_ground.tscn" id="3_brcgr"]
+[ext_resource type="PackedScene" uid="uid://c6hv2s3spolqj" path="res://scenes/level_01/Ground/level_01_ground.tscn" id="3_brcgr"]
 [ext_resource type="PackedScene" uid="uid://bghtab3mormds" path="res://scenes/enemies/enemy_00.tscn" id="4_ndufj"]
 [ext_resource type="PackedScene" uid="uid://ta4dcsv2he5s" path="res://scenes/interactive_civilians/store_owner.tscn" id="5_88x31"]
 [ext_resource type="PackedScene" uid="uid://c54eav2pfd8i1" path="res://scenes/misc/actionable.tscn" id="6_5njdv"]

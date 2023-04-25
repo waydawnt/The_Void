@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/misc/load.gd" id="1_y84ak"]
 [ext_resource type="FontFile" uid="uid://laww37tcrbn7" path="res://fonts/digital/Digital7Mono-Yz9J4.ttf" id="2_f0iav"]
-[ext_resource type="Texture2D" uid="uid://bae508acwq106" path="res://icon.svg" id="3_uh2yl"]
+[ext_resource type="Texture2D" uid="uid://c0f2pw27xmeuq" path="res://imports/images/Fergusson_logo.png" id="3_7ctxc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iq6dn"]
 bg_color = Color(1, 1, 0.6, 0)
@@ -160,7 +160,7 @@ theme = SubResource("Theme_dskwp")
 
 [node name="Icon" type="Sprite2D" parent="Control"]
 position = Vector2(960, 540)
-texture = ExtResource("3_uh2yl")
+texture = ExtResource("3_7ctxc")
 
 [node name="FadeOut" type="ColorRect" parent="Control"]
 layout_mode = 1
