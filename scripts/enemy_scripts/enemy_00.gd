@@ -26,7 +26,6 @@ func _process(delta):
 func _physics_process(delta):
 	get_direction()
 	play_animations()
-	
 	velocity = calculate_velocity(direction, velocity, delta)
 	move_and_slide()
 

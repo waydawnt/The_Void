@@ -19,10 +19,18 @@ func _process(delta):
 	
 	if player.dead:
 		animation_player.play("dead_fade_out")
+	
+	if State.start_bus == true:
+		start_bus()
+
+
+func start_bus():
+	var b = bus.instantiate()
+	bus_trigger_point.add_child(b)
+	State.start_bus = false
 
 
 func _on_bus_trigger_body_entered(body):
-	print(body.name)
 	if body.name == "Player":
 		var b = bus.instantiate()
 		bus_trigger_point.add_child(b)

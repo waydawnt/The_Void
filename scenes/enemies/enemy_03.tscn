@@ -1,8 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://buxk33xqncrro"]
+[gd_scene load_steps=27 format=3 uid="uid://bg7lmu18gv3b3"]
 
-[ext_resource type="Script" path="res://scripts/enemy_scripts/enemy_00.gd" id="1_fuh4l"]
-[ext_resource type="Texture2D" uid="uid://cby7skj2xwj38" path="res://imports/enemies/enemy_01/goon4ani.png" id="2_ppui3"]
-[ext_resource type="AudioStream" uid="uid://bft2sex46al4l" path="res://sounds/run.mp3" id="3_h00o6"]
+[ext_resource type="Script" path="res://scripts/enemy_scripts/enemy_00.gd" id="1_po170"]
+[ext_resource type="Texture2D" uid="uid://b4vhcvmu6f6j6" path="res://imports/enemies/enemy_03/goon4Redcap.png" id="2_qwhpp"]
+[ext_resource type="AudioStream" uid="uid://bft2sex46al4l" path="res://sounds/run.mp3" id="3_t1nkt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uekh6"]
 radius = 0.4
@@ -36,7 +36,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_7rmsj"]
 resource_name = "attack"
-length = 0.6
+length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -45,10 +45,10 @@ tracks/0/path = NodePath("EnemySprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [24, 25, 28]
+"values": [12, 15, 17, 19, 21, 23, 25]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -57,15 +57,15 @@ tracks/1/path = NodePath("AttackArea:monitoring")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_gmj2u"]
 resource_name = "die"
-length = 0.5
+length = 0.8
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -73,7 +73,7 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -87,31 +87,14 @@ tracks/1/path = NodePath("EnemySprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [31, 32, 33]
+"values": [57, 58, 59, 60, 61]
 }
 
 [sub_resource type="Animation" id="Animation_16vaj"]
 resource_name = "idle"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EnemySprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [19, 20, 21]
-}
-
-[sub_resource type="Animation" id="Animation_1m8u2"]
-resource_name = "run"
 length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
@@ -125,6 +108,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_1m8u2"]
+resource_name = "run"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 30, 31]
 }
 
 [sub_resource type="Animation" id="Animation_6xu4q"]
@@ -201,8 +201,8 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 [sub_resource type="BoxShape3D" id="BoxShape3D_0rnvk"]
 size = Vector3(2.12995, 1, 0.508583)
 
-[node name="Enemy_01" type="CharacterBody3D" groups=["Enemy"]]
-script = ExtResource("1_fuh4l")
+[node name="Enemy_02" type="CharacterBody3D" groups=["Enemy"]]
+script = ExtResource("1_po170")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_uekh6")
@@ -214,8 +214,8 @@ offset = Vector2(-26, 0)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("2_ppui3")
-hframes = 34
+texture = ExtResource("2_qwhpp")
+hframes = 39
 region_rect = Rect2(4627, 10, 78, 111)
 
 [node name="BloodPoint" type="Node3D" parent="EnemySprite"]
@@ -245,7 +245,7 @@ monitoring = false
 shape = SubResource("BoxShape3D_0rnvk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_h00o6")
+stream = ExtResource("3_t1nkt")
 volume_db = 24.0
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

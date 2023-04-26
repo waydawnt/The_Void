@@ -1,10 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://c4sjxor8spc62"]
+[gd_scene load_steps=40 format=3 uid="uid://c4sjxor8spc62"]
 
 [ext_resource type="Script" path="res://scripts/act_01.gd" id="1_bqy3t"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="1_fgpdl"]
 [ext_resource type="PackedScene" uid="uid://c6hv2s3spolqj" path="res://scenes/level_01/Ground/level_01_ground.tscn" id="1_jl1n3"]
 [ext_resource type="PackedScene" uid="uid://djh83pailidpc" path="res://scenes/enemies/enemy_02.tscn" id="3_ahw7w"]
 [ext_resource type="PackedScene" uid="uid://bghtab3mormds" path="res://scenes/enemies/enemy_00.tscn" id="3_aka3d"]
+[ext_resource type="PackedScene" uid="uid://bg7lmu18gv3b3" path="res://scenes/enemies/enemy_03.tscn" id="3_s27lc"]
 [ext_resource type="PackedScene" uid="uid://buxk33xqncrro" path="res://scenes/enemies/enemy_01.tscn" id="3_thijy"]
 [ext_resource type="PackedScene" uid="uid://ta4dcsv2he5s" path="res://scenes/interactive_civilians/store_owner.tscn" id="4_c56u7"]
 [ext_resource type="PackedScene" uid="uid://c54eav2pfd8i1" path="res://scenes/misc/actionable.tscn" id="5_nnf8p"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c22ihxfjal3if" path="res://imports/civilians/kid_on_stone.png" id="12_hbjwm"]
 [ext_resource type="AudioStream" uid="uid://ckvfrd01letkb" path="res://sounds/badlands.mp3" id="13_4qt00"]
 [ext_resource type="AudioStream" uid="uid://u50xdn0bg74o" path="res://sounds/AfterHours.mp3" id="14_fwbqm"]
+[ext_resource type="PackedScene" uid="uid://dhgj5o00k4m1c" path="res://scenes/misc/pause_menu.tscn" id="18_p86dy"]
 
 [sub_resource type="Gradient" id="Gradient_r1fex"]
 offsets = PackedFloat32Array(0.327869, 1)
@@ -61,9 +63,6 @@ dof_blur_near_transition = 5.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_di6qi"]
 size = Vector3(0.250902, 1.94723, 7.42596)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ixtpr"]
-size = Vector3(1, 1, 7.06946)
 
 [sub_resource type="Animation" id="Animation_7w5dx"]
 length = 0.001
@@ -261,20 +260,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.757, 1.103, -3)
 axis_lock_linear_z = true
 player_health = 50
 
-[node name="Enemy_02" parent="." node_paths=PackedStringArray("player_position") instance=ExtResource("3_ahw7w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212.869, 1.09, -3)
+[node name="GoonsAttack" type="Node3D" parent="."]
+
+[node name="Enemy_03" parent="GoonsAttack" node_paths=PackedStringArray("player_position") instance=ExtResource("3_s27lc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.099, 1.09, -3)
+player_position = NodePath("../../Player")
+
+[node name="Enemy_02" parent="GoonsAttack" node_paths=PackedStringArray("player_position") instance=ExtResource("3_ahw7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.014, 1.09, -3)
 enemy_speed = 2.8
-player_position = NodePath("../Player")
+player_position = NodePath("../../Player")
 
-[node name="Enemy_01" parent="." node_paths=PackedStringArray("player_position") instance=ExtResource("3_thijy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214.131, 1.09, -3)
+[node name="Enemy_01" parent="GoonsAttack" node_paths=PackedStringArray("player_position") instance=ExtResource("3_thijy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.752, 1.09, -3)
 enemy_speed = 2.5
-player_position = NodePath("../Player")
+player_position = NodePath("../../Player")
 
-[node name="Enemy_00" parent="." node_paths=PackedStringArray("player_position") instance=ExtResource("3_aka3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215.685, 1.09, -3)
+[node name="Enemy_00" parent="GoonsAttack" node_paths=PackedStringArray("player_position") instance=ExtResource("3_aka3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.198, 1.09, -3)
 axis_lock_linear_z = true
-player_position = NodePath("../Player")
+player_position = NodePath("../../Player")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.908508, -0.0306038, 0.416745, 0, 0.997315, 0.0732381, -0.417867, 0.0665375, -0.906068, 0, 33.99, 0)
@@ -305,12 +310,6 @@ shape = SubResource("BoxShape3D_di6qi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40643, 1.22453, -1.24047)
 
 [node name="Marker3D" type="Marker3D" parent="BusTriggerPoint"]
-
-[node name="BusTrigger" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.4529, 0.700081, -2.41372)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BusTrigger"]
-shape = SubResource("BoxShape3D_ixtpr")
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -411,6 +410,90 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -105.411, 0.207925, -12.4968)
 [node name="Crows22" parent="Crows" instance=ExtResource("10_dn8ph")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -107.77, 0.207925, -11.0785)
 
+[node name="Crows23" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -45.9456, 0.207925, -12.7355)
+
+[node name="Crows24" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -27.0416, 0.207925, -8.5625)
+
+[node name="Crows25" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26.1096, 0.207925, -10.5526)
+
+[node name="Crows26" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -27.4196, 0.207925, -10.5526)
+
+[node name="Crows27" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -29.7786, 0.207925, -9.1343)
+
+[node name="Crows28" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 13.4728, 0.207925, -12.7355)
+
+[node name="Crows29" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 32.3768, 0.207925, -8.5625)
+
+[node name="Crows30" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 33.3088, 0.207925, -10.5526)
+
+[node name="Crows31" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 31.9988, 0.207925, -10.5526)
+
+[node name="Crows32" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 29.6398, 0.207925, -9.1343)
+
+[node name="Crows33" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 11.2899, 0.207925, -16.3469)
+
+[node name="Crows34" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 30.1939, 0.207925, -12.1739)
+
+[node name="Crows35" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 31.1259, 0.207925, -14.164)
+
+[node name="Crows36" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 29.8159, 0.207925, -14.164)
+
+[node name="Crows37" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4569, 0.207925, -12.7457)
+
+[node name="Crows38" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0485, 0.207925, -12.599)
+
+[node name="Crows39" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 79.2342, 0.207925, -12.1739)
+
+[node name="Crows40" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 80.1662, 0.207925, -14.164)
+
+[node name="Crows41" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 78.8562, 0.207925, -14.164)
+
+[node name="Crows42" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 76.4972, 0.207925, -12.7457)
+
+[node name="Crows43" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 125.821, 0.207925, -8.17256)
+
+[node name="Crows44" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 126.753, 0.207925, -10.1627)
+
+[node name="Crows45" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 125.443, 0.207925, -10.1627)
+
+[node name="Crows46" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 123.084, 0.207925, -8.74436)
+
+[node name="Crows47" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 146.099, 0.207925, -12.5474)
+
+[node name="Crows48" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 147.031, 0.207925, -14.5375)
+
+[node name="Crows49" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 145.721, 0.207925, -14.5375)
+
+[node name="Crows50" parent="Crows" instance=ExtResource("10_dn8ph")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 143.362, 0.207925, -13.1192)
+
 [node name="Lady" type="Sprite3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -85.2091, 0.924401, -4.08945)
 shaded = true
@@ -464,5 +547,7 @@ stream = ExtResource("14_fwbqm")
 volume_db = -10.0
 autoplay = true
 
-[connection signal="body_entered" from="BusTrigger" to="." method="_on_bus_trigger_body_entered"]
+[node name="PauseMenu" parent="." instance=ExtResource("18_p86dy")]
+visible = false
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
