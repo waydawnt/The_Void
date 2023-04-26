@@ -15,7 +15,7 @@ var dead : bool = false
 var is_running : bool = false
 
 
-func _process(delta):
+func _process(_delta):
 	if is_running:
 		audio_player.play()
 	else:
@@ -24,10 +24,11 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	get_direction()
-	play_animations()
-	velocity = calculate_velocity(direction, velocity, delta)
-	move_and_slide()
+	if Global.goons_start_fight == true:
+		get_direction()
+		play_animations()
+		velocity = calculate_velocity(direction, velocity, delta)
+		move_and_slide()
 
 
 func get_direction():
@@ -44,7 +45,7 @@ func get_direction():
 	else:
 		direction.x = 0
 
-func calculate_velocity(dir, vel, delta):
+func calculate_velocity(dir, vel, _delta):
 	var new_vel = vel
 	
 	new_vel.x = dir.x * enemy_speed
@@ -85,8 +86,9 @@ func deal_damage(damage):
 
 
 func _on_attack_area_body_entered(body):
-	if body.name == "Player":
-		if !body.dead:
-			body.camera_animation.play("camera_shake")
-			body.hurt = true
-			body.deal_damage()
+	if Global.goons_start_fight == true:
+		if body.name == "Player":
+			if !body.dead:
+				body.camera_animation.play("camera_shake")
+				body.hurt = true
+				body.deal_damage()

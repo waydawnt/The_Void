@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cnbbgetwpmnia" path="res://scenes/level_01/Ground/wall_00.tscn" id="6_qta2c"]
 [ext_resource type="Texture2D" uid="uid://gtb64qet3and" path="res://imports/2d_sprites/level_01_sprites/pp.png" id="7_b5704"]
 [ext_resource type="Texture2D" uid="uid://68gjyo6kycd8" path="res://imports/2d_sprites/level_01_sprites/Cars/Cars1.png" id="8_4p12t"]
-[ext_resource type="Texture2D" uid="uid://q16sdf12v4ce" path="res://imports/2d_sprites/level_01_sprites/billboard1.png" id="9_3mc0b"]
+[ext_resource type="Texture2D" uid="uid://b7sbnpwf7vk18" path="res://imports/2d_sprites/level_02_sprites/garagebillboard2.png" id="9_oxmrr"]
 [ext_resource type="Texture2D" uid="uid://c1uv7retv8jgw" path="res://imports/2d_sprites/level_01_sprites/truck.png" id="10_uemho"]
 [ext_resource type="PackedScene" uid="uid://fc42tlaktuqt" path="res://scenes/level_01/vending_machines/vending_machine_01.tscn" id="11_8tyvk"]
 [ext_resource type="PackedScene" uid="uid://c54eav2pfd8i1" path="res://scenes/misc/actionable.tscn" id="12_cg7re"]
@@ -82,11 +82,11 @@ texture = ExtResource("8_4p12t")
 vframes = 3
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(2.59808, 0, -1.5, 0, 3, 0, 1.5, 0, 2.59808, 7.81573, 2.36789, 8.69275)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.61163, 4.16825, -3.13686)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("9_3mc0b")
+texture = ExtResource("9_oxmrr")
 
 [node name="Truck" type="Sprite3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 6.11671, 1.96457, 1.80949)

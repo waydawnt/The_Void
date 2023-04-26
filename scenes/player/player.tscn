@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cv80xmr0e1ad2"]
+[gd_scene load_steps=61 format=3 uid="uid://cv80xmr0e1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://kcxvdg3hqxtj" path="res://imports/player/player_spritesheet.png" id="1_827c7"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qk0m8"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dh0oi6h55u5gu" path="res://sounds/body_fall_down.mp3" id="7_l2qo4"]
 [ext_resource type="AudioStream" uid="uid://b08ml6odphkts" path="res://sounds/punch.mp3" id="8_nkkvi"]
 [ext_resource type="AudioStream" uid="uid://h77vx37c1j84" path="res://sounds/hurt.mp3" id="9_lksnt"]
+[ext_resource type="FontFile" uid="uid://c1ycg8n3owyj4" path="res://fonts/ExMechanica.otf" id="9_rvvbg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toi7h"]
 transparency = 2
@@ -631,7 +632,8 @@ offset_left = -110.0
 offset_right = 110.0
 offset_bottom = 55.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_ultkg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_rvvbg")
 theme_override_font_sizes/font_size = 50
 text = "Health: 100"
 
@@ -639,6 +641,7 @@ text = "Health: 100"
 layout_mode = 1
 offset_right = 220.0
 offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_ultkg")
 theme_override_font_sizes/font_size = 50
 text = "6 / 6"

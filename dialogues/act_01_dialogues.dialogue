@@ -100,7 +100,7 @@ Kid: No, you'll save the world.
 
 Detective: What about you?
 
-Kid: Who do you think you're saving it from?
+Kid: Who do you think you will be saving it from?
 
 Detective: ...
 
@@ -109,24 +109,26 @@ Detective: ...
 
 ~ goons_adda
 
+set State.start_bus = true
 Goon: Long time no see, detective!
 Goon: Oh! wait we beat you up just yesterday.
 Goon: I think you have something that is ours don't you think, detective? It's bad manners to steal you know.
 Goon: Give it back or else my boys will take care of it.
 
+
 if State.keep_pendrive == true:
 	Give original or fake pendrive?
 	- Give fake pendrive
 		set State.gave_original = false
-		Goon: That's like a good boy.
-		set State.start_bus = true
+		Goon: Let's check it.
+		Goon: It's fake, get him!
+		set State.start_fight = true
 	- Give original pendrive
 		set State.gave_original = true
 		Goon: That's like a good boy.
-		set State.start_bus = true
 else:
 	Detective: Well then, violence it is...
-	set State.star_fight = true
+	set State.start_fight = true
 
 => END
 

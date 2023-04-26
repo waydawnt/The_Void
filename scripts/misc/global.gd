@@ -2,6 +2,9 @@ extends Node
 
 var next_scene : String
 
+var goons_start_fight : bool = false
+var got_on_bus : bool = false
+
 @onready var audio_player = AudioStreamPlayer.new()
 @onready var main_music : AudioStream = preload("res://sounds/just_evil(cyberpunk).mp3")
 

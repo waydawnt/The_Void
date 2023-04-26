@@ -38,7 +38,7 @@ var hurt : bool = false
 var damage_power : int = 5
 
 
-func _process(delta):
+func _process(_delta):
 	update_text()
 	
 	if player_health <= 0:
@@ -207,7 +207,7 @@ func _on_actionable_finder_area_entered(area):
 	interact_text.visible = true
 
 
-func _on_actionable_finder_area_exited(area):
+func _on_actionable_finder_area_exited(_area):
 	interact_text.visible = false
 
 
