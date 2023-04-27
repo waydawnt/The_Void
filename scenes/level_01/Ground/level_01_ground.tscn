@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://c6hv2s3spolqj"]
+[gd_scene load_steps=68 format=3 uid="uid://c6hv2s3spolqj"]
 
 [ext_resource type="Shader" uid="uid://b7nsg66n2p8h5" path="res://shaders/level_01_ground.tres" id="1_sjh5s"]
 [ext_resource type="Texture2D" uid="uid://bhhj4yab4hc04" path="res://imports/level_01/road/Dirt 04 seamless.jpg" id="2_0kryc"]
@@ -40,6 +40,13 @@
 [ext_resource type="Texture2D" uid="uid://glgylkw5dmmr" path="res://imports/2d_sprites/level_01_sprites/busstop.png" id="36_jbqci"]
 [ext_resource type="Texture2D" uid="uid://by4l0tf1yhf2t" path="res://imports/2d_sprites/level_01_sprites/tree_01.png" id="38_u4et8"]
 [ext_resource type="Texture2D" uid="uid://b0xx5xhv2cl6j" path="res://imports/2d_sprites/level_01_sprites/streetlamp.png" id="40_mjytu"]
+[ext_resource type="Texture2D" uid="uid://d3doqutx480j1" path="res://imports/2d_sprites/level_01_sprites/ferris wheel.png" id="41_j1o3t"]
+[ext_resource type="Texture2D" uid="uid://cckfe0j0k7ctr" path="res://imports/2d_sprites/level_01_sprites/trash1.png" id="42_fj5b1"]
+[ext_resource type="Texture2D" uid="uid://bmscl0a1alxxc" path="res://imports/2d_sprites/level_01_sprites/metal_g.png" id="42_jqv30"]
+[ext_resource type="Texture2D" uid="uid://ct06xggp8td8k" path="res://imports/2d_sprites/level_01_sprites/metal_g_01.png" id="43_78pab"]
+[ext_resource type="Texture2D" uid="uid://bdplr6xul40to" path="res://imports/2d_sprites/level_02_sprites/hotel board.png" id="45_awqx0"]
+[ext_resource type="Texture2D" uid="uid://6e8gkbmf22xw" path="res://imports/2d_sprites/level_02_sprites/pole.png" id="46_6kquk"]
+[ext_resource type="Texture2D" uid="uid://bvb8ait2w35rk" path="res://imports/2d_sprites/level_02_sprites/hotel1.png" id="47_5pcy7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b72ai"]
 render_priority = 0
@@ -3188,3 +3195,187 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("40_mjytu")
+
+[node name="FerrisWheel" type="Sprite3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -37.2427, 13.0003, -147.256)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("41_j1o3t")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -232.617, 0.612425, -7.06469)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_fj5b1")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -72.4929, 0.612425, -8.73597)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_fj5b1")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -61.5173, 0.612425, -4.11595)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -66.8886, 0.612425, -4.11595)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -68.6938, 0.612425, -4.11595)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -70.4863, 0.612425, -4.11595)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(-6.55671e-08, 0, -1, 0, 1, 0, 1.5, 0, -4.37114e-08, -71.3944, 0.612425, -5.05657)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Sprite3D8" type="Sprite3D" parent="."]
+transform = Transform3D(-6.55671e-08, 0, -1, 0, 1, 0, 1.5, 0, -4.37114e-08, -71.3944, 0.612425, -6.88455)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Sprite3D9" type="Sprite3D" parent="."]
+transform = Transform3D(-6.55671e-08, 0, -1, 0, 1, 0, 1.5, 0, -4.37114e-08, -71.3944, 0.612425, -8.70589)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Sprite3D10" type="Sprite3D" parent="."]
+transform = Transform3D(-1.5, 0, 8.74228e-08, 0, 1, 0, -1.31134e-07, 0, -1, -70.4609, 0.612425, -9.61492)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Sprite3D11" type="Sprite3D" parent="."]
+transform = Transform3D(-1.5, 0, 8.74228e-08, 0, 1, 0, -1.31134e-07, 0, -1, -72.2637, 0.612425, -9.61492)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Sprite3D12" type="Sprite3D" parent="."]
+transform = Transform3D(-1.5, 0, 8.74228e-08, 0, 1, 0, -1.31134e-07, 0, -1, -74.0731, 0.612425, -9.61492)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("43_78pab")
+
+[node name="Gates" type="Node3D" parent="."]
+
+[node name="Metal" type="Sprite3D" parent="Gates"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -225.231, 0.616685, -5.78902)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Metal2" type="Sprite3D" parent="Gates"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -223.428, 0.616685, -5.78902)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Metal9" type="Sprite3D" parent="Gates"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -221.634, 0.616685, -5.78902)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Metal10" type="Sprite3D" parent="Gates"]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -220.696, 0.616685, -6.75149)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Metal3" type="Sprite3D" parent="Gates"]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -226.156, 0.616685, -6.75682)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Metal4" type="Sprite3D" parent="Gates"]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -226.156, 0.616685, -8.58664)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Metal5" type="Sprite3D" parent="Gates"]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -226.156, 0.616685, -10.3749)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Metal6" type="Sprite3D" parent="Gates"]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -226.156, 0.616685, -12.1742)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Metal7" type="Sprite3D" parent="Gates"]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -226.156, 0.616685, -13.9776)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Metal8" type="Sprite3D" parent="Gates"]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -226.156, 0.616685, -15.7776)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("42_jqv30")
+
+[node name="Billboard" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36.3445, 3.59047, -4.27401)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("45_awqx0")
+
+[node name="Pole" type="Sprite3D" parent="Billboard"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -1.04906, -0.00658607)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("46_6kquk")
+
+[node name="Hotel" type="Sprite3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 66.4718, 8.40739, -81.9087)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("47_5pcy7")

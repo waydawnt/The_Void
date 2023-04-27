@@ -5,10 +5,13 @@ extends Node3D
 @onready var credits : MeshInstance3D = $title/menu_options/Credits/credits
 @onready var sleep : MeshInstance3D = $title/menu_options/Sleep/sleep
 @onready var options : Array = [wake_up, credits, sleep]
+@onready var camera_animation : AnimationPlayer = $CamaraMovementAnimation
+
 
 var current_index : int = 0
 
 var selected_option
+var in_credits : bool = false
 
 var yellow_neon = preload("res://materials/yellow_neon.tres")
 var red_neon = preload("res://materials/red_neon.tres")
@@ -38,12 +41,17 @@ func _process(_delta):
 			$AnimationPlayer.play("fade_out")
 		elif current_index == 1:
 			reset_previous(current_index)
-			await get_tree().create_timer(1.0).timeout
+			in_credits = true
+			camera_animation.play("credits_move")
 		elif current_index == 2:
 			reset_previous(current_index)
 			$AnimationPlayer.play("fade_out")
 	
 	current_option(current_index)
+	
+	if Input.is_action_just_pressed("escape") and in_credits:
+		camera_animation.play("main_move")
+		in_credits = false
 
 
 func current_option(number):

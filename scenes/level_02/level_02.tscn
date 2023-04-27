@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://b8vwywexas22f"]
+[gd_scene load_steps=56 format=3 uid="uid://b8vwywexas22f"]
 
 [ext_resource type="Script" path="res://scripts/level_02/level_02.gd" id="1_fb601"]
 [ext_resource type="PackedScene" uid="uid://cju8r7mme5683" path="res://scenes/level_02/ground/ground.tscn" id="1_l64pm"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://b40gyummkt1gd" path="res://scenes/level_02/civilians/civilian_06.tscn" id="19_0s4hh"]
 [ext_resource type="Texture2D" uid="uid://buo42nppguiir" path="res://imports/enemies/Enemy_00/enemy_00.png" id="19_dl48g"]
 [ext_resource type="Texture2D" uid="uid://dptydyeppfkor" path="res://imports/enemies/Enemy_00/enemy_00_normals.png" id="20_27pho"]
+[ext_resource type="PackedScene" uid="uid://w65vviu44217" path="res://scenes/level_02/civilians/Drone.tscn" id="20_y0ih4"]
 
 [sub_resource type="Environment" id="Environment_mjnp1"]
 background_mode = 1
@@ -814,6 +815,22 @@ speed = 0.75
 [node name="Civilian_23" parent="Civilians" instance=ExtResource("19_0s4hh")]
 transform = Transform3D(1.4, 0, 4.89568e-07, 0, 1.4, 0, -4.89568e-07, 0, 1.4, 29.4813, 2.03352, 11.7025)
 speed = 0.75
+
+[node name="Drone" parent="Civilians" instance=ExtResource("20_y0ih4")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 65.6154, 2.06213, 10.9183)
+
+[node name="Drone5" parent="Civilians" instance=ExtResource("20_y0ih4")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 60.4092, 2.06213, 11.6172)
+speed = 1.0
+
+[node name="Drone2" parent="Civilians" instance=ExtResource("20_y0ih4")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 55.6514, 2.06213, 7.82879)
+
+[node name="Drone3" parent="Civilians" instance=ExtResource("20_y0ih4")]
+transform = Transform3D(1.5, 0, 2.62268e-07, 0, 1.5, 0, -2.62268e-07, 0, 1.5, 62.9972, 2.06213, 10.7745)
+
+[node name="Drone4" parent="Civilians" instance=ExtResource("20_y0ih4")]
+transform = Transform3D(1.5, 0, 2.62268e-07, 0, 1.5, 0, -2.62268e-07, 0, 1.5, 44.3594, 2.06213, 9.80002)
 
 [node name="CrowControl" type="Node3D" parent="."]
 script = ExtResource("11_3lrnl")

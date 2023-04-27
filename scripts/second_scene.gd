@@ -18,6 +18,5 @@ func _on_animation_player_animation_finished(anim_name):
 			enter_pressed = true
 	elif anim_name == "type_in_2":
 		await get_tree().create_timer(5.0).timeout
-		Global.next_scene = "res://scenes/level_02/level_02.tscn"
-		get_tree().change_scene_to_file("res://scenes/misc/load.tscn")
+		get_tree().change_scene_to_file("res://scenes/news_screen.tscn")
 		queue_free()

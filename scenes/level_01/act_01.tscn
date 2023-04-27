@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://c4sjxor8spc62"]
+[gd_scene load_steps=64 format=3 uid="uid://c4sjxor8spc62"]
 
 [ext_resource type="Script" path="res://scripts/act_01.gd" id="1_bqy3t"]
 [ext_resource type="PackedScene" uid="uid://cv80xmr0e1ad2" path="res://scenes/player/player.tscn" id="1_fgpdl"]
@@ -22,6 +22,8 @@
 [ext_resource type="AudioStream" uid="uid://ckvfrd01letkb" path="res://sounds/badlands.mp3" id="13_4qt00"]
 [ext_resource type="AudioStream" uid="uid://u50xdn0bg74o" path="res://sounds/AfterHours.mp3" id="14_fwbqm"]
 [ext_resource type="PackedScene" uid="uid://dhgj5o00k4m1c" path="res://scenes/misc/pause_menu.tscn" id="18_p86dy"]
+[ext_resource type="Script" path="res://scripts/level_02/CrowControl.gd" id="23_ob5jd"]
+[ext_resource type="PackedScene" uid="uid://dd78d0wouf2g6" path="res://scenes/level_02/civilians/civilian_03.tscn" id="24_fycpx"]
 
 [sub_resource type="Gradient" id="Gradient_r1fex"]
 offsets = PackedFloat32Array(0.327869, 1)
@@ -462,6 +464,9 @@ _data = {
 "idle": SubResource("Animation_l4aie")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rktnw"]
+size = Vector3(1, 1, 11.3464)
+
 [node name="Act_01" type="Node3D"]
 script = ExtResource("1_bqy3t")
 
@@ -562,6 +567,7 @@ player_position = NodePath("../../Player")
 [node name="Enemy_00" parent="GoonsAttack" node_paths=PackedStringArray("player_position") instance=ExtResource("3_aka3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.92, 1.09, -3)
 axis_lock_linear_z = true
+enemy_speed = 2.7
 player_position = NodePath("../../Player")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -745,19 +751,19 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 29.8159, 0.207925, -14.164)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4569, 0.207925, -12.7457)
 
 [node name="Crows38" parent="Crows" instance=ExtResource("10_dn8ph")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0485, 0.207925, -12.599)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 65.5692, 0.207925, -12.599)
 
 [node name="Crows39" parent="Crows" instance=ExtResource("10_dn8ph")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 79.2342, 0.207925, -12.1739)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 70.7549, 0.207925, -12.1739)
 
 [node name="Crows40" parent="Crows" instance=ExtResource("10_dn8ph")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 80.1662, 0.207925, -14.164)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 71.6869, 0.207925, -14.164)
 
 [node name="Crows41" parent="Crows" instance=ExtResource("10_dn8ph")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 78.8562, 0.207925, -14.164)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 70.3769, 0.207925, -14.164)
 
 [node name="Crows42" parent="Crows" instance=ExtResource("10_dn8ph")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 76.4972, 0.207925, -12.7457)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 68.0179, 0.207925, -12.7457)
 
 [node name="Crows43" parent="Crows" instance=ExtResource("10_dn8ph")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 125.821, 0.207925, -8.17256)
@@ -862,6 +868,31 @@ vertical_alignment = 1
 [node name="PauseMenu" parent="." instance=ExtResource("18_p86dy")]
 visible = false
 
+[node name="CrowControl" type="Node3D" parent="."]
+script = ExtResource("23_ob5jd")
+
+[node name="AreaLeft" type="Area3D" parent="CrowControl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -234.544, 0.651362, 1.85122)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CrowControl/AreaLeft"]
+shape = SubResource("BoxShape3D_rktnw")
+
+[node name="AreaRight" type="Area3D" parent="CrowControl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.8075, 1.05049, 1.85122)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CrowControl/AreaRight"]
+shape = SubResource("BoxShape3D_rktnw")
+
+[node name="Civilians" type="Node3D" parent="."]
+
+[node name="Civilian_01" parent="Civilians" instance=ExtResource("24_fycpx")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -157.179, 0.972715, 3.60627)
+
+[node name="Civilian_02" parent="Civilians" instance=ExtResource("24_fycpx")]
+transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -125.699, 0.972715, -3.74005)
+
 [connection signal="area_entered" from="BusStop" to="." method="_on_bus_stop_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="CrowControl/AreaLeft" to="CrowControl" method="_on_area_left_area_entered"]
+[connection signal="area_entered" from="CrowControl/AreaRight" to="CrowControl" method="_on_area_right_area_entered"]

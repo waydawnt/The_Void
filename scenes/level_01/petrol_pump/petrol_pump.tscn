@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dya41eiihhbal"]
+[gd_scene load_steps=24 format=3 uid="uid://dya41eiihhbal"]
 
 [ext_resource type="ArrayMesh" uid="uid://cnv8py6gb75dw" path="res://objects/level_01_objects/petrol_pump/petrol_pump_ground.res" id="1_y114f"]
 [ext_resource type="ArrayMesh" uid="uid://dahhcx07c2qlr" path="res://objects/level_01_objects/petrol_pump/petrol_pump_store.res" id="2_toqdh"]
@@ -13,6 +13,15 @@
 [ext_resource type="PackedScene" uid="uid://fc42tlaktuqt" path="res://scenes/level_01/vending_machines/vending_machine_01.tscn" id="11_8tyvk"]
 [ext_resource type="PackedScene" uid="uid://c54eav2pfd8i1" path="res://scenes/misc/actionable.tscn" id="12_cg7re"]
 [ext_resource type="Resource" uid="uid://i0u0e6rmwpgi" path="res://dialogues/act_01_dialogues.dialogue" id="13_g6mle"]
+[ext_resource type="Texture2D" uid="uid://bq7jtqyge26s6" path="res://imports/2d_sprites/level_01_sprites/car_00.png" id="14_275vo"]
+[ext_resource type="Texture2D" uid="uid://df7ek7x1wp5d2" path="res://imports/2d_sprites/level_01_sprites/Cars/Cars2.png" id="15_bdaf6"]
+[ext_resource type="Texture2D" uid="uid://cq5idccgxshq8" path="res://imports/2d_sprites/level_01_sprites/car_01.png" id="16_lfr23"]
+[ext_resource type="Texture2D" uid="uid://6e8gkbmf22xw" path="res://imports/2d_sprites/level_02_sprites/pole.png" id="17_imgcb"]
+[ext_resource type="Texture2D" uid="uid://cckfe0j0k7ctr" path="res://imports/2d_sprites/level_01_sprites/trash1.png" id="18_86hab"]
+[ext_resource type="Texture2D" uid="uid://47efyo24bpaf" path="res://imports/2d_sprites/level_01_sprites/chain_railing.png" id="19_8i43k"]
+[ext_resource type="Texture2D" uid="uid://bxik7rkle4g70" path="res://imports/2d_sprites/level_02_sprites/scooter.png" id="20_gu750"]
+[ext_resource type="Texture2D" uid="uid://d0kooxntu8kqg" path="res://imports/2d_sprites/level_02_sprites/scooterblue.png" id="21_tuwd3"]
+[ext_resource type="Texture2D" uid="uid://ccnvn48of2ag1" path="res://imports/2d_sprites/level_01_sprites/ground/bicycle(1).png" id="22_0is5k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_626jr"]
 size = Vector3(1, 2.67, 5)
@@ -105,3 +114,97 @@ dialogue_start = "vending_machine"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vending_machine_01/Actionable"]
 shape = SubResource("BoxShape3D_626jr")
+
+[node name="Car_00" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.314028, 1.8644, 4.6525)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_275vo")
+
+[node name="Car_04" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 1.19209e-06, 0, 5, 0, -1.19209e-06, 0, 5, -6.58795, 0.600138, -5.24869)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_4p12t")
+vframes = 3
+frame = 2
+
+[node name="Car_06" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 2.06632e-06, 0, 5, 0, -2.06632e-06, 0, 5, -6.77945, 0.542988, -2.12668)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("15_bdaf6")
+vframes = 3
+
+[node name="Car2" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.93163, 1.05632, -11.6432)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_lfr23")
+
+[node name="Billboard" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.737, 3.56517, 9.71561)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_oxmrr")
+
+[node name="Pole" type="Sprite3D" parent="Billboard"]
+transform = Transform3D(0.233333, 0, 0, 0, 0.233333, 0, 0, 0, 0.233333, 0, -0.616942, -0.00658607)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_imgcb")
+
+[node name="Trash9" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 8.80388, 0.597159, 3.59155)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("18_86hab")
+
+[node name="Railing" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.09129, 1.2096, 2.8638)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("19_8i43k")
+
+[node name="Railing2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32082, 1.2096, 2.8638)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("19_8i43k")
+
+[node name="Railing3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57746, 1.2096, 2.8638)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("19_8i43k")
+
+[node name="Scooter" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.65637, 0.651534, 7.82845)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("20_gu750")
+
+[node name="Scooter2" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.65637, 0.651534, 6.58447)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("21_tuwd3")
+
+[node name="Scooter3" type="Sprite3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 8.81852, 0.589315, 8.44564)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("22_0is5k")

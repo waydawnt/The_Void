@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c7nrek8nydo76"]
+[gd_scene load_steps=21 format=3 uid="uid://c7nrek8nydo76"]
 
 [ext_resource type="ArrayMesh" uid="uid://bctnh8co4os7y" path="res://objects/level_01_objects/goons_adda/goons_adda.res" id="1_lv5r8"]
 [ext_resource type="ArrayMesh" uid="uid://dcfl6u2b7lsds" path="res://objects/level_01_objects/goons_adda/goons_add_ground.res" id="2_o5obs"]
@@ -12,6 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://o6qjf47qtc4y" path="res://imports/level_01/2d_sprites/lol1.png" id="10_8qpw1"]
 [ext_resource type="Texture2D" uid="uid://d0vns2xajutl8" path="res://imports/2d_sprites/level_01_sprites/sign8.png" id="11_5qadt"]
 [ext_resource type="Texture2D" uid="uid://be5ottmk0vksc" path="res://imports/2d_sprites/level_01_sprites/mask_paint.png" id="12_ubyby"]
+[ext_resource type="Texture2D" uid="uid://bo557uw12lf1j" path="res://imports/2d_sprites/level_01_sprites/car3.png" id="13_iyh0g"]
+[ext_resource type="Texture2D" uid="uid://cckfe0j0k7ctr" path="res://imports/2d_sprites/level_01_sprites/trash1.png" id="14_dpt2v"]
+[ext_resource type="Texture2D" uid="uid://cgy2etkgljg4b" path="res://imports/2d_sprites/level_01_sprites/kachra.png" id="15_tn7x7"]
+[ext_resource type="Texture2D" uid="uid://ccnvn48of2ag1" path="res://imports/2d_sprites/level_01_sprites/ground/bicycle(1).png" id="16_6c18m"]
+[ext_resource type="Texture2D" uid="uid://dt4fqednkdwxk" path="res://imports/2d_sprites/level_01_sprites/bt1.png" id="16_pwvxn"]
+[ext_resource type="Texture2D" uid="uid://d0kooxntu8kqg" path="res://imports/2d_sprites/level_02_sprites/scooterblue.png" id="17_4iiu8"]
+[ext_resource type="Texture2D" uid="uid://lh3326wuupcp" path="res://imports/2d_sprites/level_01_sprites/bottle.png" id="17_kadnp"]
+[ext_resource type="Texture2D" uid="uid://7tucqrfaht02" path="res://imports/2d_sprites/level_01_sprites/bt.png" id="18_dsbg7"]
 
 [node name="GoonsAdda" type="Node3D"]
 
@@ -131,6 +139,13 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("6_06db4")
 
+[node name="Railing14" type="Sprite3D" parent="Railings"]
+transform = Transform3D(1.737, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -4.55044, 6.80309, -0.94382)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_06db4")
+
 [node name="Railing13" type="Sprite3D" parent="Railings"]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 3.39196, 1.54538, 7.98061)
 shaded = true
@@ -152,33 +167,12 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("8_77re0")
 
-[node name="Trash" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.41236, 0.555137, -1.50466)
+[node name="Cycle2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -15.0266, 0.623848, 5.37042)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("9_yx76g")
-
-[node name="Trash2" type="Sprite3D" parent="."]
-transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0.0283982, 3.92732, -0.658763)
-shaded = true
-alpha_cut = 1
-texture_filter = 0
-texture = ExtResource("10_8qpw1")
-
-[node name="Trash3" type="Sprite3D" parent="."]
-transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0.0283982, 8.62319, -0.658763)
-shaded = true
-alpha_cut = 1
-texture_filter = 0
-texture = ExtResource("10_8qpw1")
-
-[node name="Trash4" type="Sprite3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.8084, 1.15096, 8.03491)
-shaded = true
-alpha_cut = 1
-texture_filter = 0
-texture = ExtResource("11_5qadt")
+texture = ExtResource("8_77re0")
 
 [node name="MaskPaint" type="Sprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.35108, 3.75245, -0.466574)
@@ -191,3 +185,245 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.44499, 3.75245, -0.46
 shaded = true
 texture_filter = 0
 texture = ExtResource("12_ubyby")
+
+[node name="Railings2" type="Node3D" parent="."]
+
+[node name="Railing3" type="Sprite3D" parent="Railings2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9245, 1.16407, -11.9088)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_06db4")
+
+[node name="Railing4" type="Sprite3D" parent="Railings2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1837, 1.16407, -11.9088)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_06db4")
+
+[node name="Railing5" type="Sprite3D" parent="Railings2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4646, 1.16407, -11.9088)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_06db4")
+
+[node name="Railing6" type="Sprite3D" parent="Railings2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73858, 1.16407, -11.9088)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_06db4")
+
+[node name="Railing7" type="Sprite3D" parent="Railings2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.003, 1.16407, -11.9088)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("6_06db4")
+
+[node name="Car2" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.6295, 0.795106, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_iyh0g")
+
+[node name="Trash5" type="Node3D" parent="."]
+
+[node name="Trash" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.41236, 0.555137, -1.50466)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_yx76g")
+
+[node name="Trash2" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0.0283982, 3.92732, -0.658763)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8qpw1")
+
+[node name="Trash3" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0.0283982, 8.62319, -0.658763)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_8qpw1")
+
+[node name="Trash4" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.8084, 1.15096, 8.03491)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_5qadt")
+
+[node name="Sprite3D" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -14.1711, 0.602985, -0.00679815)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("14_dpt2v")
+
+[node name="Kachra_03" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(1.84637, 0, 0, 0, 1.84637, 0, 0, 0, 1.84637, -13.0631, 0.576728, 0.323467)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("15_tn7x7")
+
+[node name="Kachra_04" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(1.84637, 0, 0, 0, 1.84637, 0, 0, 0, 1.84637, -12.0679, 0.576728, -0.130819)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("15_tn7x7")
+
+[node name="Kachra_05" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(1.84637, 0, 0, 0, 1.84637, 0, 0, 0, 1.84637, -14.2503, 0.576728, 0.653225)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("15_tn7x7")
+
+[node name="Kachra_06" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(1.84637, 0, 0, 0, 1.84637, 0, 0, 0, 1.84637, -13.1224, 0.576728, 0.843719)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("15_tn7x7")
+
+[node name="Bottle_05" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-6.55671e-08, -0.5, 3.17865e-08, 0.5, -6.55671e-08, 4.68955e-15, -3.82137e-15, 3.17865e-08, 0.5, -11.8965, 0.0690174, 1.39042)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_pwvxn")
+
+[node name="Bottle_09" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(0.5, -4.37114e-08, 3.17865e-08, 4.37114e-08, 0.5, 3.55271e-15, -3.17865e-08, 0, 0.5, -11.8965, 0.188087, 5.89976)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_pwvxn")
+
+[node name="Bottle_10" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(0.5, -4.37114e-08, 3.17865e-08, 4.37114e-08, 0.5, 3.55271e-15, -3.17865e-08, 0, 0.5, -11.7806, 0.188087, 6.00212)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_pwvxn")
+
+[node name="Bottle_11" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(0.5, -4.37114e-08, 3.17865e-08, 4.37114e-08, 0.5, 3.55271e-15, -3.17865e-08, 0, 0.5, -11.6781, 0.188087, 5.94491)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_pwvxn")
+
+[node name="Bottle_06" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-6.55671e-08, -0.5, 3.17865e-08, 0.5, -6.55671e-08, 4.68955e-15, -3.82137e-15, 3.17865e-08, 0.5, -5.86709, 0.0767621, 6.59613)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_pwvxn")
+
+[node name="Bottle_07" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-6.55671e-08, 0.5, -7.54979e-08, 0.5, 6.55671e-08, -1.70218e-14, -3.82137e-15, -7.54979e-08, -0.5, 11.6198, 0.072518, 3.71096)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_pwvxn")
+
+[node name="Bottle_08" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-0.5, -8.74228e-08, -7.54979e-08, -8.74228e-08, 0.5, -1.42109e-14, 7.54979e-08, -7.10543e-15, -0.5, 12.9776, 0.178956, 6.97768)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_pwvxn")
+
+[node name="Bottle_04" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-0.2, -1.65729e-15, -3.01992e-08, -1.77636e-15, 0.2, 0, 3.01992e-08, 0, -0.2, -1.36347, 0.150677, -0.49305)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_kadnp")
+
+[node name="Bottle_12" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-0.2, -1.65729e-15, -3.01992e-08, -1.77636e-15, 0.2, 0, 3.01992e-08, 0, -0.2, -1.49749, 0.150677, -0.49305)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_kadnp")
+
+[node name="Bottle_13" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-0.2, -1.65729e-15, -3.01992e-08, -1.77636e-15, 0.2, 0, 3.01992e-08, 0, -0.2, -1.76323, 0.150677, -0.49305)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_kadnp")
+
+[node name="Bottle_16" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-0.2, -1.65729e-15, -3.01992e-08, -1.77636e-15, 0.2, 0, 3.01992e-08, 0, -0.2, -6.24808, 0.176253, 6.2575)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_kadnp")
+
+[node name="Bottle_17" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(8.74228e-09, 0.2, -3.01992e-08, 0.2, -8.74228e-09, 0, 0, -3.01992e-08, -0.2, -6.14239, 0.0568806, 6.20891)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_kadnp")
+
+[node name="Bottle_14" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-0.2, -1.65729e-15, -3.01992e-08, -1.77636e-15, 0.2, 0, 3.01992e-08, 0, -0.2, -1.61161, 0.150677, -0.400834)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_kadnp")
+
+[node name="Bottle_15" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(8.74228e-09, -0.2, -3.01992e-08, -0.2, -8.74228e-09, 0, 0, 3.01992e-08, -0.2, -1.31056, 0.0193288, -0.400834)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_kadnp")
+
+[node name="Bottle_18" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-0.2, -1.65729e-15, -3.01992e-08, -1.77636e-15, 0.2, 0, 3.01992e-08, 0, -0.2, 4.08269, 0.193653, 7.02299)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_kadnp")
+
+[node name="Bottle_02" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(-0.5, 7.41726e-16, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 3.66921, 0.182182, 7.20005)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("18_dsbg7")
+
+[node name="Bottle_03" type="Sprite3D" parent="Trash5"]
+transform = Transform3D(2.18557e-08, -0.5, -7.54979e-08, -0.5, -2.18557e-08, 0, 0, 7.54979e-08, -0.5, 3.51364, 0.0315847, 7.10607)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("18_dsbg7")
+
+[node name="Scooter3" type="Sprite3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 14.7392, 0.592682, 1.38706)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("16_6c18m")
+
+[node name="Scooter2" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.4476, 0.651534, 3.98904)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("17_4iiu8")

@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://ck52nybmj580a"]
+
+[ext_resource type="Shader" path="res://shaders/crt_monitor_shader.gdshader" id="1_4s0mj"]
+[ext_resource type="Script" path="res://scripts/news_screen.gd" id="1_qt71n"]
+[ext_resource type="Texture2D" uid="uid://bps13u5fs28yn" path="res://imports/images/NEWS.png" id="2_2bay6"]
+[ext_resource type="AudioStream" uid="uid://bqs3kld0clou7" path="res://sounds/CRT_monitor.mp3" id="3_ktgdc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52lhk"]
+shader = ExtResource("1_4s0mj")
+shader_parameter/screen_texture = ExtResource("2_2bay6")
+
+[sub_resource type="Animation" id="Animation_qwyl4"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ko3x5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qnfc6"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_48irw"]
+_data = {
+"RESET": SubResource("Animation_ko3x5"),
+"fade_in": SubResource("Animation_qwyl4"),
+"fade_out": SubResource("Animation_qnfc6")
+}
+
+[node name="NewsScreen" type="Node2D"]
+script = ExtResource("1_qt71n")
+
+[node name="NewsSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_52lhk")
+texture = ExtResource("2_2bay6")
+offset = Vector2(960, 540)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -102.0
+offset_top = -66.0
+offset_right = 2021.0
+offset_bottom = 1161.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_48irw")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ktgdc")
+autoplay = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

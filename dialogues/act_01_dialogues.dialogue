@@ -2,6 +2,9 @@
 
 (Hurtful noise)
 Detective: I am so confused right now, where even am I?
+Detective: I was following a goon and suddenly, someone hit me in the back.
+Detective: And I passed, out...
+(Hurt)
 Detective: At least I got some intel.
 
 => END
@@ -35,7 +38,9 @@ if State.give_money == "gave":
 	set State.gun_status = true
 	Detective: A gun! why?
 	Store Owner: You will need it in case you meet the west bloods goons.
-	Detective: Thanks
+	Detective: Westbloods? Who are they?
+	Store Owner: Just a bunch of street gang robbing people around this area.
+	Detective: Thanks, I'll take care of it.
 elif State.give_money == "none":
 	Store Owner: You are just another servant of higher level, just want to rob everything from poor.
 	Store Owner: Now get lost!
